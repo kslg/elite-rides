@@ -83,3 +83,10 @@ body {
         padding-top: 164px;
     }
 }
+
+@media (min-width: 900px) {
+    .mobile-logo {
+      display: none;
+    }
+}
+
