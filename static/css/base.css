@@ -1,13 +1,25 @@
+
+/* helps browsers and devices scale the site more smoother */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
 html {
     height: 100%;
 }
 
 body {
-    background: url('/media/homepage_background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
     font-family: 'Jura', sans-serif;
+}
+
+.hero-img {
+    background: url('/media/homepage_background.jpg') no-repeat center center;
+    background-size: cover;
+    height: calc(100vh - 173px);
+    color: #555;
+    width: 100%;
 }
 
 /* from Bulma */
@@ -60,12 +72,16 @@ body {
     background: #000 !important;
 }
 
+.hero-content {
+    padding-top: 5rem;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
   .container {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 
@@ -89,4 +105,3 @@ body {
       display: none;
     }
 }
-
