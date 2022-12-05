@@ -34,6 +34,10 @@ class Product(models.Model):
 
 
 class Warranty(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Warranty Packages'
+
     name = models.CharField(max_length=40)
     price = models.DecimalField(max_digits=6, decimal_places=2)
 
