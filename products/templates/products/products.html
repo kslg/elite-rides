@@ -10,11 +10,97 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="overlay"></div>
+    <div class="container-fluid">
         <div class="row">
-            <div class="col">
-                {{ products }}
+            <div class="col text-center products-header">
+                <h2 class="logo-font">Products</h2>
+                <hr class="mb-1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card h-100 border-0">
+                                {% if product.image %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                                {% else %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="/media/noimage.png" alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
+                                <div class="card-body pb-0">
+                                    <p class="mb-0">{{ product.name }}</p>
+                                </div>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            <!-- {% if product.rating %}
+                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                            {% else %}
+                                                <small class="text-muted">No Rating</small>
+                                            {% endif %} -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}                        
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-xl-block mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block page_footer %}
+    <footer class="container-wrapper">
+        <div class="container quotes-container content-container">
+        <section class="footer">
+            <div class="row">
+            <div class="col-12 page-header mb-4">
+                <h2 class="text-uppercase">Stay in touch:</h2>
+                <hr class="block-divider block-divider--short">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+            <h3>Social</h3>
+            <p>Keep up to date with all our latest offers</p>
+            <a href="#" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+            </div>
+            <div class="col-12 col-md-6">
+            <h2>Subscribe!</h2>
+            <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
+            <!-- Mailchimp signup form here -->
+            </div>
+        </div>
+        </section>
+    </div>
+    </footer>
 {% endblock %}

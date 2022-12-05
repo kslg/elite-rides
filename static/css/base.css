@@ -76,6 +76,20 @@ body {
     padding-top: 5rem;
 }
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+.products-header {
+    margin-top: 13rem;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -103,5 +117,11 @@ body {
 @media (min-width: 900px) {
     .mobile-logo {
       display: none;
+    }
+}
+
+@media (min-width: 1000px) {
+    .products-header {
+        margin-top: 3rem;
     }
 }
