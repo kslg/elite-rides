@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container hero-img w-100">
+        <div class="row">
+            <div class="col-7 col-md-6 my-auto hero-content">
+                <h1 class="display-4 logo-font text-black">
+                    Servicing
+                </h1>
+                <div class="my-5">
+                    <h4>
+                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">View Rides</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_footer %}
+    <footer class="container-wrapper">
+        <div class="container quotes-container content-container">
+        <section class="footer">
+            <div class="row">
+            <div class="col-12 page-header mb-4">
+                <h2 class="text-uppercase">Stay in touch:</h2>
+                <hr class="block-divider block-divider--short">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+            <h3>Social</h3>
+            <p>Keep up to date with all our latest offers</p>
+            <a href="#" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+            </div>
+            <div class="col-12 col-md-6">
+            <h2>Subscribe!</h2>
+            <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
+            <!-- Mailchimp signup form here -->
+            </div>
+        </div>
+        </section>
+    </div>
+    </footer>
+{% endblock %}
