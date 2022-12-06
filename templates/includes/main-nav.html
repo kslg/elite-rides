@@ -15,10 +15,10 @@
                 All Rides
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Make</a>
-                <a href="" class="dropdown-item">By Model</a>
-                <a href="" class="dropdown-item">All Rides</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=make&direction=asc" class="dropdown-item">By Make</a>
+                <a href="{% url 'products' %}?sort=model&direction=asc" class="dropdown-item">By Model</a>
+                <a href="{% url 'products' %}" class="dropdown-item">All Rides</a>
             </div>
         </li>
         <li class="nav-item dropdown">
