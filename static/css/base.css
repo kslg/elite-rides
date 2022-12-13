@@ -120,6 +120,13 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
+/* -------------------------------- Shopping Bag */
+
+.bag-table {
+    margin-left: 2.5rem!important;
+    padding-right: 7rem;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
