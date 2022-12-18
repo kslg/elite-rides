@@ -197,6 +197,17 @@ a.category-badge > span.badge:hover {
     overflow-y: auto;
 }
 
+/* -------------------------------- Allauth Account Pages */
+
+.logout-elements,
+.login-elements,
+.signup-elements,
+.verification-sent-elements,
+.confirm-email-elements {
+    margin-top: 14rem;
+    padding-left: 2rem;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
