@@ -180,6 +180,7 @@ STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY_ER')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY_ER')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET_ER')
+DEFAULT_FROM_EMAIL = 'customerservice@eliterides.com'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
