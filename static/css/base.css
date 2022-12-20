@@ -122,6 +122,16 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
+.profile-container {
+    margin-top: 6rem;
+}
+
+/* -------------------------------- Search Bar */
+
+input[name='q']::placeholder {
+    color: #aab7c4;
+}
+
 /* -------------------------------- Shopping Bag */
 
 .bag-table {
