@@ -4,12 +4,13 @@
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
-{% block content %}
-<div class="container logout-elements">
+{% block inner_content %}
+<!-- <div class="container logout-elements">
   <div class="row">
-    <div class="col">
-
-      <h1>{% trans "Sign Out" %}</h1>
+    <div class="col"> -->
+      <hr>
+      <h2 class="logo-font mb-4">{% trans "Sign Out" %}</h2>
+      <hr>
 
       <p>{% trans 'Are you sure you want to sign out?' %}</p>
 
@@ -21,7 +22,7 @@
         <button type="submit">{% trans 'Sign Out' %}</button>
       </form>
 
-    </div>
+    <!-- </div>
   </div>
-</div>
+</div> -->
 {% endblock %}
