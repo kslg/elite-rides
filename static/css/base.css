@@ -207,6 +207,10 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+.products-manage-container {
+    margin-top: 6rem;
+}
+
 /* -------------------------------- Allauth Account Pages */
 
 .accounts-header-container {
