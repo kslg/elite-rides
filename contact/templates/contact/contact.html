@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <hr>
+                <h2 class="logo-font mb-4">Contact Us</h2>
+                <h5 class="text-muted">Please contact us with any questions you may have.</h5>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right">
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn btn-black rounded-0" type="submit">Send</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_footer %}
+    <footer class="container-wrapper">
+        <div class="container quotes-container content-container">
+        <section class="footer">
+            <div class="row">
+            <div class="col-12 page-header mb-4">
+                <h2 class="text-uppercase">Stay in touch:</h2>
+                <hr class="block-divider block-divider--short">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+            <h3>Social</h3>
+            <p>Keep up to date with all our latest offers</p>
+            <a href="#" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+            </div>
+            <div class="col-12 col-md-6">
+            <h2>Subscribe!</h2>
+            <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
+            <!-- Mailchimp signup form here -->
+            </div>
+        </div>
+        </section>
+    </div>
+    </footer>
+{% endblock %}

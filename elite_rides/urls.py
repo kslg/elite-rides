@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from contact import views as contact_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,7 +26,7 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('', include('home.urls')),
     path('servicing/', include('servicing.urls')),
-    path('contact/', include('contact.urls')),
+    path('contact/', contact_views.contact_view, name='contact'),
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
