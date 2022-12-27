@@ -207,6 +207,13 @@
                         <span class="text-uppercase">Keep Browsing</span>
                     </a>
                 {% endif %}
+                {% if user.is_authenticated %}
+                    <label class="form-check-label display-block"></label>
+                {% else %}
+                    <label class="form-check-label" for="id-save-info">
+                        <a class="text-info" href="{% url 'account_signup' %}">Create an account</a>
+                    </label>
+                {% endif %}
 			</div>
 		</div>
     </div>
