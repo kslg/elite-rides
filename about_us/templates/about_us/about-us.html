@@ -10,19 +10,34 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container hero-img w-100">
+    <div class="container w-100">
         <div class="row">
-            <div class="col-7 col-md-6 my-auto hero-content">
-                <h1 class="display-4 logo-font text-black">
-                    Servicing
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">View Rides</a>
-                    </h4>
-                </div>
+            <div class="col-12 col-md-6">
+                <hr>
+                <h2 class="logo-font mb-4">About Us</h2>
+                <hr>
+            </div>
+        </div>       
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <p>
+                    ELITE RIDES IS THE UK'S BEST CHOICE OF HIGH-END, LUXURY DIECAST MODEL CARS.
+                </p>
+                <p>
+                    WE HOPE YOU WILL FIND THAT SPECIAL RIDE YOU HAVE BEEN LOOKING FOR, BE IT A CAR YOU USED TO OWN, OR, A CAR YOU WOULD LIKE TO OWN, 
+                    OR A CAR THAT YOU HAVE ADMIRED IN FILMS OR TELEVISION.
+                </p>
+                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Browsing</span>
+                </a>
+                <a href="{% url 'contact' %}" class="btn btn-black rounded-0">Contact Us</a>
             </div>
         </div>
+
+
     </div>
 {% endblock %}
 
