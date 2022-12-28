@@ -161,7 +161,6 @@
             <div class="col-12 page-header mb-4">
                 <hr>
                 <h2 class="text-uppercase">Stay in touch:</h2>
-                <!-- <hr class="block-divider block-divider--short"> -->
             </div>
         </div>
         <div class="row">
@@ -172,10 +171,26 @@
             </div>
             <div class="col-12 col-md-4">
                 <h3>Information</h3>
-                <p>About Us</p>
-                <p>Terms & Conditions</p>
-                <p>Privacy Policy</p>
-                <p>Cookie Policy</p>
+                <p>
+                    <a href="{% url 'about-us' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                        About Us
+                    </a>
+                </p>
+                <p>
+                <a href="{% url 'terms-conditions' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                    Terms & Conditions
+                </a>
+                </p>
+                <p>
+                    <a href="{% url 'about-us' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                        Privacy Policy
+                    </a>
+                </p>
+                <p>
+                    <a href="{% url 'about-us' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                        Cookie Policy
+                    </a>
+                </p>
             </div>
             <div class="col-12 col-md-4">
                 <h2>Subscribe!</h2>

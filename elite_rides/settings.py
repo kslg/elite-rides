@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'django_summernote',
+    'terms_conditions',
 
     # Other
     'crispy_forms',
