@@ -126,6 +126,17 @@ a.category-badge > span.badge:hover {
     margin-top: 6rem;
 }
 
+.social-icons li{
+    display: inline;
+}
+
+.social-icons i{
+    font-size: 225%;
+    /* margin: 1%;
+    padding: 0%; */
+    color: #000;
+}
+
 /* -------------------------------- Search Bar */
 
 input[name='q']::placeholder {

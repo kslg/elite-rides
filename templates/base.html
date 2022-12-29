@@ -156,52 +156,75 @@
     {% block page_footer %}
     <footer class="container-wrapper">
         <div class="container quotes-container content-container">
-        <section class="footer">
-            <div class="row">
-            <div class="col-12 page-header mb-4">
-                <hr>
-                <h2 class="text-uppercase">Stay in touch:</h2>
-            </div>
+            <section class="footer">
+                <div class="row">
+                    <div class="col-12 page-header mb-4">
+                        <hr>
+                        <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                            <h2 class="logo-font text-black my-0"><strong>Elite</strong> Rides</h2>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <h3>Stay Connected</h3>
+                        <p>Keep up to date with all our latest offers</p>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="https://www.facebook.com" aria-label="Go to our facebook page (opens in new tab)" target="_blank" rel="noopener">
+                                    <i class="fab fa-facebook-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.twitter.com" aria-label="Go to our twitter page (opens in new tab)" target="_blank" rel="noopener">
+                                    <i class="fab fa-twitter-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com" aria-label="Go to our instagram page (opens in new tab)" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com" aria-label="Go to our youtube page (opens in new tab)" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube-square"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <h3>Information</h3>
+                        <p>
+                            <a href="{% url 'about-us' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                                About Us
+                            </a>
+                        </p>
+                        <p>
+                        <a href="{% url 'terms-conditions' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                            Terms & Conditions
+                        </a>
+                        </p>
+                        <p>
+                            <a href="{% url 'privacy-policy' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                                Privacy Policy
+                            </a>
+                        </p>
+                        <p>
+                            <a href="{% url 'cookie-policy' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                                Cookie Policy
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <h2>Subscribe!</h2>
+                        <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
+                        <!-- Mailchimp signup form here -->
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <h3>Social</h3>
-                <p>Keep up to date with all our latest offers</p>
-                <a href="#" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
-            </div>
-            <div class="col-12 col-md-4">
-                <h3>Information</h3>
-                <p>
-                    <a href="{% url 'about-us' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
-                        About Us
-                    </a>
-                </p>
-                <p>
-                <a href="{% url 'terms-conditions' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
-                    Terms & Conditions
-                </a>
-                </p>
-                <p>
-                    <a href="{% url 'privacy-policy' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
-                        Privacy Policy
-                    </a>
-                </p>
-                <p>
-                    <a href="{% url 'cookie-policy' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
-                        Cookie Policy
-                    </a>
-                </p>
-            </div>
-            <div class="col-12 col-md-4">
-                <h2>Subscribe!</h2>
-                <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
-                <!-- Mailchimp signup form here -->
-            </div>
-        </div>
-        </section>
-    </div>
     </footer>
-{% endblock %}
+    {% endblock %}
     
     {% block postloadjs %}
     <script type="text/javascript">
