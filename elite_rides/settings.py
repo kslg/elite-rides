@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'profiles',
     'django_summernote',
     'terms_conditions',
+    'privacy_policy',
+    'cookie_policy',
 
     # Other
     'crispy_forms',
