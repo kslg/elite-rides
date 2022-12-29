@@ -69,8 +69,9 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+    background: white;
+    color: black;
+    border: 1px solid black;
 }
 
 .text-black {
