@@ -17,9 +17,10 @@ body {
 .hero-img {
     background: url('/media/homepage_background.jpg') no-repeat center center;
     background-size: cover;
-    height: calc(100vh - 173px);
+    height: calc(100vh - 164px);
     color: #555;
     width: 100%;
+    max-width: 768px;
 }
 
 /* from Bulma */
@@ -42,7 +43,7 @@ body {
 .shop-now-button {
     background: black;
     color: white;
-    min-width: 260px;
+    min-width: 80px;
 }
 
 .btn-black {
@@ -321,6 +322,17 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+.hero-h4 {
+    margin-left: -5rem;
+}
+
+a.hero-button {
+    font-size: 1rem;
+}
+
+#delivery-banner {
+    margin-top: -0.5rem;
+}
 
 /* -------------------------------- Media Queries */
 
@@ -366,5 +378,58 @@ input[name='q']::placeholder {
 
     body {
         height: calc(100vh - 116px);
+    }
+}
+
+@media (min-width: 320px) {
+    .hero-img {
+        margin-top: 2.5rem;
+        height: calc(100vh - 118px);
+    }
+
+    .hero-content {
+        padding-top: 3.5rem;
+        margin-left: 4.5rem;
+    }
+
+    .hero-row {
+        font-size: 1.5rem;
+    }
+
+    .header-container {
+        padding-left: 0px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .hero-img {
+        margin-top: 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-row {
+        font-size: 3.5rem;
+    }
+
+    .shop-now-button {
+        background: black;
+        color: white;
+        min-width: 260px;
+    }
+
+    .hero-h4 {
+        margin-left: 0rem;
+    }
+
+    a.hero-button {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1260px) {
+    .hero-img {
+        margin-top: 0.5rem;
+        height: calc(100vh - 118px);
     }
 }
