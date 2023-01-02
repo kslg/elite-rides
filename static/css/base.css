@@ -153,7 +153,12 @@ input[name='q']::placeholder {
 
 .bag-table {
     margin-left: 2.5rem!important;
-    padding-right: 7rem;
+    padding-right: 4rem;
+}
+
+.bag-row {
+    margin-right: -9rem;
+    margin-left: -15px;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -326,6 +331,7 @@ a.hero-button {
 
 #delivery-banner {
     margin-top: -0.5rem;
+    /* padding-right: 7rem; */
 }
 
 .product-content {
@@ -338,6 +344,15 @@ a.hero-button {
 
 .margin-fix {
     margin-top: 5rem;
+    margin-bottom: 10rem;
+}
+
+.bagmargin-fix {
+    padding-top: 4rem;
+}
+
+.social-icons {
+    padding-left: 0rem;
 }
 
 /* -------------------------------- Media Queries */
@@ -411,6 +426,10 @@ a.hero-button {
     .hero-img {
         margin-top: 0.5rem;
     }
+
+    #delivery-banner {
+        padding-right: 0rem;
+    }
 }
 
 @media (min-width: 768px) {
@@ -435,6 +454,23 @@ a.hero-button {
     .allauth-pages {
         margin-top: -1rem;
     }
+
+    .bagmargin-fix {
+        padding-top: 2rem;
+    }
+
+    .navbar-toggler {
+        margin-right: 3rem;
+    }
+
+    .bag-table {
+        margin-left: 1.5rem!important;
+        padding-right: 9rem;
+    }
+
+    #delivery-banner {
+        padding-right: 0rem;
+    }
 }
 
 @media (min-width: 1260px) {
@@ -453,5 +489,13 @@ a.hero-button {
 
     .margin-fix {
         margin-top: 1rem;
+    }
+
+    .bagmargin-fix {
+        padding-top: 0rem;
+    }
+
+    .bag-table {
+        padding-right: 11rem;
     }
 }
