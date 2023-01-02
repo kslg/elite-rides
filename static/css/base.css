@@ -125,7 +125,7 @@ a.category-badge > span.badge:hover {
 }
 
 .profile-container {
-    margin-top: 6rem;
+    margin-top: 5rem;
 }
 
 .social-icons li{
@@ -137,6 +137,10 @@ a.category-badge > span.badge:hover {
     /* margin: 1%;
     padding: 0%; */
     color: #000;
+}
+
+.products-listing {
+    margin-top: -7rem;
 }
 
 /* -------------------------------- Search Bar */
@@ -229,16 +233,6 @@ input[name='q']::placeholder {
 .accounts-header-container {
     margin-top: 13rem;
 }
-
-/* .logout-elements,
-.login-elements,
-.signup-elements,
-.verification-sent-elements,
-.confirm-email-elements {
-    margin-top: 14rem;
-    padding-left: 2rem;
-} */
-
 
 /* Allauth form formatting */
 
@@ -334,6 +328,18 @@ a.hero-button {
     margin-top: -0.5rem;
 }
 
+.product-content {
+    margin-top: 3rem;
+}
+
+.order-success {
+    margin-top: 5rem;
+}
+
+.margin-fix {
+    margin-top: 5rem;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -425,11 +431,27 @@ a.hero-button {
     a.hero-button {
         font-size: 1.5rem;
     }
+
+    .allauth-pages {
+        margin-top: -1rem;
+    }
 }
 
 @media (min-width: 1260px) {
     .hero-img {
         margin-top: 0.5rem;
         height: calc(100vh - 118px);
+    }
+
+    .products-listing {
+        margin-top: 0rem;
+    }
+
+    .product-content {
+        margin-top: 0rem;
+    }
+
+    .margin-fix {
+        margin-top: 1rem;
     }
 }
