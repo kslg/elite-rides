@@ -152,13 +152,21 @@ input[name='q']::placeholder {
 /* -------------------------------- Shopping Bag */
 
 .bag-table {
-    margin-left: 2.5rem!important;
-    padding-right: 4rem;
+    margin-left: 0.5rem!important;
+    padding-right: 9rem;
 }
 
 .bag-row {
     margin-right: -9rem;
     margin-left: -15px;
+}
+
+.mobile-qty {
+    max-width: 35%;
+}
+
+.remove-item {
+    padding-right: 11rem;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -322,7 +330,8 @@ input[name='q']::placeholder {
 }
 
 .hero-h4 {
-    margin-left: -5rem;
+    margin-left: 0rem;
+    margin-top: -2rem
 }
 
 a.hero-button {
@@ -353,6 +362,12 @@ a.hero-button {
 
 .social-icons {
     padding-left: 0rem;
+}
+
+/* -------------------------------- Mobile Checkout */
+
+.btn-checkout {
+    font-size: 0.90rem;
 }
 
 /* -------------------------------- Media Queries */
@@ -444,7 +459,7 @@ a.hero-button {
     }
 
     .hero-h4 {
-        margin-left: 0rem;
+        margin-left: 10rem;
     }
 
     a.hero-button {
@@ -479,6 +494,10 @@ a.hero-button {
         height: calc(100vh - 118px);
     }
 
+    .hero-h4 {
+        margin-left: 0rem;
+    }
+
     .products-listing {
         margin-top: 0rem;
     }
@@ -497,5 +516,9 @@ a.hero-button {
 
     .bag-table {
         padding-right: 11rem;
+    }
+
+    .remove-item {
+        padding-right: 17rem;
     }
 }
