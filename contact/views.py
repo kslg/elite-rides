@@ -8,7 +8,7 @@ def contact_view(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.info(request, f'Thank you for your message.\
+            messages.info(request, 'Thank you for your message.\
                              We aim to respond within 24 hours.')
     form = ContactForm()
     context = {'form': form}
