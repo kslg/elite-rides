@@ -1,0 +1,1 @@
+web: gunicorn elite_rides.wsgi:application
