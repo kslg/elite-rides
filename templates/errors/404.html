@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="container hero-img w-100">
+    <div class="container hero-img w-100 broken-404-margin">
         <div class="row">
             <div class="col-7 col-md-6 my-auto hero-content">
-                <h1 class="display-4 logo-font text-black h1-text hero-row">
+                <h1 class="display-4 logo-font text-black text-center h1-text hero-row">
                     404
                 </h1>
-                <p> 
-                    It looks like the page you tried to reach does not exist. Click below to go back to our Home page.
-                </p>
+                <h3> 
+                    The page you tried to reach does not exist. Click back to our Home page.
+                </h3>
                 <div class="my-5">
                     <h4 class="hero-h4">
                         <a href="{% url 'products' %}" class="hero-button shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Go to home page</a>

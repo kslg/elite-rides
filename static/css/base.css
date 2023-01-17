@@ -364,6 +364,10 @@ a.hero-button {
     padding-left: 0rem;
 }
 
+.broken-404-margin {
+    margin-top: 11.5rem;
+}
+
 /* -------------------------------- Mobile Checkout */
 
 .btn-checkout {
