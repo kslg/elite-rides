@@ -1,1 +1,1 @@
-Boutique Ado Confirmation for Order Number {{ order.order_number }}
+EliteRides.com Confirmation for Order Number {{ order.order_number }}
