@@ -364,6 +364,11 @@ a.hero-button {
     padding-left: 0rem;
 }
 
+.content-404 {
+    padding-top: 4rem;
+    font-size: 1.25rem;
+}
+
 /* -------------------------------- Mobile Checkout */
 
 .btn-checkout {

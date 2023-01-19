@@ -2,41 +2,42 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container w-100 margin-fix">
-        <div class="row">
-            <div class="col-12 col-md-9">
-                <hr>
-                <h2 class="logo-font mb-4">About Us</h2>
-                <hr>
-            </div>
-        </div>       
-        <div class="row">
-            <div class="col-12 col-md-9">
-                <p>
-                    ELITE RIDES IS THE UK'S BEST CHOICE OF HIGH-END, LUXURY DIECAST MODEL CARS.
-                </p>
-                <p>
-                    WE HOPE YOU WILL FIND THAT SPECIAL RIDE YOU HAVE BEEN LOOKING FOR, BE IT A CAR YOU USED TO OWN, OR, A CAR YOU WOULD LIKE TO OWN, 
-                    OR A CAR THAT YOU HAVE ADMIRED IN FILMS OR TELEVISION.
-                </p>
-                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
-                    <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Keep Browsing</span>
-                </a>
-                <a href="{% url 'contact' %}" class="btn btn-black rounded-0">Contact Us</a>
-            </div>
-        </div>
-
-
+<div class="container w-100 margin-fix">
+  <div class="row">
+    <div class="col-12 col-md-9">
+      <hr>
+      <h2 class="logo-font mb-4">About Us</h2>
+      <hr>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-9">
+      <p>
+        ELITE RIDES IS THE UK'S BEST CHOICE OF HIGH-END, LUXURY DIECAST MODEL CARS.
+      </p>
+      <p>
+        WE HOPE YOU WILL FIND THAT SPECIAL RIDE YOU HAVE BEEN LOOKING FOR, BE IT A CAR YOU USED TO OWN, OR, A CAR YOU
+        WOULD LIKE TO OWN,
+        OR A CAR THAT YOU HAVE ADMIRED IN FILMS OR TELEVISION.
+      </p>
+      <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
+        <span class="icon">
+          <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="text-uppercase">Keep Browsing</span>
+      </a>
+      <a href="{% url 'contact' %}" class="btn btn-black rounded-0">Contact Us</a>
+    </div>
+  </div>
+
+
+</div>
 {% endblock %}

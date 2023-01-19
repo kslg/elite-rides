@@ -1,25 +1,30 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
-    <div class="container hero-img w-100 margin-fix">
-        <div class="row">
-            <div class="col-7 col-md-6 my-auto hero-content">
-                <h1 class="logo-font mb-4">
-                    404
-                </h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-9">
-                <p> 
-                    The page you tried to reach does not exist.
-                </p>
-                <div class="my-5">
-                    <h4 class="hero-h4">
-                        <a href="{% url 'products' %}" class="hero-button shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Go to home page</a>
-                    </h4>
-                </div>   
+<div class="container hero-img w-100">
+    <div class="row">
+        <div class="col-12 col-md-9 w-100 content-404">
+            <h1 class="logo-font text-black h1-text">
+                404
+            </h1>
+            <p class="text-black text-uppercase text-404">
+                The page you are looking for is not available.
+            </p>
+            <div class="my-5">
+                <h4 class="hero-h4">
+                    <a href="{% url 'home' %}" class="hero-button shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Go to home page</a>
+                </h4>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
