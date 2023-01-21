@@ -301,6 +301,10 @@ input[name='q']::placeholder {
 	color: #17a2b8; /* text-info */
 }
 
+.account-pages {
+    width: 17rem;
+}
+
 /* Admin Product Form */
 
 .btn-file {
@@ -490,6 +494,10 @@ a.hero-button {
 
     #delivery-banner {
         padding-right: 0rem;
+    }
+
+    .account-pages {
+        width: 35rem;
     }
 }
 
