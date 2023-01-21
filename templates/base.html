@@ -22,6 +22,9 @@
         {% block extra_css %}
         {% endblock %}
 
+        {% comment %} To get your favicon displaying in Production {% endcomment %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}">
+
         {% block corejs %}
             <script src="https://kit.fontawesome.com/4a385e4c2f.js" crossorigin="anonymous"></script>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
