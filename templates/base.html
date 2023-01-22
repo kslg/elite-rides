@@ -5,17 +5,28 @@
     <head>
 
         {% block meta %}
+            <!-- This is the SEO meta data -->
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <meta charset="utf-8">
+            <meta charset="utf-8">    
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="Elite Rides specialise in luxury, high-performance, diecast car models.">
+            <meta name="keywords"
+                content="toy car models, luxury toy cars, diecast models, high end diecast cars,
+                diecast cars, british diecast models, italian diecast models, german diecast models, mercedes diecast models,
+                ferrari diecast models, lamborghini diecast models, bentely diecast models, luxury diecast models"
+                >
+            <meta name="author" content="Krishan Gharu for Code Institute E-commerce Project">
         {% endblock %}
 
         {% block extra_meta %}
         {% endblock %}
 
         {% block corecss %}
+            <!-- bootstrap library -->
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <!-- Google font -->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jura&display=swap">
+            <!-- css file link -->
             <link rel="stylesheet" href="{% static 'css/base.css' %}">
         {% endblock %}
 
@@ -29,6 +40,7 @@
             <script src="https://kit.fontawesome.com/4a385e4c2f.js" crossorigin="anonymous"></script>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <!-- bootstrap library -->
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
             <!-- Stripe -->
             <script src="https://js.stripe.com/v3/"></script>
@@ -40,205 +52,200 @@
         <title>Elite Rides {% block extra_title %}{% endblock %}</title>
     </head>
     <body>
-    <header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <div class="col-sm col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>Elite</strong> Rides</h2>
-                </a>
-            </div>
-            <div class="col-sm col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="{% url 'products' %}">
-                    <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Find your ride">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-sm col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
+        <header class="container-fluid fixed-top">
+            <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+                <div class="col-sm col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                    <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                        <h2 class="logo-font text-black my-0"><strong>Elite</strong> Rides</h2>
+                    </a>
+                </div>
+                <div class="col-sm col-lg-4 my-auto py-1 py-lg-0">
+                    <form method="GET" action="{% url 'products' %}">
+                        <div class="input-group w-100">
+                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Find your ride">
+                            <div class="input-group-append">
+                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
                             </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Model Management</a>
-                                {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
                         </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
-                            <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                        £{{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        £0.00
+                    </form>
+                </div>
+                <div class="col-sm col-lg-4 my-auto py-1 py-lg-0">
+                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                        <li class="list-inline-item dropdown">
+                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <div><i class="fas fa-user fa-lg"></i></div>
+                                    <p class="my-0">My Account</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'add_product' %}" class="dropdown-item">Model Management</a>
                                     {% endif %}
-                                </p>
+                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                {% endif %}
                             </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light mx-auto">
-                {% include 'includes/main-nav.html' %}
-                {% include 'includes/mobile-top-header.html' %}
-            </nav>
-        </div>
-        <div id="delivery-banner" class="carousel slide row text-center" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="col bg-black text-white">
-                    <h4 class="logo-font my-1">Luxury Diecast Model Specialists</h4>                  
-                </div>   
-              </div>
-              <div class="carousel-item">
-                <div class="col bg-black text-white">
-                    <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                  
-                </div> 
-              </div>
-              <div class="carousel-item">
-                <div class="col bg-black text-white">
-                    <h4 class="logo-font my-1">Elite Sale Now On!</h4>                  
-                </div> 
-              </div>
-            </div>
-          </div>
-        <!-- <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                  
-            </div>            
-        </div> -->
-    </header>
-
-    {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
-    {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
-
-    {% block content %}
-    {% endblock %}
-
-    {% block page_footer %}
-    <footer class="container-wrapper">
-        <div class="container quotes-container content-container">
-            <section class="footer">
-                <div class="row">
-                    <div class="col-12 page-header mb-4">
-                        <hr>
-                        <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                            <h2 class="logo-font text-black my-0"><strong>Elite</strong> Rides</h2>
-                        </a>
-                    </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                                <div class="text-center">
+                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                    <p class="my-0">
+                                        {% if grand_total %}
+                                            £{{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                            £0.00
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <h3>Stay Connected</h3>
-                        <p>Keep up to date with all our latest offers</p>
-                        <ul class="social-icons">
-                            <li>
-                                <a href="https://www.facebook.com" aria-label="Go to our facebook page (opens in new tab)" target="_blank" rel="noopener">
-                                    <i class="fab fa-facebook-square"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.twitter.com" aria-label="Go to our twitter page (opens in new tab)" target="_blank" rel="noopener">
-                                    <i class="fab fa-twitter-square"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com" aria-label="Go to our instagram page (opens in new tab)" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram-square"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com" aria-label="Go to our youtube page (opens in new tab)" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube-square"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <h3>Information</h3>
-                        <p>
-                            <a href="{% url 'about-us' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
-                                About Us
-                            </a>
-                        </p>
-                        <p>
-                        <a href="{% url 'terms-conditions' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
-                            Terms & Conditions
-                        </a>
-                        </p>
-                        <p>
-                            <a href="{% url 'privacy-policy' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
-                                Privacy Policy
-                            </a>
-                        </p>
-                        <p>
-                            <a href="{% url 'cookie-policy' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
-                                Cookie Policy
-                            </a>
-                        </p>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <h2>Subscribe!</h2>
-                        <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
-                        <!-- Mailchimp signup form here -->
-                    </div>
-                    <div class="col-12 w-100">
-                        <hr>
-                        <p class="text-black text-center">
-                            © 2022 Made by Krishan Gharu
-                        </p>
-                    </div>
+            </div>
+            <div class="row bg-white">
+                <nav class="navbar navbar-expand-lg navbar-light mx-auto">
+                    {% include 'includes/main-nav.html' %}
+                    {% include 'includes/mobile-top-header.html' %}
+                </nav>
+            </div>
+            <div id="delivery-banner" class="carousel slide row text-center" data-ride="carousel">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="col bg-black text-white">
+                        <h4 class="logo-font my-1">Luxury Diecast Model Specialists</h4>                  
+                    </div>   
                 </div>
-            </section>
-        </div>
-    </footer>
-    {% endblock %}
-    
-    {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
-    </script>
-    {% endblock %}
+                <div class="carousel-item">
+                    <div class="col bg-black text-white">
+                        <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                  
+                    </div> 
+                </div>
+                <div class="carousel-item">
+                    <div class="col bg-black text-white">
+                        <h4 class="logo-font my-1">Elite Sale Now On!</h4>                  
+                    </div> 
+                </div>
+                </div>
+            </div>
+        </header>
+
+        {% if messages %}
+            <div class="message-container">
+                {% for message in messages %}
+                    {% with message.level as level %}
+                        {% if level == 40 %}
+                            {% include 'includes/toasts/toast_error.html' %}
+                        {% elif level == 30 %}
+                            {% include 'includes/toasts/toast_warning.html' %}
+                        {% elif level == 25 %}
+                            {% include 'includes/toasts/toast_success.html' %}
+                        {% else %}
+                            {% include 'includes/toasts/toast_info.html' %}
+                        {% endif %}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block page_header %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% block page_footer %}
+        <footer class="container-wrapper">
+            <div class="container quotes-container content-container">
+                <section class="footer">
+                    <div class="row">
+                        <div class="col-12 page-header mb-4">
+                            <hr>
+                            <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                                <h2 class="logo-font text-black my-0"><strong>Elite</strong> Rides</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <h3>Stay Connected</h3>
+                            <p>Keep up to date with all our latest offers</p>
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="https://www.facebook.com" aria-label="Go to our facebook page (opens in new tab)" target="_blank" rel="noopener">
+                                        <i class="fab fa-facebook-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com" aria-label="Go to our twitter page (opens in new tab)" target="_blank" rel="noopener">
+                                        <i class="fab fa-twitter-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com" aria-label="Go to our instagram page (opens in new tab)" target="_blank" rel="noopener">
+                                        <i class="fab fa-instagram-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com" aria-label="Go to our youtube page (opens in new tab)" target="_blank" rel="noopener">
+                                        <i class="fab fa-youtube-square"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h3>Information</h3>
+                            <p>
+                                <a href="{% url 'about-us' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                                    About Us
+                                </a>
+                            </p>
+                            <p>
+                            <a href="{% url 'terms-conditions' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                                Terms & Conditions
+                            </a>
+                            </p>
+                            <p>
+                                <a href="{% url 'privacy-policy' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                                    Privacy Policy
+                                </a>
+                            </p>
+                            <p>
+                                <a href="{% url 'cookie-policy' %}" class="text-black" aria-haspopup="true" aria-expanded="false">
+                                    Cookie Policy
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h2>Subscribe!</h2>
+                            <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
+                            <!-- Mailchimp signup form here -->
+                        </div>
+                        <div class="col-12 w-100">
+                            <hr>
+                            <p class="text-black text-center">
+                                © 2022 Made by Krishan Gharu
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </footer>
+        {% endblock %}
+        
+        {% block postloadjs %}
+        <script type="text/javascript">
+            $('.toast').toast('show');
+        </script>
+        {% endblock %}
     </body>
 </html>
