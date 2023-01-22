@@ -379,6 +379,23 @@ a.hero-button {
     font-size: 0.90rem;
 }
 
+/* -------------------------------- Mailchimp */
+
+#mc_embed_signup{
+    background:#fff;
+    clear:left;
+    font:14px Helvetica,Arial,sans-serif;
+    width:19rem;
+}
+
+.mc-field-group {
+    margin-left: -1rem;
+}
+
+.optionalParent {
+    margin-left: -1rem;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -499,6 +516,10 @@ a.hero-button {
     .account-pages {
         width: 35rem;
     }
+
+    #mc_embed_signup{
+        width:15rem;
+    }
 }
 
 @media (min-width: 1260px) {
@@ -533,5 +554,9 @@ a.hero-button {
 
     .remove-item {
         padding-right: 17rem;
+    }
+
+    #mc_embed_signup{
+        width:21rem;
     }
 }
