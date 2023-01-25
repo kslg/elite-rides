@@ -1,6 +1,7 @@
 <h1 align="center">Elite Rides</h1>
 
-[Fairchild School Appointment App](https://kslg-appointment-app.herokuapp.com/) is for a fictitious school called Fairchild School, and allows Parents, Guardians, Carers to book a consultation with their child’s Teacher. The App is responsive so Parent can book and Teachers can manage appointments on mobile and tablet devices.
+[Elite Rides](https://pp5-elite-rides.herokuapp.com/) is an E-commerce store that specialises in die-cast models of luxury, high-end cars. As a Customer you are able to purchase a product and set up and online account. Guest checkout is also available. As the Store Admin, you can login from the store-front and edit the product details, and delele products too.
+Elite Rides is responsive which makes shopping possible on mobile and table devices. 
 
 [Visit the website](https://pp5-elite-rides.herokuapp.com/)
 
@@ -39,40 +40,36 @@ I used the 5 Planes of UX to provide a conceptual framework.
 
 ## Target Audience:
 
-- Target Audience: 
-`Users` Parents, Guardians and Carers.
-`Admin` Teachers.
-`Super Admim` School IT Department / School Office Admins.
+- `Users` Hobby enthusiasts, mainly adults who can make purchases online.
+- `Admin` E-Commerce Managers.
+- `Super Admin` Store Owner, E-Commerce Managers.
 
 ## Mission Objectives:
 
-- To develop an `mvp (minimum viable product)` that allows `Users` to book appointments with `Admin` Teachers for parents evening and other consultations.
-- The app must be simple, easy for parents to use and must be able to book an appointment in `less than three clicks`.
-- `Super Admins` will have backend access to manage appointments for the Users and Admin.
+- To develop an `mvp (minimum viable product)` that allows `Users` to navigate an online store and purchase a product.
+- The shopping experiecne must be simple in design and navigation.
+- `Admins` will have a store-front login to manage product cataloge.
+- `Super Admins` can access the Django back-end to view and manages Order and Customer data.
 
 ### The Why:
 
-- The school was using paper forms which becomes costly and is environmentally unfriendly.
+- As a high-end car aficionado and collector, it's hard to find a company online that deals with only styling models. Also, existing competitors don't stand out in the market. 
+- I want to promote an exlusive presence and target a younger and modern audience. 
+- Make die-cast models attractive again. Not fucusing on racing and classic cars.
 
 ## Ideas and Inspiration Mind Map
-![image](/documentation/readme_folder/images/mindmap_1.png)
-![image](/documentation/readme_folder/images/mindmap2.png)
-
-
-## Colour Palette Ideas:
-![image](/documentation/readme_folder/images/color_pallette_ideas.png)
+![image](/documentation/mind_map/mind_map.png)
 
 ## Content Strategy:
 
-- Main functionality is to book an appointment with the child's teacher.
-- The Teacher has thier own admin area to view appointments and accept the appointment.
-- The booking form will be easy to get to via the top navigation header or from the CTA button on the homepage.
-
+- Main functionality is to purchase a product through checkout.
+- Keep content simple and easy to digest. 
+- Let the imagery and branding become more engaging.
 
 ## Typography:
 https://fonts.google.com/
-Montserrat was used due to it's warm style and being easy to read. The are qualities found in most school websites.
-![image](/documentation/readme_folder/images/google_fonts.png)
+Just was used due to it's luxury, modern look and feel. It's easy to read.
+![image](/documentation/typography/google_font.png)
 
 [Back to contents](#contents)
 
