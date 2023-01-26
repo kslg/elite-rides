@@ -40,7 +40,7 @@ I used the 5 Planes of UX to provide a conceptual framework.
 
 ## Target Audience:
 
-- `Users` Hobby enthusiasts, mainly adults who can make purchases online.
+- `User - Customers` Hobby enthusiasts, mainly adults who can make purchases online.
 - `Admin` E-Commerce Managers.
 - `Super Admin` Store Owner, E-Commerce Managers.
 
@@ -68,68 +68,90 @@ I used the 5 Planes of UX to provide a conceptual framework.
 
 ## Typography:
 https://fonts.google.com/
-Just was used due to it's luxury, modern look and feel. It's easy to read.
+Jura was used due to it's luxury, modern look and feel. It's easy to read.
 ![image](/documentation/typography/google_font.png)
 
 [Back to contents](#contents)
 
 # The Scope Plane:
 
-## Functional Requirements:
+## Functional Requirements for an MPV:
 
-1. Problem: The `User` needs to have direct access to the appointment form to make an appointment.
-
-- Solution: Acces the form in `less than three clicks`.
-
-2. Problem: `Users` must not be allowed to see other `User` appointments order to protect their sensitive data.
-
-- Solution: Create an `Admin Area` so only Teachers can login and gain access.
-
-3. Problem: `Users` need to be notified that thier appointment is confirmed.
-
-- Solution: The `Admin` can accpect the appointment which then `sends a confirmtion email` to the `User`
-
-4. Problem: If appointment is no longer needed then it need to be removed from the appointments list.
-
-- Solution: The `Admin` can `delete appointment records` from the Admin Area.
-
-5. Problem: The `Admin` accidentally click delete on the appointment.
-
-- Solution: `Defensive Programming` put in place to ask the `Admin` to confirm deletion of the appointment. 
-
-6. Problem: Harmful bots and malicious attackers could use the appintment form to crash the site.
-
-- Solution: Implement a `CAPTCHA` to the form so human intervention is needed to submit the form.
-  - CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) is a type of security measure known as challenge-response authentication. CAPTCHA helps protect the site from spam and automated scipts by asking the `User` to complete a simple test that proves you are human and not a computer trying to break into a password protected account.
-
-  - A CAPTCHA test is made up of two simple parts: a randomly generated sequence of letters and/or numbers that appear as a distorted image, and a text box. To pass a the test and prove your human identity, simply type the characters you see in the image into the text box.
+1. Checkout functionality 
+2. Account Profile and User Authentication
+3. CRUD Functionality
+4. Site Navigation
+5. Newsletter SignUp
+6. Stripe 3rd Party Payment Integration
+7. Search Functionality
+8. Order Confirmation Email
+9. SEO Optimisation
+10. Company Information Pages
+11. Accessibilty
+12. Product Detail Page
+13. Product Listing Page
+14. Triggered Customer Messaging
+15. Taxonomy: Category Tree
+16. Standard E-commerce store layout (Header, Footer, Homepage)
+17. Error Handling
+18. 404 Error Page
 
 [Back to contents](#contents)
 
 ## Content Requirements:
 
-- `Public` Homepage with hero text to explain what the app is for.
-- `Public` Booking form for the `User` to create the appointment.
-- `Public with Restrictions` Admin area to Teacher `Admin` to manage the appointments.
-- `Public` Login Page
-- `Private` Teacher `Admin` Register Page - **Not public facing page. This will be a private link shared to Teachers.**
+- `Customer` Homepage with hero text and a hero banner.
+- `Customer` Category Pages
+- `Customer` Contact Us Form
+- `Customer` Company Information Pages(About, T&Cs, Privacy Policy, Cookie Policy)
+- `Customer` Footer to include Social Media Links, Links to Company Info and Newsletter signup. 
+- `Customer` Account Related Pages: Login, Register.
+- `Admin` Access to manage products with CRUD functionality. 
 
 [Back to contents](#contents)
 
 ## Interaction Design:
 
 - All CTA (Call to Action) buttons will change colour to let the customers know that the buttons are clickable. 
-- The `User` and `Admin` are notified for all changes to appointments and data.
-- The `Admin` login state is reflected to the `Admin` on the front-end.
-- The `User` recieves an email confirmation when the appointment have been accepted by the `User`.
-- Both thr `Admin` and `User` and presents with alert messages when they trigger a certain action. i.e create an appointment, etc.
+- The `Customer` and `Admin` are notified for changes and major actions.
+- The `Customer` recieves an order email confirmation when checkout has successfully completed.
 
 [Back to contents](#contents)
 
 ## Scope of MVP:
 Using the MoSCoW prioritisation method to outline the importance of each requirement and what needs to be delivered in the MVP.
 
-![image](/documentation/readme_folder/images/moscow_pp4.png)
+| Requirements | Must Have | Should Have | Could Have | Won't Have |
+| ------------- | ------------- | ------------- | ---------- | ---------- |
+| USP (Unique Selling Point) Carousel on Homepage | Y | - | - | - |
+|Checkout functionality | Y | - | - | - |
+|Role-Based Login and Registration | Y | - | - | - |
+|Restrict User access to Admin area | Y | - | - | - |
+|Admin CRUD Functionality | Y | - | - | - |
+|Site Navigation | Y | - | - | - |
+|Newsletter SignUp | Y | - | - | - |
+|Stripe 3rd Party Payment Integration | Y | - | - | - |
+|Search Functionality | Y | - | - | - |
+|Order Confirmation Email | Y | - | - | - |
+|SEO Optimisation | Y | - | - | - |
+|Company Information Pages | Y | - | - | - |
+|Accessibilty | Y | - | - | - |
+|Product Detail Page | Y | - | - | - |
+|Product Listing Page | Y | - | - | - |
+|Triggered Customer Messaging | Y | - | - | - |
+|Taxonomy: Category Tree | Y | - | - | - |
+|Standard E-commerce store layout (Header, Footer, Homepage) | Y | - | - | - |
+|Error Handling | Y | - | - | - |
+|404 Error Page | Y | - | - | - |
+|Responsive Design | Y | - | - | - |
+|Front-end messages to notify the user and admin of any changes. | Y | - | - | - |
+|CAPTCHA Function | - | Y | - | - |
+|Display Sale Price | - | Y | - | - |
+|Current login state reflected to the user | - | - | - | Y |
+|Hero Banner Carousel | - | - | - | Y |
+|Product Reviews | - | - | - | Y |
+|Product Image Carousel | - | - | - | Y |
+
 
 [Back to contents](#contents)
 
@@ -137,7 +159,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 ## Site Architecture
 
-![image](/documentation/readme_folder/images/site_structure.png)
+![image](/documentation/site_architecture/EliteRides_Data_Flow_Diagram.jpeg)
 
 [Back to contents](#contents)
 
@@ -145,18 +167,16 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 - Permitted access based on `User`, Teacher `Admin` and `Super Admin` Role:
 
-| Page Name | User | Admin | Super Admin |
+| Page Name | Customer | Admin | Super Admin |
 | ------------- | ------------- | ------------- | ---------- |
-| home page                   | Y | Y | Y |
-| login page                  | N | Y | Y |
-| registration page           | N | Y | Y |
-| logout page                 | N | Y | Y |
-| teacher admin               | N | Y | Y |
-| make appointments           | Y | Y | Y |
-| view appointments           | N | Y | Y |
-| update appointments         | N | Y | Y |
-| delete appointments         | N | Y | Y |
-| backend django admin        | N | N | Y |
+| Home page                   | Y | Y | Y |
+| Login page                  | Y | Y | Y |
+| Registration page           | Y | Y | Y |
+| Logout page                 | Y | Y | Y |
+| Admin: Model Management               | N | Y | Y |
+| Product Page w/ Edit & Delete  | N | Y | Y |
+| Checkout           | Y | Y | Y |
+| Contact Us         | Y | Y | Y |
 
 
 [Back to contents](#contents)
@@ -488,7 +508,7 @@ class DateInput(forms.DateInput):
 
 * The ERD was created using [lucid.app](https://www.lucid.app).
 
-![Database Schema](/documentation/readme_folder/images/database_schema.png)
+![Database Schema](/documentation/erd/EliteRides_Schema.jpeg)
 
 
 
