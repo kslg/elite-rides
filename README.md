@@ -5,7 +5,7 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
 
 [Visit the website](https://pp5-elite-rides.herokuapp.com/)
 
-![image](/documentation/iamreposonsive_image.png)
+![image](/documentation/iamresponsive_image.png)
 
 <br>
 
@@ -183,61 +183,90 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 # The Skeleton Plane:
 
-## Header:
+## Header and Footer:
 - White background.
 - Black text.
 - Hover States: Underline style.
 
-  - Wireframe Example:
-  <br>
-![image]()
+- Wireframes Examples:
+<br>
+![image](/documentation/wireframes/wireframes_header.png)
+![image](/documentation/wireframes/wireframes_footer.png)
+<br>
 
-## Footer:
-- Brown background.
-- Dark Green text.
-- Crean Icon.
-
-  - Example:
-  <br>
-![image](/documentation/readme_folder/images/footer.png)
 
 [Back to contents](#contents)
 
 ## Colour Palette:
 
-![image](/documentation/readme_folder/images/colour_pallete.png)
+![image](/documentation/color_palette/color_palette_blackandwhite.png)
 
 
 # Manifestations of Data
 
 ## Data at rest
 
-- Appointment Data in the Admin
+1. Customer Orders in the Admin
 <br>
-![image](/documentation/readme_folder/images/data_at_rest_appointments.png)
+![image](/documentation/manifestations_of_data/data_at_rest_orders.png)
 <br>
-- Teacher in the Admin
+
+2. Products and Categories in the Admin
 <br>
-![image](/documentation/readme_folder/images/data_at_rest_teachers.png)
+![image](/documentation/manifestations_of_data/data_at_rest_products.png)
+![image](/documentation/manifestations_of_data/data_at_rest_product_categories.png)
+
+3. Customer Messages in the Admin
+<br>
+![image](/documentation/manifestations_of_data/data_at_rest_customer_messages.png)
+
+4. Newsletter Subscribers in MailChimp 
+<br>
+![image](/documentation/manifestations_of_data/data_at_rest_newsletter_subscribe.png)
+
+
 
 ## Data in motion
 
-1. Data is `captured` from the appointment form and `stored` in the database.
+1. Order Data is `captured` from the Checkout and `stored` in the database.
 <br>
-![image](/documentation/readme_folder/images/data_in_motion_appointment_form.png)
-![image](/documentation/readme_folder/images/data_in_motion_admin.png)
+![image](/documentation/manifestations_of_data/data_in_motion_orders.png)
 <br>
 
-2. An `email` is sent to the `User` when a appointment is accepted by the `Admin`
+2. An `order confirmation email` is sent to the `Customer` when they have successfully completed checkout.
 <br>
-![image](/documentation/readme_folder/images/data_in_motion_email.png)
+![image](/documentation/manifestations_of_data/data_in_motion_order_confirmation_email.png)
+<br>
+
+3. Products and Categories can be `edited` and `added` from the admin area.
+<br>
+![image](/documentation/manifestations_of_data/data_in_motion_products.png)
+![image](/documentation/manifestations_of_data/data_in_motion_categories.png)
+<br>
+
+4. Customer messages can be `viewed` and `updated` from the admin area.
+<br>
+![image](/documentation/manifestations_of_data/data_in_motion_customer_messages.png)
+<br>
+
+
 
 ## Data in use
 
-Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Admin area.
+1. `Customers` can `update` delivery information and `view` order history in thier online profile.
+<br>
+![image](/documentation/manifestations_of_data/data_in_use_delivery_information_and_order_history.png)
+<br>
 
-![image](/documentation/readme_folder/images/data_in_use_manage_appointment.png)
+2. `Customers` can view a `completed order` with details.
+<br>
+![image](/documentation/manifestations_of_data/data_in_use_completed_order.png)
+<br>
 
+3. `Customers` can `subscribe to the newsletter` from the footer.
+<br>
+![image](/documentation/manifestations_of_data/data_in_use_newsletter_subscribe.png)
+<br>
 
 # The Surface Plane:
 
