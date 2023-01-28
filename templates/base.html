@@ -83,7 +83,7 @@
                             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p class="my-0">My Account</p>
+                                    <p class="my-0 header-underline">My Account</p>
                                 </div>
                             </a>
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -103,7 +103,7 @@
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                    <p class="my-0">
+                                    <p class="my-0 header-underline">
                                         {% if grand_total %}
                                             £{{ grand_total|floatformat:2 }}
                                         {% else %}
@@ -261,8 +261,10 @@
                         </div>
                         <div class="col-12 w-100">
                             <hr>
-                            <p class="text-black text-center">
-                                © 2022 Made by Krishan Gharu
+                            <p class="text-black text-center">© 2022 Made by
+                                <a href="https://github.com/kslg" class="text-black text-center">
+                                Krishan Gharu
+                                </a>
                             </p>
                         </div>
                     </div>

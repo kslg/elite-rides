@@ -87,6 +87,10 @@ body {
     background: #000 !important;
 }
 
+.header-underline:hover {
+    text-decoration: underline;
+}
+
 .hero-content {
     padding-top: 5rem;
 }

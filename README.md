@@ -184,13 +184,13 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 # The Skeleton Plane:
 
 ## Header:
-- Cream background.
-- Dark Green Text.
+- White background.
+- Black text.
 - Hover States: Underline style.
 
-  - Example:
+  - Wireframe Example:
   <br>
-![image](/documentation/readme_folder/images/header.png)
+![image]()
 
 ## Footer:
 - Brown background.
