@@ -95,6 +95,7 @@ Jura was used due to it's luxury, modern look and feel. It's easy to read.
 16. Standard E-commerce store layout (Header, Footer, Homepage)
 17. Error Handling
 18. 404 Error Page
+19. Shipping Rate Logic
 
 [Back to contents](#contents)
 
@@ -151,6 +152,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 |Hero Banner Carousel | - | - | - | Y |
 |Product Reviews | - | - | - | Y |
 |Product Image Carousel | - | - | - | Y |
+|Shipping Rate Logic | Y | - | - | - |
 
 
 [Back to contents](#contents)
@@ -190,6 +192,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 - Wireframes Examples:
 <br>
+
 ![image](/documentation/wireframes/wireframes_header.png)
 ![image](/documentation/wireframes/wireframes_footer.png)
 <br>
@@ -208,20 +211,24 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 1. Customer Orders in the Admin
 <br>
+
 ![image](/documentation/manifestations_of_data/data_at_rest_orders.png)
 <br>
 
 2. Products and Categories in the Admin
 <br>
+
 ![image](/documentation/manifestations_of_data/data_at_rest_products.png)
 ![image](/documentation/manifestations_of_data/data_at_rest_product_categories.png)
 
 3. Customer Messages in the Admin
 <br>
+
 ![image](/documentation/manifestations_of_data/data_at_rest_customer_messages.png)
 
 4. Newsletter Subscribers in MailChimp 
 <br>
+
 ![image](/documentation/manifestations_of_data/data_at_rest_newsletter_subscribe.png)
 
 
@@ -230,22 +237,26 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 1. Order Data is `captured` from the Checkout and `stored` in the database.
 <br>
+
 ![image](/documentation/manifestations_of_data/data_in_motion_orders.png)
 <br>
 
 2. An `order confirmation email` is sent to the `Customer` when they have successfully completed checkout.
 <br>
+
 ![image](/documentation/manifestations_of_data/data_in_motion_order_confirmation_email.png)
 <br>
 
 3. Products and Categories can be `edited` and `added` from the admin area.
 <br>
+
 ![image](/documentation/manifestations_of_data/data_in_motion_products.png)
 ![image](/documentation/manifestations_of_data/data_in_motion_categories.png)
 <br>
 
 4. Customer messages can be `viewed` and `updated` from the admin area.
 <br>
+
 ![image](/documentation/manifestations_of_data/data_in_motion_customer_messages.png)
 <br>
 
@@ -255,16 +266,19 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 1. `Customers` can `update` delivery information and `view` order history in thier online profile.
 <br>
+
 ![image](/documentation/manifestations_of_data/data_in_use_delivery_information_and_order_history.png)
 <br>
 
 2. `Customers` can view a `completed order` with details.
 <br>
+
 ![image](/documentation/manifestations_of_data/data_in_use_completed_order.png)
 <br>
 
 3. `Customers` can `subscribe to the newsletter` from the footer.
 <br>
+
 ![image](/documentation/manifestations_of_data/data_in_use_newsletter_subscribe.png)
 <br>
 
@@ -272,7 +286,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 ## **Mobile First Design**
 
-![Image](/documentation/readme_folder/images/mobile_first_design.png)
+[See here](/documentation/wireframes/wireframes_mobile.png)
 
 ---
 
@@ -345,7 +359,7 @@ To satisfy an MPV and keeping the Navbar simple allows Users to become familiar 
 
 ### [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
-## **Bootstrap Alert Messages**
+## **Bootstrap Toasts - Alert Messages**
 
 ### **Succes Alert with Appointment has been created**
 ![Image](/documentation/readme_folder/images/alert_success_appointment_feature.png)
@@ -361,41 +375,6 @@ To satisfy an MPV and keeping the Navbar simple allows Users to become familiar 
 
 ### **Success Alert when you logout**
 ![Image](/documentation/readme_folder/images/alert_success_logout_feature.png)
-
-
-## **Time Slot selector on Appointment form**
-
-```Python
-  # Time slot options
-  TIME_SLOTS = (
-      ('0', '15:30 - 15:45'),
-      ('1', '15:45 - 16:00'),
-      ('2', '16:00 - 16:15'),
-      ('3', '16:15 - 16:30'),
-      ('4', '16:30 - 16:45'),
-      ('5', '16:45 - 17:00'),
-  )
-```
-
-## **Teacher Dropdown Selector**
-
-**Note:** on_delete CASCADE option not needed as Teachers still exist if an appointment is deleted.
-
-```Python
-class Teacher(models.Model):
-    name = models.CharField(max_length=40)
-
-    def __str__(self):
-        return self.name
-```
-
-## **Date Picker on Make Appointment Page**
-
-```Python
-# Date Picker for the Appointment form
-class DateInput(forms.DateInput):
-    input_type = 'date'
-```
 
 
 [Back to contents](#contents)
