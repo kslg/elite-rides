@@ -286,7 +286,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 ## **Mobile First Design**
 
-[See here](/documentation/wireframes/wireframes_mobile.pdf)
+[See here](/documentation/wireframes/)
 
 ---
 
