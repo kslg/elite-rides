@@ -286,7 +286,12 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 ## **Mobile First Design**
 
-[See here](/documentation/wireframes/)
+Prioritising design for mobiles makes sense as there are space limitations in devices with smaller screen sizes and need to ensure that the key elements of the website are prominently displayed for anyone using those screens.
+
+[See the mobile wireframes here](/documentation/wireframes/)
+
+Web visitors on Mobile contributes to approximately half of the overall web traffic.
+The number of mobile users has surpassed desktop users. As per Statcounter GlobalStats, overall mobile users continue to grow with a leading market share of 60.43% as compared to desktop users.
 
 ---
 
@@ -294,164 +299,198 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 ## **Navbar**
 
-![Navbar](/documentation/readme_folder/images/navbar_desktop.png)
-![Navbar](/documentation/readme_folder/images/navbar_mobile.png)
+## *Navbar elements for E-commerce:*
+- Home Page link (Elites Rides Logo) 
+- Search bar
+- My Account
+- Shopping Bag
+- Dropdown Navigation Menu
 
-Navbar links:
-- Home Page (School Logo) 
-- Make Appointment
-- Teacher Admin
+To satisfy an MPV and keeping the Navbar simple allows Customers to become familiar with the store more quickly.
 
-To satisfy an MPV and keeping the Navbar simple allows Users to become familiar with the app more quickly.
+- Mobile
+<br>
+![image](/documentation/features/navbar/navbar_mobile.png)
+<br>
+- Desktop
+<br>
+![image](/documentation/features/navbar/navbar_desktop.png)
 
-## **CRUD Create - Make an Appointment includes Django Simple Captcha**
-
-### [Go to page](https://kslg-appointment-app.herokuapp.com/make-an-appointment/)
 <br>
 
-![Image](/documentation/readme_folder/images/appointment_form_feature.png)
+## **CRUD Functionality**
 
-## **CRUD Read - Manage Appointment**
+## *CRUD Create: Admins Only - In Model Management, you can add a new product to the catalogue*
 
-### [Go to page](https://kslg-appointment-app.herokuapp.com/accounts/login/?next=/manage-appointments/)
+### [Go to page](https://pp5-elite-rides.herokuapp.com/products/add/)
 <br>
 
-![Image](/documentation/readme_folder/images/crud_read_feature.png)
+![image](/documentation/features/crud_functionality/CRUD_Create_Model_Management.png)
 
-## **CRUD Update - Manage Appointment**
+## *CRUD Read - In My Profile, Customers can see their Default Delivery Information and Order History*
 
-### [Go to page](https://kslg-appointment-app.herokuapp.com/accounts/login/?next=/manage-appointments/)
+### [Go to page](https://pp5-elite-rides.herokuapp.com/profile/)
 <br>
 
-![Image](/documentation/readme_folder/images/crud_update_feature.png)
+![image](/documentation/manifestations_of_data/data_in_use_delivery_information_and_order_history.png)
 
-## **CRUD Delete - Manage Appointment with Defensive Programming**
+## *CRUD Update - Admins Only - Can Edit Product Details directly from the Product Page*
 
-### [Go to page](https://kslg-appointment-app.herokuapp.com/accounts/login/?next=/manage-appointments/)
 <br>
 
-![Image](/documentation/readme_folder/images/crud_delete_feature.png)
+![image](/documentation/features/crud_functionality/CRUD_Update_Model_Management_Edit.png)
+![image](/documentation/features/crud_functionality/CRUD_Update_Model_Management.png)
 
-## **Sign up page**
-
-### [Go to page](https://kslg-appointment-app.herokuapp.com/accounts/login/)
+## *CRUD Delete - Admins Only - Can Delete the Product directly from the Product Page*
 <br>
 
-![Image](/documentation/readme_folder/images/login_feature.png)
+![image](/documentation/features/crud_functionality/CRUD_Delete_Model_Management.png)
 
-## **Register page**
+## *CRUD Delete - Defensive Programming using Bootstrap Modal*
 
-**NOTE: THIS IS NOT A PUBLIC PAGE - Made for Super Admins to share the link with Teacher Admins**
-
-### [Go to page](https://kslg-appointment-app.herokuapp.com/accounts/signup/)
+I used the Bootstrap modal pop up to alert the Admin that they are about the delete the product from the catalogue.
+Once they click `Delete`, the product is deleted from the `Database`
 <br>
 
-![Image](/documentation/readme_folder/images/signup_feature.png)
+![image](/documentation/features/crud_functionality/CRUD_Delete_Defensive_Programming_Modal.png)
 
-## **Email Confirmation**
+[Back to contents](#contents)
 
-**Sent to the `User` when `Admin` accepts the appointment.**
+## **Accounts and User Authentication**
 
-![Image](/documentation/readme_folder/images/email_confirmation_feature.png)
+`django-allauth` is an integrated set of Django applications dealing with account authentication, registration, management, and third-party (social) account authentication. It is one of the most popular authentication modules due to its ability to handle both store and social logins. 
 
+## *Sign in page*
+
+### [Go to page](https://pp5-elite-rides.herokuapp.com/accounts/login/)
+<br>
+
+![image](/documentation/features/accounts_and_authentication/sign_up_page.png)
+
+## *Registration page*
+
+### [Go to page](https://pp5-elite-rides.herokuapp.com/accounts/signup/)
+<br>
+
+![image](/documentation/features/accounts_and_authentication/register_page.png)
+
+## *Customer Verification*
+
+1. When the Customer registers for the first time, they are asked to `verify` their email address.
+![image](/documentation/features/accounts_and_authentication/email_verification.png)
+2. An email is sent to the Customer asking them to confirm this with an confirmation link.
+![image](/documentation/features/accounts_and_authentication/confirm_email_address_email.png)
+3. When the Customer clicks on the link, they are directed back to the store to confirm once more.
+![image](/documentation/features/accounts_and_authentication/confirm_email_address.png)
+4. Finally, after confirmation, the Customer is then directed to the Sign In page. A `Toast message` tells the Customer that their email address was successfully confirmed. 
+This means The Customer is now stored in the `database`.
+![image](/documentation/features/accounts_and_authentication/email_address_confirmed.png)
+
+## *Customer Restrictions*
+
+To prevent unauthorised access to Admin functionality (Create, Update, Delte), restriction logic is in place to stop Customers access those areas. 
+
+- A `logged in Customer` is presented with `Toast Error Message` when trying to access Model Management URL:
+![image](/documentation/features/accounts_and_authentication/customers_restricted_access_add.png)
+<br>
+
+- A `logged in Customer does not` have the ability to `Edit` and `Delete` from the Product pages:
+![image](/documentation/features/accounts_and_authentication/customers_restricted_access_edit_delete.png)
+
+
+[Back to contents](#contents)
+
+## **Order Confirmation Email**
+
+**An Order Confirmation Email is sent to the Customer after placing an order.**
+
+![image](/documentation/manifestations_of_data/data_in_motion_order_confirmation_email.png)
+
+[Back to contents](#contents)
 
 ## **Bootstrap Theme**
+Bootstrap 4 is a free front-end framework for faster and easier web development
+Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins
+Bootstrap also gives you the ability to easily create responsive designs
 
 ### [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
 ## **Bootstrap Toasts - Alert Messages**
+- Alert popups are used to `improve Customer user experience`. Alert popup give users clear feedback as a result of their actions and any server response.
+- I used Bootstrap 4 Toasts: Lightweight notifications designed to mimic the push notifications that have been popularized by mobile and desktop operating systems.
+- 4 Toast Messages: Error, Info, Success and Warning.
+- Set a display timer of 3 seconds. After 3 seconds the message will go.
+- A close icon on the toast so customers can manually close.
 
-### **Succes Alert with Appointment has been created**
-![Image](/documentation/readme_folder/images/alert_success_appointment_feature.png)
+## **Bootstrap Carousel - USP (Unique Selling Points)**
 
-### **Warning Alert when Captcha is invalid**
-![Image](/documentation/readme_folder/images/alert_invalid_capthca_feature.png)
+![image](/documentation/features/bootstrap_carousel.png)
 
-### **Success Alert when you login and register**
-![Image](/documentation/readme_folder/images/alert_success_login_feature.png)
 
-### **Success Alert when you delete an Appointment**
-![Image](/documentation/readme_folder/images/alert_success_appointment_delete_feature.png)
+[Back to contents](#contents)
 
-### **Success Alert when you logout**
-![Image](/documentation/readme_folder/images/alert_success_logout_feature.png)
+
+## **Guest Checkout**
+Guest Customers are able to navigate and purchase a product without signing up for a customer account. They don't have to sign in or save any information to website besides their email address.
+
+The Guest Customer has the option to Create an Account at the Checkout Success Page.
+
+`Befenits of Guest Checkout` is that you can `convert the Customer much quicker`, removing the friction for certain customers.
+
+<br>
+
+![image](/documentation/features/guest_checkout.png)
+
+
+[Back to contents](#contents)
+
+## **Shipping Logic**
+
+- Customers are offered `Free Shipping` when they spend over £50.
+- The delivery fee threshold can be updated at code-level.
+- The functionality `calculates the current Bag Total` and informs the Customer of how much they need to spend extra to qualify for free shipping.
+<br>
+
+![image](/documentation/features/shipping_logic/free_shipping_calculation.png)
+<br>
+
+![image](/documentation/features/shipping_logic/free_shipping_bag_page.png)
+
+[Back to contents](#contents)
+
+## **MailChimp Integration**
+- Customers can sign up to `Elite Rides Email Marketing` by providing there email address.
+- Here I am using MailChimp to `capture the Customer emails` and `manage the subscibers via the MailChimp admin`.
+<br>
+
+![image](/documentation/features/newsletter_signup_mailchimp.png)
+![image](/documentation/manifestations_of_data/data_at_rest_newsletter_subscribe.png)
+
+
+[Back to contents](#contents)
+
+## **404 Page**
+A 404 page, or error page, is the content the Customer sees when they try to reach a non-existent page on the site. It’s the page the server displays when it can’t find the URL requested by the customer.
+
+404 errors can be frustrating for Customers, so the main purpose of a 404 page is to turn the potential negative user experience of encountering an error into a positive one.
+
+I've added a link back to all products page so the Customer can restart their shopping journey.
+<br>
+
+![image](/documentation/features/404_error_page.png)
 
 
 [Back to contents](#contents)
 
 ---
 
-# User Journeys and Manual Testing
-
-***Testing against the Acceptance Criteria in the User Stories.*
-
-| Journey   | Result |
-|-------------|-------------------------------------|
-| 1. As a **User** and **Admin** I want **to see a responsive design that can be used to adapt screen sizes** So that **I have a consistent user experience no matter where and how I use the app.** | `PASS`
-|2. As a **User** I need **to verify myself as a human user and not a bot** so that **I can successfully submit an appointment** | `PASS`
-|6. As a **User** AND **Admin** I can **Create a new appointment** so that **the appointment data is stored in the database.** | `PASS`
-|4. As a **User** and **Admin** I can **see notifications messages on the front-end** so that **I know what what is happening or what has happened**)| `PASS`
-|5. As a **Teacher Admin** I need to **login to the Teacher Admin Area with a user name and password** so that **I can access the appointment data**| `PASS`
-|6. As a **User** I cannot **login to the Teacher Admin Area** so that **I can access the appointment data**| `PASS`
-|7. As a **User** I cannot **signup as a Teacher Admin** so that **I can access the appointment data**| `PASS`
-|8. As an **Admin** I want to **be notified that I have signed out from the admin** So that **I know I have signed out when working on a shared device.**| `PASS`
-|9. As an **Admin** I can **view appointments in the admin area** so that **I can review and edit the appointments.**| `PASS`
-|10. As an **Admin** I can **update the appointment record** by **accepting an appointment**| `PASS`
-|11. When I **Accept an appointment** I expect **the accepted status attribute to be updated for the appointment record in the database**| `PASS`
-|12. As an **Admin** I can **delete the appointment record** so that **the appointment record is removed from the database.**| `PASS`
-|13. As a **Admin** I can **click accept on the appointment which send an email confirmation to the user** so that **the User is notified that the appointment is confirmed.**| `PASS`
-|14. As a **Teacher Admin** wanting to **Delete an appointment, I can see the Modal Pop up asking me to confirm if I want to Delete** so that **the appointment is not deleted by accident.**| `PASS`
-
-
 # Agile Project Management
+I used Jira Project Tracking Software to manage the backlog for the project.
+Jira Software is an agile project management tool that supports any agile methodology, be it scrum, kanban, or your own unique flavor. I was able to plan, track, and manage the whole project in Jira.
 
-## **User Stories - User**
+I tested against the Acceptance Criteria in the Jira User Stories.
 
-| Issue ID    | User Story |
-|-------------|-------------------------------------|
-|[#1](https://github.com/kslg/appointment-app/issues/1)| User Story: Install Bootstrap 4 Theme
-|[#2](https://github.com/kslg/appointment-app/issues/24)| User Story: Django Simple CAPTCHA
-|[#3](https://github.com/kslg/appointment-app/issues/6)| User Story: CRUD - CREATE Functionality
-|[#4](https://github.com/kslg/appointment-app/issues/9)| User Story: Add Bootstrap Alert Messages  
-|[#5](https://github.com/kslg/appointment-app/issues/10)| User Story: Role Based Login and Registration Functionality
-|[#6](https://github.com/kslg/appointment-app/issues/11)| User Story: Restrict User Access to Teacher Admin Area
-
-## **User Stories - Teacher Admin**
-
-| Issue ID    | User Story |
-|-------------|-------------------------------------|
-|[#1](https://github.com/kslg/appointment-app/issues/23)| User Story: Sign Out Success Message
-|[#2](https://github.com/kslg/appointment-app/issues/5)| User Story: CRUD - READ Functionality
-|[#3](https://github.com/kslg/appointment-app/issues/7)| User Story: CRUD - UPDATE Functionality
-|[#4](https://github.com/kslg/appointment-app/issues/8)| User Story: CRUD - DELETE Functionality
-|[#5](https://github.com/kslg/appointment-app/issues/14)| User Story: Send Email to Parent when appointment is Approved. django.core.mail module.
-|[#6](https://github.com/kslg/appointment-app/issues/9)| User Story: Add Bootstrap Alert Messages 
-|[#7](https://github.com/kslg/appointment-app/issues/22)| User Story: Delete Appointment - Defensive Programming with Bootstrap Modal
-|[#8](https://github.com/kslg/appointment-app/issues/10)| User Story: Role Based Login and Registration Functionality
-
-## **Tasks**
-
-| Issue ID    | Tasks |
-|-------------|-------------------------------------|
-|[#1](https://github.com/kslg/appointment-app/issues/4)| Task: Create Appointment Model
-|[#2](https://github.com/kslg/appointment-app/issues/17)| Task: Update Login, Signup and Log out pages with Bootstrap and Crispy forms.  
-|[#3](https://github.com/kslg/appointment-app/issues/3)| Task: Install Django and start up libraries
-
-## **Bugs and Issues**
-
-| Issue ID | Bugs / Issues |
-|----------|--------------------------------------------------------------------------|
-|[#1](https://github.com/kslg/appointment-app/issues/25)| Issue: Trying to set up email sending via gmail
-|[#2](https://github.com/kslg/appointment-app/issues/26)| Issue: Seeing this error when I click the delete button on the appointment
-|[#3](https://github.com/kslg/appointment-app/issues/27)| Issue: I cannot get the appointment to delete from the pop up modal
-|[#4](https://github.com/kslg/appointment-app/issues/28)| Issue: CAPTCHA Alert not showing as Warning Alert
-|[#5](https://github.com/kslg/appointment-app/issues/29)| Issue: Success Alert Message not showing when admin logs out
-|[#6](https://github.com/kslg/appointment-app/issues/13)| BUG: Styling on Manage Appointment Cards
-|[#7](https://github.com/kslg/appointment-app/issues/19)| BUG: Fix padding issue on Account pages (Login, Sign out)
-|[#8](https://github.com/kslg/appointment-app/issues/12)| BUG: Mobile View - Burger Menu does not show Nav Links
-|[#9](https://github.com/kslg/appointment-app/issues/18)| BUG: Fix Bootstrap errors seen in the browser console
-|[#10](https://github.com/kslg/appointment-app/issues/16)| BUG: Sign Out message showing on appointment page. Needs to show on redirect page.
-
+[Go to Jira](https://krishangharu.atlassian.net/jira/software/projects/ER/boards/2)
 
 
 [Back to contents](#contents)
@@ -482,7 +521,6 @@ To satisfy an MPV and keeping the Navbar simple allows Users to become familiar 
 - ## Frameworks and libraries:
 
     + [Django](https://www.djangoproject.com/): a high-level Python web framework for the app.
-    + [Django Simple Captcha](https://pypi.org/project/django-simple-captcha/): is a simple captcha form to prevent automated bot attacks.
     + [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/overview.html): is an integrated set of Django applications dealing with account authentication, registration and management.
     + [CrispyForms](): is an optimised way of rendering forms on the front-end in a very elegant and `DRY` way. 
 
@@ -503,7 +541,7 @@ To satisfy an MPV and keeping the Navbar simple allows Users to become familiar 
     + [Draw.io](https://www.lucidchart.com/) used to create the Database schema.
     + [W3C Validator](https://validator.w3.org/): used to validate HTML5 code.
     + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): used to validate CSS code.
-    + [pycodestyle 2.9.1](https://pypi.org/project/pycodestyle/): was used to validate Python code.
+    + [flake8](https://pypi.org/project/flake8/): was used to validate Python code.
 
 [Back to contents](#contents)
 
