@@ -309,11 +309,17 @@ The number of mobile users has surpassed desktop users. As per Statcounter Globa
 To satisfy an MPV and keeping the Navbar simple allows Customers to become familiar with the store more quickly.
 
 - Mobile
+
 <br>
+
 ![image](/documentation/features/navbar/navbar_mobile.png)
+
 <br>
+
 - Desktop
+
 <br>
+
 ![image](/documentation/features/navbar/navbar_desktop.png)
 
 <br>
@@ -325,7 +331,7 @@ To satisfy an MPV and keeping the Navbar simple allows Customers to become famil
 ### [Go to page](https://pp5-elite-rides.herokuapp.com/products/add/)
 <br>
 
-![image](/documentation/features/crud_functionality/CRUD_Create_Model_Management.png)
+![image](/documentation/features/crud_functionality/crud_create_model_management.png)
 
 ## *CRUD Read - In My Profile, Customers can see their Default Delivery Information and Order History*
 
@@ -339,6 +345,9 @@ To satisfy an MPV and keeping the Navbar simple allows Customers to become famil
 <br>
 
 ![image](/documentation/features/crud_functionality/CRUD_Update_Model_Management_Edit.png)
+
+<br>
+
 ![image](/documentation/features/crud_functionality/CRUD_Update_Model_Management.png)
 
 ## *CRUD Delete - Admins Only - Can Delete the Product directly from the Product Page*
@@ -377,13 +386,21 @@ Once they click `Delete`, the product is deleted from the `Database`
 ## *Customer Verification*
 
 1. When the Customer registers for the first time, they are asked to `verify` their email address.
+<br>
+
 ![image](/documentation/features/accounts_and_authentication/email_verification.png)
 2. An email is sent to the Customer asking them to confirm this with an confirmation link.
+<br>
+
 ![image](/documentation/features/accounts_and_authentication/confirm_email_address_email.png)
 3. When the Customer clicks on the link, they are directed back to the store to confirm once more.
+<br>
+
 ![image](/documentation/features/accounts_and_authentication/confirm_email_address.png)
 4. Finally, after confirmation, the Customer is then directed to the Sign In page. A `Toast message` tells the Customer that their email address was successfully confirmed. 
 This means The Customer is now stored in the `database`.
+<br>
+
 ![image](/documentation/features/accounts_and_authentication/email_address_confirmed.png)
 
 ## *Customer Restrictions*
