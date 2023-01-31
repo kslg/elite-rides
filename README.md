@@ -293,6 +293,8 @@ Prioritising design for mobiles makes sense as there are space limitations in de
 Web visitors on Mobile contributes to approximately half of the overall web traffic.
 The number of mobile users has surpassed desktop users. As per Statcounter GlobalStats, overall mobile users continue to grow with a leading market share of 60.43% as compared to desktop users.
 
+[Back to contents](#contents)
+
 ---
 
 # Features
@@ -489,16 +491,13 @@ The Guest Customer has the option to Create an Account at the Checkout Success P
 
 [Back to contents](#contents)
 
-## **MailChimp Integration**
-- Customers can sign up to `Elite Rides Email Marketing` by providing there email address.
-- Here I am using MailChimp to `capture the Customer emails` and `manage the subscibers via the MailChimp admin`.
-<br>
+## **Sort By Filter**
+I added a sort by product filter on the product listing page. 
+This helps the customer order the product by name, price, make, model and cateogry.
+This is another way to help boost conversion so the customers can see what they want more quickly, and increase the chances of a purchase being made.
 
-![image](/documentation/features/newsletter_signup_mailchimp.png)
-![image](/documentation/manifestations_of_data/data_at_rest_newsletter_subscribe.png)
+![image](/documentation/sort_by/sort_by_product_filter.png)
 
-
-[Back to contents](#contents)
 
 ## **404 Page**
 A 404 page, or error page, is the content the Customer sees when they try to reach a non-existent page on the site. It’s the page the server displays when it can’t find the URL requested by the customer.
@@ -509,6 +508,105 @@ I've added a link back to all products page so the Customer can restart their sh
 <br>
 
 ![image](/documentation/features/404_error_page.png)
+
+[Back to contents](#contents)
+
+---
+
+# SEO Optimisation
+
+I've added `meta data` and a `title` to the base.html page. This helps Search engines like Google when looking for matches based on what the user searches for.  
+
+I added a `description`, `keywords` and `author`. Search Engines will display the title and description information in their search results. 
+
+## Internal and External Links and SEO
+
+Social links contain the `rel="noopener"` attribute, which tells search engines not to include these links when it looks at our search engine ranking.  
+
+## Sitemap XML
+I've create a xml sitemap which is a file that lists a website’s important page urls, making sure that search engines can crawl, or navigate, through them. It also helps search engines  understand the website structure.
+A sitemap file ensures search engines will crawl every essential page on your website.
+A sitemap can help speed up content discovery for search engines when they crawl and index the site.
+
+## Robots.txt
+I've added a robots.txt file which is a simple text file that tells search engines where they are not allowed to go on a website. It lists out any folders or files that will not be crawled or indexed by search engine spiders. 
+
+Having a robots.txt file shows that I have acknowledged that search engines are allowed on the site and that they may have free access to it.
+
+For this reason, search engines take the existence of this file in your projects as a sign of quality, and so it improves the SEO ranking as a result.
+
+## Keyword Research
+
+| Short-tail Keywords | Long-tail Keywords |
+| ------------- | ------------- |
+| diecast models | high end diecast cars |
+| diecast cars | toy car models |
+| ~~luxury toys~~ | luxury toy cars |
+| ~~car toys~~ | british diecast models |
+| ~~luxury diecast~~ | italian diecast models |
+| ~~luxury~~ | german diecast models |
+| ~~car models~~ | mercedes diecast models |
+| ~~luxury models~~ | ferrari diecast models |
+| - | lamborghini diecast models |
+| - | bentely diecast models |
+| - | luxury diecast models |
+
+[Back to contents](#contents)
+
+---
+
+# Web Marketing Strategy
+
+1. Who are your users?
+- Hobby enthusiasts, mainly adults who can make purchases online.
+
+2. Which online platforms would you find lots of your users?
+- I would find them on Social Media such as Facebook, Instagram, Twitter, YouTube. 
+- Also on online communities like Reddit.
+
+3. What do your users need? Could you meet that need with useful content? If yes, how could you best deliver that content to them?
+- High quality imagery would be most attractive along with detailed product specifications.
+- User Reivews would also boost consumer confidence, building on brand trust and loyalty.
+
+4. Would your business run sales or offer discounts? How do you think your users would most like to hear about these offers?
+- I would run regular sale promotions during peak seasons. 
+- I could setup online voucher codes to be redeemed when purchasing online. 
+- The vouchers would be sent via email to customers that have opted in to recieve marketing.
+- I can also get into affiliate marketing where content ceators / influencers can promote offers.
+
+5. What are the goals of your business? 
+- Main goal is to increase conversion.
+- To build brand awareness.
+- Build the subscriber list.
+- Build social media awareness and keep customers talking about thr brand.
+
+6. Which marketing strategies would offer the best ways to meet those goals?
+- I would need to make sure the site is optimised for SEO for prominent search rankings.
+- Keep active on social media channels posting regular content and help promote offers.
+- Engage with usrs on social media and get feedback from customers.
+
+7. Would your business have a budget to spend on advertising? Or would it need to work with free or low cost options to market itself?
+- For the fist year I would need to carefully keep spending low in order to generate revenue. 
+- After collecting sales and web statistics, I can see where investements need to be made in order to build on the business goals.
+
+## Content Marketing
+The main focus is the product content making sure the product page is attractive and gives the customer what the need to see and know in a short timeframe.
+
+![image](/documentation/web_marketing/marketing_product.png)
+
+## Social Media Marketing
+Facebook is currently the most popular social media channel so creating a Facebook business page allows me to target and engage with a wide audience. I can also grow my Elite Ride community, building brand loyalty and trust. I can chat with customers, get customer feedback on a paltform that is free/low cost. 
+
+![image](/documentation/web_marketing/elite-rides-fb-business-page.png)
+
+## **Email Marketing**
+Customers can sign up to `Elite Rides Email Marketing` by providing there email address.
+Here I am using MailChimp to `capture the Customer emails` and `manage the subscibers via the MailChimp admin`.
+<br>
+
+![image](/documentation/features/newsletter_signup_mailchimp.png)
+
+![image](/documentation/manifestations_of_data/data_at_rest_newsletter_subscribe.png)
 
 
 [Back to contents](#contents)
@@ -529,6 +627,22 @@ I tested against the Acceptance Criteria in the Jira User Stories.
 ---
 
 # Strip Integration
+
+## Testing Stripe
+Stipe is set up in Developer Mode. This means you can use Stripe Test payments to simulate a live purchase on the store.
+
+- [Stripe Test Cards here](https://stripe.com/docs/testing?locale=en-GB&testing-method=card-numbers#cards)
+
+Note: You can use test cards from any country, but if you want to test UK cards then use these:
+
+| Country | Number | Brand | Date | CVC | Postcode |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| United Kingdom (GB) | 4000008260000000 | Visa | Any future date | Any 3 digits | UK Postcode
+| United Kingdom (GB) | 4000058260000005 | Visa (debit) | Any future date | Any 3 digits | UK Postcode
+| United Kingdom (GB) | 5555558265554449 | Mastercard | Any future date | Any 3 digits | UK Postcode
+
+## Injecting Stripe
+
 In the base template, I'll add Stripe js script in the corejs block, eventhough I only technically need it on the checkout page.
 Stripe recommends putting it in the base template so it'll be available on every page of the site
 which allows some of their more `advanced fraud detection features` to work.
@@ -566,9 +680,21 @@ The Admin can then verify that the purchase was made successfully in Stripe, eve
 
 ---
 
-# **Performance**
+# Accessibility
 
-### **Google Lighthouse Score**
+I’ve added ARIA attributes to buttons and game sections. This is to help disabled users understand what the different are and their purpose. 
+
+I’ve used Symantic HTML markup which helps browsers to understand the context of the content, and also helps with the accessibility for users with impairments.
+
+I’ve used `aria-label` attributes on buttons and sections of the game to explain what they are.
+
+[Back to contents](#contents)
+
+---
+
+# Performance
+
+## Google Lighthouse Score
 
 - Mobile
 
@@ -580,7 +706,7 @@ The Admin can then verify that the purchase was made successfully in Stripe, eve
 
 ![image](/documentation/lighthouse_tests/google_lighthouse_desktop.png)
 
-### **Microsoft Edge Lighthouse score**
+## Microsoft Edge Lighthouse score
 
 - Mobile
 
@@ -596,9 +722,14 @@ The Admin can then verify that the purchase was made successfully in Stripe, eve
 
 ---
 
-# **Technologies used**
+# HTML and CSS Code Validation
+Both the W3C Markup HTML Validator and W3C CSS Validator were used to confirm there are no errors in the codebase.
 
-- ## Languages:
+---
+
+# Technologies used
+
+## Languages
     
     + [Python 3.8.5](https://www.python.org/downloads/release/python-385/): is the main language used to build the back-end.
     + [JS](https://www.javascript.com/): for the Stripe elements.
@@ -608,7 +739,7 @@ The Admin can then verify that the purchase was made successfully in Stripe, eve
     they will always stay perfectly centred and have a consistent size unless I manually change it.
 
 
-- ## Frameworks and libraries:
+## Frameworks and libraries:
 
     + [Django](https://www.djangoproject.com/): A high-level Python web framework for the app.
     + [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/overview.html): is an integrated set of Django applications dealing with account authentication, registration and management.
@@ -616,12 +747,12 @@ The Admin can then verify that the purchase was made successfully in Stripe, eve
     + [Summernote](https://summernote.org/): A JavaScript library that helps you create WYSIWYG editors online. Used in the Django Admin under Products to `enrich product descriptions`.
     + [Pillow](https://pypi.org/project/Pillow/9.3.0/): To manipulate and process images, Pillow provides tools that are similar to ones found in image processing software such as Photoshop.
 
-- ## Databases:
+## Databases:
 
     + [SQLite3](https://sqlite.org/index.html): Local DBMS (Database Management System) to store all data.
     + [PostgreSQL by ElephantSQL](https://www.elephantsql.com/): Production DBMS (Database Management System) to store all data.
 
-- ## Other tools:
+## Other tools:
 
     + [Github](https://github.com/): hosting service for software development and version control using Git.
     + [Pip3](https://pypi.org/project/pip/): is the package manager to intstall Python modules and libraries.
@@ -635,6 +766,7 @@ The Admin can then verify that the purchase was made successfully in Stripe, eve
     + [W3C Validator](https://validator.w3.org/): used to validate HTML5 code.
     + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): used to validate CSS code.
     + [flake8](https://pypi.org/project/flake8/): was used to validate Python code.
+    + [Replit.com](https://replit.com/): to store versions of work-in-progress snippets and functions of code.
 
 [Back to contents](#contents)
 
@@ -741,6 +873,7 @@ This will tell the browser that it's okay to cache static files for a long time
 - [Bootstrap Modal](https://getbootstrap.com/docs/4.6/components/modal/)
 - [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
 - [Favicon](https://upload.wikimedia.org/wikipedia/commons/b/b8/ER_logo.svg) 
+- [Sitemap.xml](https://www.xml-sitemaps.com/)
 - Insipred by the `Boutique Ado` Walkthrough Project.
 
 ## E-commerce User Stories Support
@@ -778,8 +911,40 @@ This will tell the browser that it's okay to cache static files for a long time
 - [MailChimp Newsletter Sign Up](https://mailchimp.com/)
 - [Facebook Business Page](https://www.facebook.com/)
 
-## Readme
+[Back to contents](#contents)
 
+---
+
+# Bugs Encountered during Testing
+
+## Bug 1
+I realised that on the checkout success page, the grand total is calculating a little less.
+
+For example, when I add a product with shipping cost, the Grand Total should be `£14.25` but shows on the checkout success page as `£14.24`
+
+Order Total £12.95
+Delivery £1.30
+Grand Total should be £14.25
+
+![image](/documentation/bugs/1_bug_shopping_bag.png)
+
+![image](/documentation/bugs/1_bug_checkout_success.png)
+
+The issue was in `Checkout App > models.py` where I need to add a `round() funtion` to the grand_total and output the price with 2 decimal places.
+
+![image](/documentation/bugs/1_bug_fix.png)
+
+
+## Bug 2
+
+When I try to remove an item from my bag, nothing happens.
+I checked the browser console and saw a 403 error.
+
+![image](/documentation/bugs/2_bug_403_error.png)
+
+In the `Bag App > bag.html` I removed the csrfToken from `var = data` by accident as I wanted to remove the size reference.
+
+![image](/documentation/bugs/2_bug_403_fix.png)
 
 [Back to contents](#contents)
 
