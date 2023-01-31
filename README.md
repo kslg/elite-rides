@@ -408,11 +408,25 @@ This means The Customer is now stored in the `database`.
 To prevent unauthorised access to Admin functionality (Create, Update, Delte), restriction logic is in place to stop Customers access those areas. 
 
 - A `logged in Customer` is presented with `Toast Error Message` when trying to access Model Management URL:
+<br>
+
 ![image](/documentation/features/accounts_and_authentication/customers_restricted_access_add.png)
 <br>
 
 - A `logged in Customer does not` have the ability to `Edit` and `Delete` from the Product pages:
+<br>
+
 ![image](/documentation/features/accounts_and_authentication/customers_restricted_access_edit_delete.png)
+
+## *Using Decorators*
+In the views.py files for Product and Profile apps, I imported from django.contrib.auth.decorators
+called `login_required`
+
+Decorators are special functions that wrap around another function and return a new one with some additional functionality.
+
+In the case of `login_required` for example, wherever I use this decorator it will make Django first check whether the Customer is logged in before executing the view.
+If the Customer is not logged in, it will redirect them to the Sign In page.
+I added `@login_required` on the line immediately above each view I want to decorate.
 
 
 [Back to contents](#contents)
@@ -514,13 +528,69 @@ I tested against the Acceptance Criteria in the Jira User Stories.
 
 ---
 
+# Strip Integration
+In the base template, I'll add Stripe js script in the corejs block, eventhough I only technically need it on the checkout page.
+Stripe recommends putting it in the base template so it'll be available on every page of the site
+which allows some of their more `advanced fraud detection features` to work.
+<br>
+
+![image](/documentation/stripe/stripe_js_script.png)
+
+## Get Stripe working in Gitpod
+As I was using Gitpod, I had to make the Stripe keys permanent to the workspaces page. Othwerwise I would have to keep adding them all the time if I had to create a new workspace.
+I did this by clicking your account icon in the upper right > go to settings > entering them there under the environment variables section.
+<br>
+
+## Stripe Handle Form Submission
+Before we call out to Stripe, we'll want to disable both the card element and the submit button to prevent multiple submissions.
+<br>
+
+![image](/documentation/stripe/stipe_handle_form_submission.png)
+
+## Stripe Webhooks
+I setup Webhooks in Stripe to help capture the payment intent, in case the Customer somehow intentionally or accidentally closes the browser window after the payment is confirmed but before the form is submitted.
+<br>
+
+Each time an event occurs on Stripe such as a payment intent being created, a payment being completed and so on, Stripe sends out what's called a Webhook we can listen for.
+Webhooks are like the signals django sends each time a model is saved or deleted.
+Except that they're sent securely from Stripe to a checkout URL specified.
+<br>
+
+The Admin can then verify that the purchase was made successfully in Stripe, eventhough the order was not captured in the Database. The Admin can then manually create the order on behalf of the Customer knowing that they paid for it.
+<br>
+
+![image](/documentation/stripe/stripe_webhooks.png)
+
+
+[Back to contents](#contents)
+
+---
+
 # **Performance**
 
 ### **Google Lighthouse Score**
-![Image](/documentation/readme_folder/images/google_lighthouse_score.png)
+
+- Mobile
+
+![image](/documentation/lighthouse_tests/google_lighthouse_mobile.png)
+
+<br>
+
+- Desktop
+
+![image](/documentation/lighthouse_tests/google_lighthouse_desktop.png)
 
 ### **Microsoft Edge Lighthouse score**
-![Image](/documentation/readme_folder/images/microsoft_devtools.png)
+
+- Mobile
+
+![image](/documentation/lighthouse_tests/microsoft_edge_lighthouse_mobile.png)
+
+<br>
+
+- Desktop
+
+![image](/documentation/lighthouse_tests/microsoft_edge_lighthouse_desktop.png)
 
 [Back to contents](#contents)
 
@@ -531,19 +601,25 @@ I tested against the Acceptance Criteria in the Jira User Stories.
 - ## Languages:
     
     + [Python 3.8.5](https://www.python.org/downloads/release/python-385/): is the main language used to build the back-end.
-    + [JS](https://www.javascript.com/): for the CAPTCHA Refesh function and to handle the timeout for bootstrap alerts.
+    + [JS](https://www.javascript.com/): for the Stripe elements.
     + [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): is markup language used to build the front-end templates.
     + [CSS](https://developer.mozilla.org/en-US/docs/Web/css): is styling language used adjust layout and front-end styles.
+    + [Bulma](https://www.javascript.com/): I've used the `.icon` class from another CSS framework similar to bootstrap called Bulma. This helps ensure that whenever I use font awesome icons,
+    they will always stay perfectly centred and have a consistent size unless I manually change it.
+
 
 - ## Frameworks and libraries:
 
-    + [Django](https://www.djangoproject.com/): a high-level Python web framework for the app.
+    + [Django](https://www.djangoproject.com/): A high-level Python web framework for the app.
     + [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/overview.html): is an integrated set of Django applications dealing with account authentication, registration and management.
-    + [CrispyForms](): is an optimised way of rendering forms on the front-end in a very elegant and `DRY` way. 
+    + [CrispyForms](https://django-crispy-forms.readthedocs.io/): An optimised way of rendering forms on the front-end in a very elegant and `DRY` way. 
+    + [Summernote](https://summernote.org/): A JavaScript library that helps you create WYSIWYG editors online. Used in the Django Admin under Products to `enrich product descriptions`.
+    + [Pillow](https://pypi.org/project/Pillow/9.3.0/): To manipulate and process images, Pillow provides tools that are similar to ones found in image processing software such as Photoshop.
 
 - ## Databases:
 
-    + [PostgreSQL](https://www.postgresql.org/): database to store all data.
+    + [SQLite3](https://sqlite.org/index.html): Local DBMS (Database Management System) to store all data.
+    + [PostgreSQL by ElephantSQL](https://www.elephantsql.com/): Production DBMS (Database Management System) to store all data.
 
 - ## Other tools:
 
@@ -555,7 +631,7 @@ I tested against the Acceptance Criteria in the Jira User Stories.
     + [VSCode](https://code.visualstudio.com/): the IDE used to program the app.
     + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): used to identify any errors when being rendered in the browser.
     + [Font Awesome](https://fontawesome.com/): used to source social icons to be used on the app.
-    + [Draw.io](https://www.lucidchart.com/) used to create the Database schema.
+    + [Lucid.app](https://lucid.app/) used to create the Database schema and Dataflow Diagram.
     + [W3C Validator](https://validator.w3.org/): used to validate HTML5 code.
     + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): used to validate CSS code.
     + [flake8](https://pypi.org/project/flake8/): was used to validate Python code.
@@ -566,59 +642,143 @@ I tested against the Acceptance Criteria in the Jira User Stories.
 
 # Information Architecture
 
-
 ## Entity-Relationship Diagram
 
-* The ERD was created using [lucid.app](https://www.lucid.app).
+* The Database schema was created using [Lucid.app](https://lucid.app/).
 
 ![Database Schema](/documentation/erd/EliteRides_Schema.jpeg)
 
-
-
 [Back to contents](#contents)
 
-
 ---
 
-## Deployment
+# Deployments
+I worked on my local environment before deploying the code to Github and then Production (Live Site).
 
-- The app was deployed to [Heroku](https://heroku.com).
-- The app can be reached by the [link](https://kslg-appointment-app.herokuapp.com/)
+### Deployment to Github
+
+`$ git add .` - Adding this to the editor terminal commits all the latest file changes.
+The period (.) at the end is what adds all files to the commit.
+
+`$ git commit -m “{Commit Details}”` - Pushes the latest changes to the GIT Repository.
+`-m` means "message" which is common practice to add so you and other developers know what changes were being made.
 
 
----
+### Deployment to Production
+
+Once I verified and tested by changes, I then deploy thr changes to Production.
+
+`$ git push` deploys the code to the GitHub and into the main branch of code which is connected to Production (the Live Public URL).
 
 
 ## Heroku Deployment
 
-**Final Deployment Process**
+The app was deployed to [Heroku](https://heroku.com).
+
+I setup `automatic deployments to Heroku` so when I `$ git push` to Github, I also deploy to Heroku at the same time.
+
+![image](/documentation/deployment/heroku_automatic_deployment_setup.png)
+
+## Final Deployment Process
 
 * Set DEBUG=False in settings.py.
-* Delete DISABLE_COLLECTSTATIC from Config Vars in Heroku dashboard.
-* Commit and push the changes to GitHub. 
-* Trigger a deplopyment in Heroku
+* Delete DISABLE_COLLECTSTATIC from Config Vars in Heroku.
+* Commit and push the changes to GitHub which deploys to Heroku.
 
 [Back to contents](#contents)
 
 ---
 
-## Credits and Acknowledgements
+# Use of env.py
+I've used the env.py to store secret keys and other senstive environment varaibles.
+This ensures that the project secret keys and variables are safe and out of version control, and not stored in Github.
 
-- [Date Picker](https://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django)
-- [Customise User Registration, Login, and Logout in Django](https://ordinarycoders.com/blog/article/django-user-register-login-logout)
-- [What is PEP8's E128: continuation line under-indented for visual indent?](https://stackoverflow.com/questions/15435811/what-is-pep8s-e128-continuation-line-under-indented-for-visual-indent)
-- [How to Create a Drop-down List in a Django Form](http://www.learningaboutelectronics.com/Articles/How-to-create-a-drop-down-list-in-a-Django-form.php)
-- [Django @login_required for class views](https://stackoverflow.com/questions/28555260/django-login-required-for-class-views)
-- [Django message upon logout is confusing to users #2031](https://github.com/pennersr/django-allauth/issues/2031)
-- [Bootstrap 4 Alerts](https://getbootstrap.com/docs/4.6/components/alerts/)
-- [Django Simple Captcha](https://django-simple-captcha.readthedocs.io/en/latest/usage.html)
-- [Colour Pallete](https://www.color-hex.com/color-palette/1006818)
+[Back to contents](#contents)
+
+---
+
+# Amazon Web Services S3
+I need a place to store our static files and images. For this, I'm using `Amazon Web Services s3` which is a `cloud-based storage service` that gives us a small piece of Amazon's infrastructure that I can use to store static files.
+
+## Amazon - Identify and Access Management (IAM)
+After setting up the s3 bucket, I have to create a user to access it.
+I did this through another service called `IAM` which stands for `Identity and Access Management`.
+
+The process here is first I create a group for our user to live in.
+Then create an access policy giving the group access to the s3 bucket we created.
+And finally, assign the user to the group so it can use the policy to access all our files.
+
+## AWS Config Vars
+In settings.py I added a key `USE_AWS` which is set to true.
+This is so thr settings file knows to use the AWS configuration when we deploy to Heroku.
+
+## AWS Cache Control
+I added another setting to settings.py called `AWS_S3_OBJECT_PARAMETERS`.
+This will tell the browser that it's okay to cache static files for a long time
+
+[Back to contents](#contents)
+---
+
+# Credits / Borrowed Resources
+
+## BootStrap Support
+- [Carousel](https://getbootstrap.com/docs/4.0/components/carousel/)
+- [Pop up Modal](https://getbootstrap.com/docs/4.6/components/modal/)
+- [Accordion](https://getbootstrap.com/docs/4.6/components/collapse/#accordion-example)
+- [Responsive Layout](https://getbootstrap.com/docs/4.0/layout/grid/)
+
+## Project Support
+- [Django admin how to show currency numbers in comma separated format](https://stackoverflow.com/questions/73514339/django-admin-how-to-show-currency-numbers-in-comma-separated-format)
+- [What Is a Positional Argument in Python](https://www.codingem.com/what-is-a-positional-argument-in-python/)
+- [Python Docstrings](https://www.programiz.com/python-programming/docstrings)
+- [Python round() Function](https://www.w3schools.com/python/ref_func_round.asp)
+- [How should I format a long url in a python comment and still be PEP8 compliant](https://stackoverflow.com/questions/10739843/how-should-i-format-a-long-url-in-a-python-comment-and-still-be-pep8-compliant/25034769)
+- [Build a Contact Form in Python Django](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)
+- [Integrating Summernote WYSIWYG Editor in Django ](https://djangocentral.com/integrating-summernote-in-django/)
+- [Colour Pallete](https://www.color-hex.com/color-palette/2286)
 - [What is CAPTCHA](https://support.google.com/a/answer/1217728?hl=en#:~:text=CAPTCHA%20offers%20protection%20from%20remote,must%20to%20pass%20the%20test.)
 - [How to auto close an alert after few seconds with Bootstrap?](https://stackoverflow.com/questions/68165290/how-to-auto-close-an-alert-after-few-seconds-with-bootstrap)
 - [Bootstrap Modal](https://getbootstrap.com/docs/4.6/components/modal/)
-- Insipred by the `Hello Django Project` and the `I Think Threfore I Blog Project`
-- Readme.md layout inspired by fellow student Luliia Konovalova (Juliia_Konn_5P)  
+- [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
+- [Favicon](https://upload.wikimedia.org/wikipedia/commons/b/b8/ER_logo.svg) 
+- Insipred by the `Boutique Ado` Walkthrough Project.
 
+## E-commerce User Stories Support
+- [AllAuth](https://www.digitalocean.com/community/tutorials/how-to-authenticate-django-apps-using-django-allauth)
+- [Website Footer](https://blog.hubspot.com/website/website-footer)
+- [Product Detail Page](https://business.adobe.com/blog/basics/learn-about-product-detail-pages)
+- [Website Navigation](https://www.bigcommerce.co.uk/ecommerce-answers/what-website-navigation-and-how-does-it-impact-ecommerce/)
+- [Product Categorisation](https://www.comalytics.com/e-commerce-product-categorisation-a-how-to-guide/)
+- [Mini Cart](https://agenciaeplus.com.br/en/mini-cart-o-que-e-e-qual-sua-utilidade-no-e-commerce/)
+- [Cart Page](https://www.omniconvert.com/what-is/cart-page/)
+- [Checkout Page](https://www.bolt.com/thinkshop/checkout-page-best-practices-templates-examples-to-end-abandonment)
+- [About Us](https://www.searchenginejournal.com/about-us-page-examples/250967/)
+- [Privacy Policy](https://blog.shift4shop.com/why-all-websites-need-a-privacy-policy-and-how-to-create-one)
+- [Cookie Policy](https://www.termsfeed.com/blog/sample-cookies-policy-template/)
+- [Contact Form](https://support.bigcommerce.com/s/article/Creating-a-Contact-Form?language=en_US)
+- [Product Listing Page](https://www.dynamicyield.com/glossary/product-listing-pages-plps/#:~:text=What%20is%20a%20product%20listing,pages%20and%20closer%20to%20conversion)
+- [Filter and Sorting](https://inviqa.com/blog/filter-and-sort-improving-ecommerce-product-findability)
+- [Code Refactoring](https://www.altexsoft.com/blog/engineering/code-refactoring-best-practices-when-and-when-not-to-do-it/)
+
+## Static Content and Copy
+- [model-car-world.co.uk](https://www.model-car-world.co.uk/)
+- [carmodel.com](https://www.carmodel.com/)
+- [Hero Image](https://pixabay.com/photos/diecast-model-toys-car-lamborghini-6001104/)
+
+## Product Details and Images
+- [carmodel.com](https://www.carmodel.com/)
+
+## Mind Map images
+- [rosewe.com](https://www.rosewe.com/images/201905/source_img/222314_P_15587932650450.jpg)
+- [Wikipedia - Sillitoe Tartan black and white.svg](https://upload.wikimedia.org/wikipedia/commons/0/0f/Sillitoe_Tartan_black_and_white.svg)
+- [goodhousekeeping.com](https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/black-and-white-bedroom-rinfret-limited-1611167676.jpg?crop=0.668xw:1.00xh;0.0238xw,0&resize=768:*)
+- [clipart-library.com](http://clipart-library.com/images/8cEbRBjxi.jpg)
+
+## Marketing
+- [MailChimp Newsletter Sign Up](https://mailchimp.com/)
+- [Facebook Business Page](https://www.facebook.com/)
+
+## Readme
 
 
 [Back to contents](#contents)
@@ -626,20 +786,16 @@ I tested against the Acceptance Criteria in the Jira User Stories.
 ---
 
 # Future Features
-1. Users could manage thier own appointments.
-2. Add Relational Database model between Teacher, Class and Child.
-3. Restrict appointment dates in the past.
+1. Product Reviews
+2. CAPTCHA on the Contact Us form.
+3. Optimised My Profile section.
+4. Display Sale Price.
+5. Promo Code at Checkout.
+6. Alternative payment methods (PayPal, Amazon Pay).
+7. Customer Control over Marking Channel Opt In - GDPR Compliance
 
 [Back to contents](#contents)
 
-# w3c Markup Valiation notice
-
-Upon chekcing the markup validation for the appointment page I can see alerts related to the captcha but these are not elements i can easlily get to and resolve.
-
-![Database Schema](/documentation/readme_folder/images/w3cvaliadation_captcha.png)
-
 ---
 
-## End of readme.md
-
----
+<h2 align="center">End of Readme</h2>
