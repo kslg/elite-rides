@@ -9,50 +9,36 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
 
 <br>
 
-## **Contents**
-* [User Experience Design](#user-experience-design)
-* [Strategy Plane](#strategy-plane)
-* [The Scope Plane](#the-scope-plane)
-* [The Structure Plane](#the-structure-plane)
-* [The Skeleton Plane](#the-skeleton-plane)
-* [Manifestations of Data](#manifestations-of-data)
-* [The Surface Plane](#the-surface-plane)
-* [Features](#features)
-* [User Journeys and Manual Testing](#user-journeys-and-manual-testing)
-* [Agile Project Management](#agile-project-management)
-* [Performace](#performance)
-* [Technologies Used](#technologies-used)
-* [Information Architecture](#information-architecture)
-* [Deployment](#deployment)
-* [Heroku Deployment](#heroku-deployment)
-* [Credits and Acknowledgements](#credits-and-acknowledgements)
-* [Future Features](#future-features)
-* [w3c Markup Valiation notice](#w3c-markup-valiation-notice)
-
----
+# **Contents**
+- [User Experience Design](#user-experience-design)
+- [Strategy Plane](#strategy-plane)
+    * [Target Audience](#target-audience)
+    * [Mission Objectives](#mission-objectives)
+    * [The Why](#the-why)
+    * [Ideas and Inspiration Mind Map](#ideas-and-inspiration-mind-map)
+    * [Content Strategy](#content-strategy)
+    * [Typography](#typography)
+- [Scope Plane](#scope-plane)
+    * [Functional Requirements for an MPV](#functional-requirements-for-an-mvp)
 
 # User Experience Design
-
 I used the 5 Planes of UX to provide a conceptual framework.
 
+# Strategy Plane
 
-# Strategy Plane:
-
-## Target Audience:
+## Target Audience
 
 - `User - Customers` Hobby enthusiasts, mainly adults who can make purchases online.
 - `Admin` E-Commerce Managers.
 - `Super Admin` Store Owner, E-Commerce Managers.
 
 ## Mission Objectives:
-
 - To develop an `mvp (minimum viable product)` that allows `Users` to navigate an online store and purchase a product.
 - The shopping experiecne must be simple in design and navigation.
 - `Admins` will have a store-front login to manage product cataloge.
 - `Super Admins` can access the Django back-end to view and manages Order and Customer data.
 
-### The Why:
-
+## The Why
 - As a high-end car aficionado and collector, it's hard to find a company online that deals with only styling models. Also, existing competitors don't stand out in the market. 
 - I want to promote an exlusive presence and target a younger and modern audience. 
 - Make die-cast models attractive again. Not fucusing on racing and classic cars.
@@ -60,22 +46,20 @@ I used the 5 Planes of UX to provide a conceptual framework.
 ## Ideas and Inspiration Mind Map
 ![image](/documentation/mind_map/mind_map.png)
 
-## Content Strategy:
-
-- Main functionality is to purchase a product through checkout.
+## Content Strategy
 - Keep content simple and easy to digest. 
 - Let the imagery and branding become more engaging.
 
-## Typography:
+## Typography
 https://fonts.google.com/
 Jura was used due to it's luxury, modern look and feel. It's easy to read.
 ![image](/documentation/typography/google_font.png)
 
 [Back to contents](#contents)
 
-# The Scope Plane:
+# Scope Plane
 
-## Functional Requirements for an MPV:
+## Functional Requirements for an MPV
 
 1. Checkout functionality 
 2. Account Profile and User Authentication
@@ -99,7 +83,7 @@ Jura was used due to it's luxury, modern look and feel. It's easy to read.
 
 [Back to contents](#contents)
 
-## Content Requirements:
+## Content Requirements
 
 - `Customer` Homepage with hero text and a hero banner.
 - `Customer` Category Pages
@@ -111,7 +95,7 @@ Jura was used due to it's luxury, modern look and feel. It's easy to read.
 
 [Back to contents](#contents)
 
-## Interaction Design:
+## Interaction Design
 
 - All CTA (Call to Action) buttons will change colour to let the customers know that the buttons are clickable. 
 - The `Customer` and `Admin` are notified for changes and major actions.
@@ -119,7 +103,7 @@ Jura was used due to it's luxury, modern look and feel. It's easy to read.
 
 [Back to contents](#contents)
 
-## Scope of MVP:
+## Scope of MVP
 Using the MoSCoW prioritisation method to outline the importance of each requirement and what needs to be delivered in the MVP.
 
 | Requirements | Must Have | Should Have | Could Have | Won't Have |
@@ -157,7 +141,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 [Back to contents](#contents)
 
-# The Structure Plane:
+# Structure Plane
 
 ## Site Architecture
 
@@ -183,9 +167,9 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 [Back to contents](#contents)
 
-# The Skeleton Plane:
+# Skeleton Plane
 
-## Header and Footer:
+## Header and Footer
 - White background.
 - Black text.
 - Hover States: Underline style.
@@ -731,42 +715,42 @@ Both the W3C Markup HTML Validator and W3C CSS Validator were used to confirm th
 
 ## Languages
     
-    + [Python 3.8.5](https://www.python.org/downloads/release/python-385/): is the main language used to build the back-end.
-    + [JS](https://www.javascript.com/): for the Stripe elements.
-    + [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): is markup language used to build the front-end templates.
-    + [CSS](https://developer.mozilla.org/en-US/docs/Web/css): is styling language used adjust layout and front-end styles.
-    + [Bulma](https://www.javascript.com/): I've used the `.icon` class from another CSS framework similar to bootstrap called Bulma. This helps ensure that whenever I use font awesome icons,
-    they will always stay perfectly centred and have a consistent size unless I manually change it.
++ [Python 3.8.5](https://www.python.org/downloads/release/python-385/): is the main language used to build the back-end.
++ [JS](https://www.javascript.com/): for the Stripe elements.
++ [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): is markup language used to build the front-end templates.
++ [CSS](https://developer.mozilla.org/en-US/docs/Web/css): is styling language used adjust layout and front-end styles.
++ [Bulma](https://www.javascript.com/): I've used the `.icon` class from another CSS framework similar to bootstrap called Bulma. This helps ensure that whenever I use font awesome icons,
+they will always stay perfectly centred, and have a consistent size unless I manually change it.
 
 
 ## Frameworks and libraries:
 
-    + [Django](https://www.djangoproject.com/): A high-level Python web framework for the app.
-    + [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/overview.html): is an integrated set of Django applications dealing with account authentication, registration and management.
-    + [CrispyForms](https://django-crispy-forms.readthedocs.io/): An optimised way of rendering forms on the front-end in a very elegant and `DRY` way. 
-    + [Summernote](https://summernote.org/): A JavaScript library that helps you create WYSIWYG editors online. Used in the Django Admin under Products to `enrich product descriptions`.
-    + [Pillow](https://pypi.org/project/Pillow/9.3.0/): To manipulate and process images, Pillow provides tools that are similar to ones found in image processing software such as Photoshop.
++ [Django](https://www.djangoproject.com/): A high-level Python web framework for the app.
++ [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/overview.html): is an integrated set of Django applications dealing with account authentication, registration and management.
++ [CrispyForms](https://django-crispy-forms.readthedocs.io/): An optimised way of rendering forms on the front-end in a very elegant and `DRY` way. 
++ [Summernote](https://summernote.org/): A JavaScript library that helps you create WYSIWYG editors online. Used in the Django Admin under Products to `enrich product descriptions`.
++ [Pillow](https://pypi.org/project/Pillow/9.3.0/): To manipulate and process images, Pillow provides tools that are similar to ones found in image processing software such as Photoshop.
 
 ## Databases:
 
-    + [SQLite3](https://sqlite.org/index.html): Local DBMS (Database Management System) to store all data.
-    + [PostgreSQL by ElephantSQL](https://www.elephantsql.com/): Production DBMS (Database Management System) to store all data.
++ [SQLite3](https://sqlite.org/index.html): Local DBMS (Database Management System) to use in Gitpod to store all data.
++ [PostgreSQL by ElephantSQL](https://www.elephantsql.com/): Production DBMS (Database Management System) to store all data on the live site.
 
 ## Other tools:
 
-    + [Github](https://github.com/): hosting service for software development and version control using Git.
-    + [Pip3](https://pypi.org/project/pip/): is the package manager to intstall Python modules and libraries.
-    + [Gunicorn](https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/gunicorn/): "Green Unicorn" is a Python Web Server Gateway to translate HTTP Rquests for Python to understand.
-    + [Spycopg2](https://pypi.org/project/psycopg2/): PostgreSQL database adapter so I can manage the Database in Python. 
-    + [Heroku](https://dashboard.heroku.com/): the hosting service to host the app.
-    + [VSCode](https://code.visualstudio.com/): the IDE used to program the app.
-    + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): used to identify any errors when being rendered in the browser.
-    + [Font Awesome](https://fontawesome.com/): used to source social icons to be used on the app.
-    + [Lucid.app](https://lucid.app/) used to create the Database schema and Dataflow Diagram.
-    + [W3C Validator](https://validator.w3.org/): used to validate HTML5 code.
-    + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): used to validate CSS code.
-    + [flake8](https://pypi.org/project/flake8/): was used to validate Python code.
-    + [Replit.com](https://replit.com/): to store versions of work-in-progress snippets and functions of code.
++ [Github](https://github.com/): hosting service for software development and version control using Git.
++ [Pip3](https://pypi.org/project/pip/): is the package manager to intstall Python modules and libraries.
++ [Gunicorn](https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/gunicorn/): "Green Unicorn" is a Python Web Server Gateway to translate HTTP Rquests for Python to understand.
++ [Spycopg2](https://pypi.org/project/psycopg2/): PostgreSQL database adapter so I can manage the Database in Python. 
++ [Heroku](https://dashboard.heroku.com/): the hosting service to host the app.
++ [VSCode](https://code.visualstudio.com/): the IDE used to program the app.
++ [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): used to identify any errors when being rendered in the browser.
++ [Font Awesome](https://fontawesome.com/): used to source social icons to be used on the app.
++ [Lucid.app](https://lucid.app/) used to create the Database schema and Dataflow Diagram.
++ [W3C Validator](https://validator.w3.org/): used to validate HTML5 code.
++ [W3C CSS validator](https://jigsaw.w3.org/css-validator/): used to validate CSS code.
++ [flake8](https://pypi.org/project/flake8/): was used to validate Python code.
++ [Replit.com](https://replit.com/): to store versions of work-in-progress snippets and functions of code.
 
 [Back to contents](#contents)
 
@@ -784,8 +768,64 @@ Both the W3C Markup HTML Validator and W3C CSS Validator were used to confirm th
 
 ---
 
-# Deployments
-I worked on my local environment before deploying the code to Github and then Production (Live Site).
+# Deployments and Database Setup
+The database I have been using while building Elite Rides in Gitpod is only accessible within Gitpod. The deployed site on Heroku will not be able to access it. So, I had to create a new database that can be accessed by my Heroku app. 
+
+## I started by creating an external database using ElephantSQL.
+
+1. Log in to ElephantSQL.com to access your dashboard
+2. Click “Create New Instance”
+3. Set up your plan
+    - Give your plan a Name (this is commonly the name of the project)
+    - Select the Tiny Turtle (Free) plan
+    - You can leave the Tags field blank
+4. Select “Select Region”
+5. Select the nearest data center to me.
+6. Then click “Review”
+7. Check your details are correct and then click “Create instance”
+8. Return to the ElephantSQL dashboard and click on the database instance name for this project
+9. In the URL section, clicking the copy icon will copy the database URL to your clipboard
+
+## Create a Heroku app to connect to the new database
+
+1. In Heroku, I clicked New to create a new app
+2. Gave the app a name and selected the region closest to me. The I clicked Create app to confirm.
+3. Open the Settings tab
+4. Under Config Var i added `DATABASE_URL`, and for the value, copied in the `new database url` from ElephantSQL.
+
+## Set up the project to connect to new ElephantSQL database
+
+1. In Gitpod terminal, I installed `dj_database_url` and `psycopg2`, both of these are needed to connect to your external database.
+2. I updated the requirements.txt file with the newly installed packages
+`pip freeze > requirements.txt`
+3. In the settings.py file, I imported dj_database_url underneath the import for os
+```python
+import os
+import dj_database_url
+```
+4. In settings.py, at the DATABASES section, I updated it to the following code, so that the original connection to sqlite3 is commented out and I connect to the new ElephantSQL database instead. I pasted in the ElephantSQL database URL in the position indicated.
+ ```python
+ # DATABASES = {
+ #     'default': {
+ #         'ENGINE': 'django.db.backends.sqlite3',
+ #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #     }
+ # }
+     
+ DATABASES = {
+     'default': dj_database_url.parse('your-database-url-here')
+ }
+ ```
+5. In the terminal, I ran the showmigrations command to confirm I'm connected to the external database `python3 manage.py showmigrations`
+6. I migrated the database models to the new database `python3 manage.py migrate`
+7. I had to create a new superuser for your new database `python3 manage.py createsuperuser`
+
+
+## Confirm that the data was migrated to ElephantSQL database
+1. On the ElephantSQL page for your database, in the left side navigation, select “BROWSER”
+2. Click the Table queries button, select `auth_user`
+3. When I clicked “Execute”, I should see the newly created superuser details displayed. This confirms the data tables have been created, and I can add data to the external database.
+
 
 ### Deployment to Github
 
@@ -804,10 +844,32 @@ Once I verified and tested by changes, I then deploy thr changes to Production.
 
 
 ## Heroku Deployment
+1. To prevent exposing the database when I push to GitHub, I deleted it again from my settings.py. I used an if statement so that when our app is running on Heroku where the database URL environment variable will be defined, we connect to Postgres. Otherwise we connect to SQLite when working locally in Gitpod. 
+If database URL is in os.environ we'll get its value using dj_database_url.parse and use that as our database setting; otherwise, we'll use the default configuration.
+```python
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
 
-The app was deployed to [Heroku](https://heroku.com).
-
-I setup `automatic deployments to Heroku` so when I `$ git push` to Github, I also deploy to Heroku at the same time.
+2. To now make my deployments to work on the first try, I need to install gunicorn, which will act as our webserver `pip3 install gunicorn`, and freeze that into our requirements.txt file.
+3. I created the `Procfile` at root directory level to tell Heroku to create a web dyno which will run gunicorn and serve my Django app.
+4. I need to temporarily disable collectstatic by using
+`heroku config:set DISALBE-COLLECTSTATIC=1` so that Heroku won't try to collect staticfiles when I deploy.
+5. I need to add the hostname of our Heroku app to ALLOWED_HOSTS in settings.py I also added `localhost` in here so that Gitpod will still work too.
+```python
+ALLOWED_HOSTS = ['pp5-elite-rides.herokuapp.com', 'localhost']
+```
+6. I need to create a new secret key for the Heroko app and add it to the Congif Vars in Heroku.
+7. I setup `automatic deployments to Heroku` so when I `$ git push` to Github, I also deploy to Heroku at the same time.
 
 ![image](/documentation/deployment/heroku_automatic_deployment_setup.png)
 
@@ -849,6 +911,7 @@ I added another setting to settings.py called `AWS_S3_OBJECT_PARAMETERS`.
 This will tell the browser that it's okay to cache static files for a long time
 
 [Back to contents](#contents)
+
 ---
 
 # Credits / Borrowed Resources
