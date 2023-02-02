@@ -19,7 +19,99 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
     * [Content Strategy](#content-strategy)
     * [Typography](#typography)
 - [Scope Plane](#scope-plane)
-    * [Functional Requirements for an MPV](#functional-requirements-for-an-mvp)
+    * [Functional Requirements for an MPV](#functional-requirements-for-an-mpv)
+    * [Content Requirements](#content-requirements)
+    * [Interaction Design](#interaction-design)
+    * [Scope of MVP](#scope-of-mvp)
+- [Structure Plane](#structure-plane)
+    * [Site Architecture](#site-architecture)
+    * [Roles and Processes](#roles-and-processes)
+- [Skeleton Plane](#skeleton-plane)
+    * [Header and Footer](#header-and-footer)
+    * [Colour Palette](#colour-palette)
+    * [Manifestations of Data](#manifestations-of-data)
+        + [Data at rest](#data-at-rest)
+        + [Data in motion](#data-in-motion)
+        + [Data in use](#data-in-use)
+- [Surface Plane](#surface-plane)
+    * [Mobile First Design](#mobile-first-design)
+- [Features](#features)
+    * [Navbar](#navbar)
+        + [Navbar elements for E-commerce](#navbar-elements-for-e-commerce)
+    * [CRUD Functionality](#crud-functionality)
+        + [CRUD Create - Admins Only](#crud-create---admins-only)
+        + [CRUD Read - In My Profile](#crud-read---in-my-profile)
+        + [CRUD Update - Admins Only](#crud-update---admins-only)
+        + [CRUD Delete - Admins Only](#crud-delete---admins-only)
+        + [CRUD Delete - Defensive Programming](#crud-delete---defensive-programming)
+    * [Accounts and User Authentication](#accounts-and-user-authentication)
+        + [Sign In page](#sign-in-page)
+        + [Registration page](#registration-page)
+        + [Customer Verification](#customer-verification)
+        + [Customer Restrictions](#customer-restrictions)
+        + [Using Decorators](#using-decorators)
+    * [Order Confirmation Email](#order-confirmation-email)
+    * [Bootstrap Theme](#bootstrap-theme)
+        + [Bootstrap Toasts - Alert Messages](#)
+        + [Bootstrap Carousel - USP (Unique Selling Points)](#)
+    * [Guest Checkout](#guest-checkout)
+    * [Shipping Logic](#shipping-logic)
+    * [Sort By Filter](#sort-by-filter)
+    * [404 Page](#404-page)
+- [SEO Optimisation](#seo-optimisation)
+    * [Internal and External Links and SEO](#internal-and-external-links-and-seo)
+    * [Sitemap XML](#sitemap-xml)
+    * [Robots.txt](#robotstxt)
+    * [Keyword Research](#keyword-research)
+- [Web Marketing Strategy](#web-marketing-strategy)
+    * [Content Marketing](#content-marketing)
+    * [Social Media Marketing](#social-media-marketing)
+    * [Email Marketing](#email-marketing)
+- [Agile Project Management](#agile-project-management)
+- [Strip Integration](#strip-integration)
+    * [Testing Stripe](#testing-stripe)
+    * [Injecting Stripe](#injecting-stripe)
+    * [Get Stripe working in Gitpod](#get-stripe-working-in-gitpod)
+    * [Stripe Handle Form Submission](#stripe-handle-form-submission)
+    * [Stripe Webhooks](#stripe-webhooks)
+- [Accessibility](#accessibility)
+- [Performance](#performance)
+    * [Google Lighthouse Score](#google-lighthouse-score)
+    * [Microsoft Edge Lighthouse score](#microsoft-edge-lighthouse-score)
+- [HTML and CSS Code Validation](#html-and-css-code-validation)
+- [Technologies used](#technologies-used)
+    * [Languages](#languages)
+    * [Frameworks and libraries](#frameworks-and-libraries)
+    * [Databases](#databases)
+    * [Other tools](#other-tools)
+- [Information Architecture](#information-architecture)
+    * [Entity-Relationship Diagram](#entity-relationship-diagram)
+- [Deployments and Database Setup](#deployments-and-database-setup)
+    * [Creating an external database using ElephantSQL](#creating-an-external-database-using-elephantsql)
+    * [Create a Heroku app to connect to the new database](#create-a-heroku-app-to-connect-to-the-new-database)
+    * [Set up the project to connect to new ElephantSQL database](#set-up-the-project-to-connect-to-new-elephantsql-database)
+    * [Confirm that the data was migrated to ElephantSQL database](#confirm-that-the-data-was-migrated-to-elephantsql-database)
+    * [Deployment to Github](#deployment-to-github)
+    * [Deployment to Production](#deployment-to-production)
+    * [Heroku Deployment](#heroku-deployment)
+    * [Final Deployment Process](#final-deployment-process)
+- [Use of env.py](#use-of-envpy)
+- [Amazon Web Services S3](#amazon-web-services-s3)
+    * [Amazon - Identify and Access Management (IAM)](#amazon---identify-and-access-management-iam)
+    * [AWS Config Vars](#aws-config-vars)
+    * [AWS Cache Control](#aws-cache-control)
+- [Credits and Borrowed Resources](#credits-and-borrowed-resources)
+    * [BootStrap Support](#bootstrap-support)
+    * [Project Support](#project-support)
+    * [E-commerce User Stories Support](#e-commerce-user-stories-support)
+    * [Static Content and Copy](#static-content-and-copy)
+    * [Product Details and Images](#product-details-and-images)
+    * [Mind Map images](#mind-map-images)
+    * [Web and Social Media Marketing](#web-and-social-media-marketing)
+- [Bugs Encountered during Testing](#bugs-encountered-during-testing)
+    * [Bug 1](#bug-1)
+    * [Bug 2](#bug-2)
+- [Future Features](#future-features)
 
 # User Experience Design
 I used the 5 Planes of UX to provide a conceptual framework.
@@ -178,16 +270,18 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 <br>
 
 ![image](/documentation/wireframes/wireframes_header.png)
+
 ![image](/documentation/wireframes/wireframes_footer.png)
 <br>
 
 
 [Back to contents](#contents)
 
-## Colour Palette:
+## Colour Palette
 
 ![image](/documentation/color_palette/color_palette_blackandwhite.png)
 
+[Back to contents](#contents)
 
 # Manifestations of Data
 
@@ -215,7 +309,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 ![image](/documentation/manifestations_of_data/data_at_rest_newsletter_subscribe.png)
 
-
+[Back to contents](#contents)
 
 ## Data in motion
 
@@ -244,7 +338,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 ![image](/documentation/manifestations_of_data/data_in_motion_customer_messages.png)
 <br>
 
-
+[Back to contents](#contents)
 
 ## Data in use
 
@@ -266,9 +360,11 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 ![image](/documentation/manifestations_of_data/data_in_use_newsletter_subscribe.png)
 <br>
 
-# The Surface Plane:
+[Back to contents](#contents)
 
-## **Mobile First Design**
+# Surface Plane
+
+## Mobile First Design
 
 Prioritising design for mobiles makes sense as there are space limitations in devices with smaller screen sizes and need to ensure that the key elements of the website are prominently displayed for anyone using those screens.
 
@@ -279,11 +375,9 @@ The number of mobile users has surpassed desktop users. As per Statcounter Globa
 
 [Back to contents](#contents)
 
----
-
 # Features
 
-## **Navbar**
+## Navbar
 
 ## *Navbar elements for E-commerce:*
 - Home Page link (Elites Rides Logo) 
@@ -310,23 +404,27 @@ To satisfy an MPV and keeping the Navbar simple allows Customers to become famil
 
 <br>
 
-## **CRUD Functionality**
+[Back to contents](#contents)
 
-## *CRUD Create: Admins Only - In Model Management, you can add a new product to the catalogue*
+## CRUD Functionality
 
+## *CRUD Create - Admins Only*
+- In Model Management, you can add a new product to the catalogue.
 ### [Go to page](https://pp5-elite-rides.herokuapp.com/products/add/)
 <br>
 
 ![image](/documentation/features/crud_functionality/crud_create_model_management.png)
 
-## *CRUD Read - In My Profile, Customers can see their Default Delivery Information and Order History*
+## *CRUD Read - In My Profile*
+- Customers can see their Default Delivery Information and Order History.
 
 ### [Go to page](https://pp5-elite-rides.herokuapp.com/profile/)
 <br>
 
 ![image](/documentation/manifestations_of_data/data_in_use_delivery_information_and_order_history.png)
 
-## *CRUD Update - Admins Only - Can Edit Product Details directly from the Product Page*
+## *CRUD Update - Admins Only* 
+- Can Edit Product Details directly from the Product Page.
 
 <br>
 
@@ -336,26 +434,26 @@ To satisfy an MPV and keeping the Navbar simple allows Customers to become famil
 
 ![image](/documentation/features/crud_functionality/CRUD_Update_Model_Management.png)
 
-## *CRUD Delete - Admins Only - Can Delete the Product directly from the Product Page*
+## *CRUD Delete - Admins Only* 
+- Can Delete the Product directly from the Product Page.
 <br>
 
 ![image](/documentation/features/crud_functionality/CRUD_Delete_Model_Management.png)
 
-## *CRUD Delete - Defensive Programming using Bootstrap Modal*
-
-I used the Bootstrap modal pop up to alert the Admin that they are about the delete the product from the catalogue.
-Once they click `Delete`, the product is deleted from the `Database`
+## *CRUD Delete - Defensive Programming*
+- I used the Bootstrap modal pop up to alert the Admin that they are about the delete the product from the catalogue.
+- Once they click `Delete`, the product is deleted from the `Database`
 <br>
 
 ![image](/documentation/features/crud_functionality/CRUD_Delete_Defensive_Programming_Modal.png)
 
 [Back to contents](#contents)
 
-## **Accounts and User Authentication**
+## Accounts and User Authentication
 
 `django-allauth` is an integrated set of Django applications dealing with account authentication, registration, management, and third-party (social) account authentication. It is one of the most popular authentication modules due to its ability to handle both store and social logins. 
 
-## *Sign in page*
+## *Sign In page*
 
 ### [Go to page](https://pp5-elite-rides.herokuapp.com/accounts/login/)
 <br>
@@ -368,6 +466,8 @@ Once they click `Delete`, the product is deleted from the `Database`
 <br>
 
 ![image](/documentation/features/accounts_and_authentication/register_page.png)
+
+[Back to contents](#contents)
 
 ## *Customer Verification*
 
@@ -389,6 +489,8 @@ This means The Customer is now stored in the `database`.
 
 ![image](/documentation/features/accounts_and_authentication/email_address_confirmed.png)
 
+[Back to contents](#contents)
+
 ## *Customer Restrictions*
 
 To prevent unauthorised access to Admin functionality (Create, Update, Delte), restriction logic is in place to stop Customers access those areas. 
@@ -404,6 +506,8 @@ To prevent unauthorised access to Admin functionality (Create, Update, Delte), r
 
 ![image](/documentation/features/accounts_and_authentication/customers_restricted_access_edit_delete.png)
 
+[Back to contents](#contents)
+
 ## *Using Decorators*
 In the views.py files for Product and Profile apps, I imported from django.contrib.auth.decorators
 called `login_required`
@@ -414,40 +518,37 @@ In the case of `login_required` for example, wherever I use this decorator it wi
 If the Customer is not logged in, it will redirect them to the Sign In page.
 I added `@login_required` on the line immediately above each view I want to decorate.
 
-
 [Back to contents](#contents)
 
-## **Order Confirmation Email**
+## Order Confirmation Email
 
-**An Order Confirmation Email is sent to the Customer after placing an order.**
+## *An Order Confirmation Email is sent to the Customer after placing an order.*
 
 ![image](/documentation/manifestations_of_data/data_in_motion_order_confirmation_email.png)
 
 [Back to contents](#contents)
 
-## **Bootstrap Theme**
+## Bootstrap Theme
 Bootstrap 4 is a free front-end framework for faster and easier web development
 Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins
 Bootstrap also gives you the ability to easily create responsive designs
 
 ### [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
-## **Bootstrap Toasts - Alert Messages**
+## Bootstrap Toasts - Alert Messages
 - Alert popups are used to `improve Customer user experience`. Alert popup give users clear feedback as a result of their actions and any server response.
 - I used Bootstrap 4 Toasts: Lightweight notifications designed to mimic the push notifications that have been popularized by mobile and desktop operating systems.
 - 4 Toast Messages: Error, Info, Success and Warning.
 - Set a display timer of 3 seconds. After 3 seconds the message will go.
 - A close icon on the toast so customers can manually close.
 
-## **Bootstrap Carousel - USP (Unique Selling Points)**
+## Bootstrap Carousel - USP (Unique Selling Points)
 
 ![image](/documentation/features/bootstrap_carousel.png)
 
-
 [Back to contents](#contents)
 
-
-## **Guest Checkout**
+## Guest Checkout
 Guest Customers are able to navigate and purchase a product without signing up for a customer account. They don't have to sign in or save any information to website besides their email address.
 
 The Guest Customer has the option to Create an Account at the Checkout Success Page.
@@ -458,10 +559,9 @@ The Guest Customer has the option to Create an Account at the Checkout Success P
 
 ![image](/documentation/features/guest_checkout.png)
 
-
 [Back to contents](#contents)
 
-## **Shipping Logic**
+## Shipping Logic
 
 - Customers are offered `Free Shipping` when they spend over £50.
 - The delivery fee threshold can be updated at code-level.
@@ -475,15 +575,16 @@ The Guest Customer has the option to Create an Account at the Checkout Success P
 
 [Back to contents](#contents)
 
-## **Sort By Filter**
+## Sort By Filter
 I added a sort by product filter on the product listing page. 
 This helps the customer order the product by name, price, make, model and cateogry.
 This is another way to help boost conversion so the customers can see what they want more quickly, and increase the chances of a purchase being made.
 
 ![image](/documentation/sort_by/sort_by_product_filter.png)
 
+[Back to contents](#contents)
 
-## **404 Page**
+## 404 Page
 A 404 page, or error page, is the content the Customer sees when they try to reach a non-existent page on the site. It’s the page the server displays when it can’t find the URL requested by the customer.
 
 404 errors can be frustrating for Customers, so the main purpose of a 404 page is to turn the potential negative user experience of encountering an error into a positive one.
@@ -494,8 +595,6 @@ I've added a link back to all products page so the Customer can restart their sh
 ![image](/documentation/features/404_error_page.png)
 
 [Back to contents](#contents)
-
----
 
 # SEO Optimisation
 
@@ -511,6 +610,8 @@ Social links contain the `rel="noopener"` attribute, which tells search engines 
 I've create a xml sitemap which is a file that lists a website’s important page urls, making sure that search engines can crawl, or navigate, through them. It also helps search engines  understand the website structure.
 A sitemap file ensures search engines will crawl every essential page on your website.
 A sitemap can help speed up content discovery for search engines when they crawl and index the site.
+
+[Back to contents](#contents)
 
 ## Robots.txt
 I've added a robots.txt file which is a simple text file that tells search engines where they are not allowed to go on a website. It lists out any folders or files that will not be crawled or indexed by search engine spiders. 
@@ -536,8 +637,6 @@ For this reason, search engines take the existence of this file in your projects
 | - | luxury diecast models |
 
 [Back to contents](#contents)
-
----
 
 # Web Marketing Strategy
 
@@ -573,6 +672,8 @@ For this reason, search engines take the existence of this file in your projects
 - For the fist year I would need to carefully keep spending low in order to generate revenue. 
 - After collecting sales and web statistics, I can see where investements need to be made in order to build on the business goals.
 
+[Back to contents](#contents)
+
 ## Content Marketing
 The main focus is the product content making sure the product page is attractive and gives the customer what the need to see and know in a short timeframe.
 
@@ -583,7 +684,7 @@ Facebook is currently the most popular social media channel so creating a Facebo
 
 ![image](/documentation/web_marketing/elite-rides-fb-business-page.png)
 
-## **Email Marketing**
+## Email Marketing
 Customers can sign up to `Elite Rides Email Marketing` by providing there email address.
 Here I am using MailChimp to `capture the Customer emails` and `manage the subscibers via the MailChimp admin`.
 <br>
@@ -592,10 +693,7 @@ Here I am using MailChimp to `capture the Customer emails` and `manage the subsc
 
 ![image](/documentation/manifestations_of_data/data_at_rest_newsletter_subscribe.png)
 
-
 [Back to contents](#contents)
-
----
 
 # Agile Project Management
 I used Jira Project Tracking Software to manage the backlog for the project.
@@ -605,10 +703,7 @@ I tested against the Acceptance Criteria in the Jira User Stories.
 
 [Go to Jira](https://krishangharu.atlassian.net/jira/software/projects/ER/boards/2)
 
-
 [Back to contents](#contents)
-
----
 
 # Strip Integration
 
@@ -659,10 +754,7 @@ The Admin can then verify that the purchase was made successfully in Stripe, eve
 
 ![image](/documentation/stripe/stripe_webhooks.png)
 
-
 [Back to contents](#contents)
-
----
 
 # Accessibility
 
@@ -673,8 +765,6 @@ I’ve used Symantic HTML markup which helps browsers to understand the context 
 I’ve used `aria-label` attributes on buttons and sections of the game to explain what they are.
 
 [Back to contents](#contents)
-
----
 
 # Performance
 
@@ -704,12 +794,10 @@ I’ve used `aria-label` attributes on buttons and sections of the game to expla
 
 [Back to contents](#contents)
 
----
-
 # HTML and CSS Code Validation
 Both the W3C Markup HTML Validator and W3C CSS Validator were used to confirm there are no errors in the codebase.
 
----
+[Back to contents](#contents)
 
 # Technologies used
 
@@ -722,8 +810,9 @@ Both the W3C Markup HTML Validator and W3C CSS Validator were used to confirm th
 + [Bulma](https://www.javascript.com/): I've used the `.icon` class from another CSS framework similar to bootstrap called Bulma. This helps ensure that whenever I use font awesome icons,
 they will always stay perfectly centred, and have a consistent size unless I manually change it.
 
+[Back to contents](#contents)
 
-## Frameworks and libraries:
+## Frameworks and libraries
 
 + [Django](https://www.djangoproject.com/): A high-level Python web framework for the app.
 + [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/overview.html): is an integrated set of Django applications dealing with account authentication, registration and management.
@@ -731,12 +820,16 @@ they will always stay perfectly centred, and have a consistent size unless I man
 + [Summernote](https://summernote.org/): A JavaScript library that helps you create WYSIWYG editors online. Used in the Django Admin under Products to `enrich product descriptions`.
 + [Pillow](https://pypi.org/project/Pillow/9.3.0/): To manipulate and process images, Pillow provides tools that are similar to ones found in image processing software such as Photoshop.
 
-## Databases:
+[Back to contents](#contents)
+
+## Databases
 
 + [SQLite3](https://sqlite.org/index.html): Local DBMS (Database Management System) to use in Gitpod to store all data.
 + [PostgreSQL by ElephantSQL](https://www.elephantsql.com/): Production DBMS (Database Management System) to store all data on the live site.
 
-## Other tools:
+[Back to contents](#contents)
+
+## Other tools
 
 + [Github](https://github.com/): hosting service for software development and version control using Git.
 + [Pip3](https://pypi.org/project/pip/): is the package manager to intstall Python modules and libraries.
@@ -754,8 +847,6 @@ they will always stay perfectly centred, and have a consistent size unless I man
 
 [Back to contents](#contents)
 
----
-
 # Information Architecture
 
 ## Entity-Relationship Diagram
@@ -766,12 +857,10 @@ they will always stay perfectly centred, and have a consistent size unless I man
 
 [Back to contents](#contents)
 
----
-
 # Deployments and Database Setup
 The database I have been using while building Elite Rides in Gitpod is only accessible within Gitpod. The deployed site on Heroku will not be able to access it. So, I had to create a new database that can be accessed by my Heroku app. 
 
-## I started by creating an external database using ElephantSQL.
+## Creating an external database using ElephantSQL
 
 1. Log in to ElephantSQL.com to access your dashboard
 2. Click “Create New Instance”
@@ -827,7 +916,7 @@ import dj_database_url
 3. When I clicked “Execute”, I should see the newly created superuser details displayed. This confirms the data tables have been created, and I can add data to the external database.
 
 
-### Deployment to Github
+## Deployment to Github
 
 `$ git add .` - Adding this to the editor terminal commits all the latest file changes.
 The period (.) at the end is what adds all files to the commit.
@@ -836,16 +925,15 @@ The period (.) at the end is what adds all files to the commit.
 `-m` means "message" which is common practice to add so you and other developers know what changes were being made.
 
 
-### Deployment to Production
+## Deployment to Production
 
 Once I verified and tested by changes, I then deploy thr changes to Production.
 
 `$ git push` deploys the code to the GitHub and into the main branch of code which is connected to Production (the Live Public URL).
 
-
 ## Heroku Deployment
 1. To prevent exposing the database when I push to GitHub, I deleted it again from my settings.py. I used an if statement so that when our app is running on Heroku where the database URL environment variable will be defined, we connect to Postgres. Otherwise we connect to SQLite when working locally in Gitpod. 
-If database URL is in os.environ we'll get its value using dj_database_url.parse and use that as our database setting; otherwise, we'll use the default configuration.
+If database URL is in os.environ I'll get its value using dj_database_url.parse and use that as my database setting; otherwise, I'll use the default configuration.
 ```python
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
@@ -881,15 +969,11 @@ ALLOWED_HOSTS = ['pp5-elite-rides.herokuapp.com', 'localhost']
 
 [Back to contents](#contents)
 
----
-
 # Use of env.py
 I've used the env.py to store secret keys and other senstive environment varaibles.
 This ensures that the project secret keys and variables are safe and out of version control, and not stored in Github.
 
 [Back to contents](#contents)
-
----
 
 # Amazon Web Services S3
 I need a place to store our static files and images. For this, I'm using `Amazon Web Services s3` which is a `cloud-based storage service` that gives us a small piece of Amazon's infrastructure that I can use to store static files.
@@ -912,9 +996,7 @@ This will tell the browser that it's okay to cache static files for a long time
 
 [Back to contents](#contents)
 
----
-
-# Credits / Borrowed Resources
+# Credits and Borrowed Resources
 
 ## BootStrap Support
 - [Carousel](https://getbootstrap.com/docs/4.0/components/carousel/)
@@ -938,6 +1020,7 @@ This will tell the browser that it's okay to cache static files for a long time
 - [Favicon](https://upload.wikimedia.org/wikipedia/commons/b/b8/ER_logo.svg) 
 - [Sitemap.xml](https://www.xml-sitemaps.com/)
 - Insipred by the `Boutique Ado` Walkthrough Project.
+- Special thanks to CI Tutor Support for their support and guidance.
 
 ## E-commerce User Stories Support
 - [AllAuth](https://www.digitalocean.com/community/tutorials/how-to-authenticate-django-apps-using-django-allauth)
@@ -970,13 +1053,11 @@ This will tell the browser that it's okay to cache static files for a long time
 - [goodhousekeeping.com](https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/black-and-white-bedroom-rinfret-limited-1611167676.jpg?crop=0.668xw:1.00xh;0.0238xw,0&resize=768:*)
 - [clipart-library.com](http://clipart-library.com/images/8cEbRBjxi.jpg)
 
-## Marketing
+## Web and Social Media Marketing
 - [MailChimp Newsletter Sign Up](https://mailchimp.com/)
 - [Facebook Business Page](https://www.facebook.com/)
 
 [Back to contents](#contents)
-
----
 
 # Bugs Encountered during Testing
 
@@ -997,7 +1078,6 @@ The issue was in `Checkout App > models.py` where I need to add a `round() funti
 
 ![image](/documentation/bugs/1_bug_fix.png)
 
-
 ## Bug 2
 
 When I try to remove an item from my bag, nothing happens.
@@ -1010,8 +1090,6 @@ In the `Bag App > bag.html` I removed the csrfToken from `var = data` by acciden
 ![image](/documentation/bugs/2_bug_403_fix.png)
 
 [Back to contents](#contents)
-
----
 
 # Future Features
 1. Product Reviews
