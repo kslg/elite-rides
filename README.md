@@ -131,9 +131,9 @@ I used the 5 Planes of UX to provide a conceptual framework.
 - `Super Admins` can access the Django back-end to view and manages Order and Customer data.
 
 ## The Why
-- As a high-end car aficionado and collector, it's hard to find a company online that deals with only styling models. Also, existing competitors don't stand out in the market. 
+- As a high-end car aficionado and collector, it's hard to find a site online that deals with only stylish, luxury models. Also, existing competitors don't stand out in the market and it's hard to find them online.
 - I want to promote an exlusive presence and target a younger and modern audience. 
-- Make die-cast models attractive again. Not fucusing on racing and classic cars.
+- Make die-cast models attractive again. Not focusing on racing and classic cars.
 
 ## Ideas and Inspiration Mind Map
 ![image](/documentation/mind_map/mind_map.png)
@@ -178,9 +178,9 @@ Jura was used due to it's luxury, modern look and feel. It's easy to read.
 ## Content Requirements
 
 - `Customer` Homepage with hero text and a hero banner.
-- `Customer` Category Pages
-- `Customer` Contact Us Form
-- `Customer` Company Information Pages(About, T&Cs, Privacy Policy, Cookie Policy)
+- `Customer` Category Pages.
+- `Customer` Contact Us Form.
+- `Customer` Company Information Pages (About, T&Cs, Privacy Policy, Cookie Policy).
 - `Customer` Footer to include Social Media Links, Links to Company Info and Newsletter signup. 
 - `Customer` Account Related Pages: Login, Register.
 - `Admin` Access to manage products with CRUD functionality. 
@@ -243,7 +243,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 ## Roles and Processes
 
-- Permitted access based on `User`, Teacher `Admin` and `Super Admin` Role:
+- Permitted access based on `Customer`, E-Commerce Manager `Admin` and `Super Admin` Role:
 
 | Page Name | Customer | Admin | Super Admin |
 | ------------- | ------------- | ------------- | ---------- |
@@ -366,7 +366,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 ## Mobile First Design
 
-Prioritising design for mobiles makes sense as there are space limitations in devices with smaller screen sizes and need to ensure that the key elements of the website are prominently displayed for anyone using those screens.
+Prioritising design for mobiles makes sense as there are space limitations in devices with smaller screen sizes. I need to ensure that the key elements of the website are prominently displayed for anyone using those screens.
 
 [See the mobile wireframes here](/documentation/wireframes/)
 
@@ -475,14 +475,23 @@ To satisfy an MPV and keeping the Navbar simple allows Customers to become famil
 <br>
 
 ![image](/documentation/features/accounts_and_authentication/email_verification.png)
-2. An email is sent to the Customer asking them to confirm this with an confirmation link.
+
+<br>
+
+2. An email is sent to the Customer asking them to confirm this with a confirmation link.
 <br>
 
 ![image](/documentation/features/accounts_and_authentication/confirm_email_address_email.png)
+
+<br>
+
 3. When the Customer clicks on the link, they are directed back to the store to confirm once more.
 <br>
 
 ![image](/documentation/features/accounts_and_authentication/confirm_email_address.png)
+
+<br>
+
 4. Finally, after confirmation, the Customer is then directed to the Sign In page. A `Toast message` tells the Customer that their email address was successfully confirmed. 
 This means The Customer is now stored in the `database`.
 <br>
@@ -493,7 +502,7 @@ This means The Customer is now stored in the `database`.
 
 ## *Customer Restrictions*
 
-To prevent unauthorised access to Admin functionality (Create, Update, Delte), restriction logic is in place to stop Customers access those areas. 
+To prevent unauthorised access to Admin functionality (Create, Update, Delte), restriction logic is in place to stop Customers accessing those areas. 
 
 - A `logged in Customer` is presented with `Toast Error Message` when trying to access Model Management URL:
 <br>
@@ -529,20 +538,21 @@ I added `@login_required` on the line immediately above each view I want to deco
 [Back to contents](#contents)
 
 ## Bootstrap Theme
-Bootstrap 4 is a free front-end framework for faster and easier web development
-Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins
-Bootstrap also gives you the ability to easily create responsive designs
+Bootstrap 4 is a free front-end framework for faster and easier web development.
+Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many more.
+Bootstrap also gives you the ability to easily create responsive designs.
 
 ### [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
 ## Bootstrap Toasts - Alert Messages
-- Alert popups are used to `improve Customer user experience`. Alert popup give users clear feedback as a result of their actions and any server response.
-- I used Bootstrap 4 Toasts: Lightweight notifications designed to mimic the push notifications that have been popularized by mobile and desktop operating systems.
+- Alert popups are used to `improve Customer user experience`. Alert popups give users clear feedback as a result of their actions and any server response.
 - 4 Toast Messages: Error, Info, Success and Warning.
-- Set a display timer of 3 seconds. After 3 seconds the message will go.
-- A close icon on the toast so customers can manually close.
+- I set a display timer of 3 seconds, so after 3 seconds the message will close itself.
+- A close 'X' icon is still on the toast so customers can manually close if they wish.
 
 ## Bootstrap Carousel - USP (Unique Selling Points)
+I used a carousel to help promote selling points for the store. The carousel will help me present more than one customer message in one confined space. Website real estate can be limited, especially on mobile devices. 
+This is where carousels come in handy.
 
 ![image](/documentation/features/bootstrap_carousel.png)
 
@@ -577,8 +587,8 @@ The Guest Customer has the option to Create an Account at the Checkout Success P
 
 ## Sort By Filter
 I added a sort by product filter on the product listing page. 
-This helps the customer order the product by name, price, make, model and cateogry.
-This is another way to help boost conversion so the customers can see what they want more quickly, and increase the chances of a purchase being made.
+This helps the Customer order the product by name, price, make, model and cateogry.
+This is another way to help boost conversion so the Customers can see what they want more quickly, and increase the chances of a purchase being made.
 
 ![image](/documentation/sort_by/sort_by_product_filter.png)
 
@@ -589,7 +599,7 @@ A 404 page, or error page, is the content the Customer sees when they try to rea
 
 404 errors can be frustrating for Customers, so the main purpose of a 404 page is to turn the potential negative user experience of encountering an error into a positive one.
 
-I've added a link back to all products page so the Customer can restart their shopping journey.
+I've added a link back to the `all products` page so the Customer can restart their shopping journey.
 <br>
 
 ![image](/documentation/features/404_error_page.png)
@@ -600,11 +610,11 @@ I've added a link back to all products page so the Customer can restart their sh
 
 I've added `meta data` and a `title` to the base.html page. This helps Search engines like Google when looking for matches based on what the user searches for.  
 
-I added a `description`, `keywords` and `author`. Search Engines will display the title and description information in their search results. 
+I added a `description`, `keywords` and `author`. Search Engines will display the title and description information in user's search results. 
 
 ## Internal and External Links and SEO
 
-Social links contain the `rel="noopener"` attribute, which tells search engines not to include these links when it looks at our search engine ranking.  
+Social links contain the `rel="noopener"` attribute, which tells search engines not to include these links when it looks at the search engine ranking for the site.  
 
 ## Sitemap XML
 I've create a xml sitemap which is a file that lists a website’s important page urls, making sure that search engines can crawl, or navigate, through them. It also helps search engines  understand the website structure.
@@ -618,7 +628,7 @@ I've added a robots.txt file which is a simple text file that tells search engin
 
 Having a robots.txt file shows that I have acknowledged that search engines are allowed on the site and that they may have free access to it.
 
-For this reason, search engines take the existence of this file in your projects as a sign of quality, and so it improves the SEO ranking as a result.
+For this reason, search engines take the existence of this file in my projects as a sign of quality, and so it improves the SEO ranking as a result.
 
 ## Keyword Research
 
@@ -655,32 +665,32 @@ For this reason, search engines take the existence of this file in your projects
 - I would run regular sale promotions during peak seasons. 
 - I could setup online voucher codes to be redeemed when purchasing online. 
 - The vouchers would be sent via email to customers that have opted in to recieve marketing.
-- I can also get into affiliate marketing where content ceators / influencers can promote offers.
+- I can also get into influencer marketing where online content creators and influencers can promote the brand.
 
 5. What are the goals of your business? 
 - Main goal is to increase conversion.
 - To build brand awareness.
 - Build the subscriber list.
-- Build social media awareness and keep customers talking about thr brand.
+- Build social media awareness and keep customers talking about the brand.
 
 6. Which marketing strategies would offer the best ways to meet those goals?
 - I would need to make sure the site is optimised for SEO for prominent search rankings.
 - Keep active on social media channels posting regular content and help promote offers.
-- Engage with usrs on social media and get feedback from customers.
+- Engage with users on social media and get feedback from customers.
 
 7. Would your business have a budget to spend on advertising? Or would it need to work with free or low cost options to market itself?
-- For the fist year I would need to carefully keep spending low in order to generate revenue. 
-- After collecting sales and web statistics, I can see where investements need to be made in order to build on the business goals.
+- For the fist year I would need to keep spending low in order to generate revenue. 
+- After collecting sales and web statistics, I can see where investements need to be made in order to build on business goals.
 
 [Back to contents](#contents)
 
 ## Content Marketing
-The main focus is the product content making sure the product page is attractive and gives the customer what the need to see and know in a short timeframe.
+The main focus is the product content making sure the product page is attractive, and gives the customer what they need to see and know in a short timeframe.
 
 ![image](/documentation/web_marketing/marketing_product.png)
 
 ## Social Media Marketing
-Facebook is currently the most popular social media channel so creating a Facebook business page allows me to target and engage with a wide audience. I can also grow my Elite Ride community, building brand loyalty and trust. I can chat with customers, get customer feedback on a paltform that is free/low cost. 
+Facebook is currently the most popular social media channel. Creating a Facebook business page allows me to target and engage with a wide audience. I can also grow my Elite Rides community, building brand loyalty and trust. I can chat with customers, get customer feedback on a paltform that is free/low cost. 
 
 ![image](/documentation/web_marketing/elite-rides-fb-business-page.png)
 
@@ -697,15 +707,17 @@ Here I am using MailChimp to `capture the Customer emails` and `manage the subsc
 
 # Agile Project Management
 I used Jira Project Tracking Software to manage the backlog for the project.
-Jira Software is an agile project management tool that supports any agile methodology, be it scrum, kanban, or your own unique flavor. I was able to plan, track, and manage the whole project in Jira.
+Jira Software is an agile project management tool that supports any agile methodology and I was able to plan, track, and manage the whole project in Jira.
 
-I tested against the Acceptance Criteria in the Jira User Stories.
+I tested the site against the Acceptance Criteria in the Jira User Stories.
 
 [Go to Jira](https://krishangharu.atlassian.net/jira/software/projects/ER/boards/2)
 
 [Back to contents](#contents)
 
 # Strip Integration
+Stripe is a PSP (Payment Service Provider) that lets business owners collect payments and transfer them directly to their own account instantly.
+It's a popular PSP as it's easy to customise, and allows for fast ans simple checkout for Customers.
 
 ## Testing Stripe
 Stipe is set up in Developer Mode. This means you can use Stripe Test payments to simulate a live purchase on the store.
@@ -722,7 +734,7 @@ Note: You can use test cards from any country, but if you want to test UK cards 
 
 ## Injecting Stripe
 
-In the base template, I'll add Stripe js script in the corejs block, eventhough I only technically need it on the checkout page.
+In the base template, I added Stripe's js script in the corejs block, eventhough I only technically need it on the checkout page.
 Stripe recommends putting it in the base template so it'll be available on every page of the site
 which allows some of their more `advanced fraud detection features` to work.
 <br>
@@ -731,11 +743,11 @@ which allows some of their more `advanced fraud detection features` to work.
 
 ## Get Stripe working in Gitpod
 As I was using Gitpod, I had to make the Stripe keys permanent to the workspaces page. Othwerwise I would have to keep adding them all the time if I had to create a new workspace.
-I did this by clicking your account icon in the upper right > go to settings > entering them there under the environment variables section.
+I did this by going to the Gitpod workpsaces page > clicking the account icon in the upper right > go to settings > entering them there under the environment variables section.
 <br>
 
 ## Stripe Handle Form Submission
-Before we call out to Stripe, we'll want to disable both the card element and the submit button to prevent multiple submissions.
+Before we call out to Stripe, I need to disable both the card element and the submit button to prevent multiple submissions.
 <br>
 
 ![image](/documentation/stripe/stipe_handle_form_submission.png)
@@ -744,12 +756,12 @@ Before we call out to Stripe, we'll want to disable both the card element and th
 I setup Webhooks in Stripe to help capture the payment intent, in case the Customer somehow intentionally or accidentally closes the browser window after the payment is confirmed but before the form is submitted.
 <br>
 
-Each time an event occurs on Stripe such as a payment intent being created, a payment being completed and so on, Stripe sends out what's called a Webhook we can listen for.
+Each time an event occurs on Stripe such as a payment intent being created or a payment being completed, Stripe sends out what's called a Webhook that we can listen for.
 Webhooks are like the signals django sends each time a model is saved or deleted.
 Except that they're sent securely from Stripe to a checkout URL specified.
 <br>
 
-The Admin can then verify that the purchase was made successfully in Stripe, eventhough the order was not captured in the Database. The Admin can then manually create the order on behalf of the Customer knowing that they paid for it.
+The `Admin` can then verify that the purchase was made successfully in Stripe, eventhough the order was not captured in the Database. The Admin can then manually create the order on behalf of the Customer knowing that they have paid for it.
 <br>
 
 ![image](/documentation/stripe/stripe_webhooks.png)
@@ -758,11 +770,9 @@ The Admin can then verify that the purchase was made successfully in Stripe, eve
 
 # Accessibility
 
-I’ve added ARIA attributes to buttons and game sections. This is to help disabled users understand what the different are and their purpose. 
+I used `aria-label` attributes in the html templates to help disabled users on the front-end understand what the different elements are and their purpose.
 
 I’ve used Symantic HTML markup which helps browsers to understand the context of the content, and also helps with the accessibility for users with impairments.
-
-I’ve used `aria-label` attributes on buttons and sections of the game to explain what they are.
 
 [Back to contents](#contents)
 
@@ -844,14 +854,13 @@ they will always stay perfectly centred, and have a consistent size unless I man
 + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): used to validate CSS code.
 + [flake8](https://pypi.org/project/flake8/): was used to validate Python code.
 + [Replit.com](https://replit.com/): to store versions of work-in-progress snippets and functions of code.
++ [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/) to generate a new secret key for the Heroku app.
 
 [Back to contents](#contents)
 
 # Information Architecture
 
 ## Entity-Relationship Diagram
-
-* The Database schema was created using [Lucid.app](https://lucid.app/).
 
 ![Database Schema](/documentation/erd/EliteRides_Schema.jpeg)
 
@@ -862,32 +871,31 @@ The database I have been using while building Elite Rides in Gitpod is only acce
 
 ## Creating an external database using ElephantSQL
 
-1. Log in to ElephantSQL.com to access your dashboard
-2. Click “Create New Instance”
-3. Set up your plan
+1. Log in to ElephantSQL.com to access your dashboard.
+2. Click “Create New Instance”.
+3. Set up your plan.
     - Give your plan a Name (this is commonly the name of the project)
     - Select the Tiny Turtle (Free) plan
     - You can leave the Tags field blank
-4. Select “Select Region”
+4. Select “Select Region”.
 5. Select the nearest data center to me.
-6. Then click “Review”
-7. Check your details are correct and then click “Create instance”
-8. Return to the ElephantSQL dashboard and click on the database instance name for this project
-9. In the URL section, clicking the copy icon will copy the database URL to your clipboard
+6. Then click “Review”.
+7. Check your details are correct and then click “Create instance”.
+8. Return to the ElephantSQL dashboard and click on the database instance name for this project.
+9. In the URL section, clicking the copy icon will copy the database URL to your clipboard.
 
 ## Create a Heroku app to connect to the new database
 
-1. In Heroku, I clicked New to create a new app
+1. In Heroku, I clicked New to create a new app.
 2. Gave the app a name and selected the region closest to me. The I clicked Create app to confirm.
-3. Open the Settings tab
-4. Under Config Var i added `DATABASE_URL`, and for the value, copied in the `new database url` from ElephantSQL.
+3. Open the Settings tab.
+4. Under Config Var I added `DATABASE_URL`, and for the value, copied in the `new database url` from ElephantSQL.
 
 ## Set up the project to connect to new ElephantSQL database
 
-1. In Gitpod terminal, I installed `dj_database_url` and `psycopg2`, both of these are needed to connect to your external database.
-2. I updated the requirements.txt file with the newly installed packages
-`pip freeze > requirements.txt`
-3. In the settings.py file, I imported dj_database_url underneath the import for os
+1. In the Gitpod terminal, I installed `dj_database_url` and `psycopg2`, both of these are needed to connect to your external database.
+2. I updated the requirements.txt file with the newly installed packages `pip freeze > requirements.txt`.
+3. In the settings.py file, I imported dj_database_url underneath the import for os.
 ```python
 import os
 import dj_database_url
@@ -905,9 +913,9 @@ import dj_database_url
      'default': dj_database_url.parse('your-database-url-here')
  }
  ```
-5. In the terminal, I ran the showmigrations command to confirm I'm connected to the external database `python3 manage.py showmigrations`
-6. I migrated the database models to the new database `python3 manage.py migrate`
-7. I had to create a new superuser for your new database `python3 manage.py createsuperuser`
+5. In the terminal, I ran the showmigrations command to confirm I'm connected to the external database `python3 manage.py showmigrations`.
+6. I migrated the database models to the new database `python3 manage.py migrate`.
+7. I had to create a new superuser for your new database `python3 manage.py createsuperuser`.
 
 
 ## Confirm that the data was migrated to ElephantSQL database
@@ -919,7 +927,7 @@ import dj_database_url
 ## Deployment to Github
 
 `$ git add .` - Adding this to the editor terminal commits all the latest file changes.
-The period (.) at the end is what adds all files to the commit.
+The dot (.) at the end is what adds all files to the commit.
 
 `$ git commit -m “{Commit Details}”` - Pushes the latest changes to the GIT Repository.
 `-m` means "message" which is common practice to add so you and other developers know what changes were being made.
@@ -927,13 +935,13 @@ The period (.) at the end is what adds all files to the commit.
 
 ## Deployment to Production
 
-Once I verified and tested by changes, I then deploy thr changes to Production.
+Once I verified and tested by changes, I then deploy the changes to Production.
 
 `$ git push` deploys the code to the GitHub and into the main branch of code which is connected to Production (the Live Public URL).
 
 ## Heroku Deployment
-1. To prevent exposing the database when I push to GitHub, I deleted it again from my settings.py. I used an if statement so that when our app is running on Heroku where the database URL environment variable will be defined, we connect to Postgres. Otherwise we connect to SQLite when working locally in Gitpod. 
-If database URL is in os.environ I'll get its value using dj_database_url.parse and use that as my database setting; otherwise, I'll use the default configuration.
+1. To prevent exposing the database when I push to GitHub, I deleted it again from my settings.py. I used an `if statement` so that when our app is running on Heroku where the database URL environment variable will be defined, we connect to Postgres. Otherwise we connect to SQLite when working locally in Gitpod. 
+If the database URL is in os.environ I'll get its value using `dj_database_url.parse` and use that as my database setting; otherwise, I'll use the default configuration.
 ```python
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
@@ -948,15 +956,15 @@ else:
     }
 ```
 
-2. To now make my deployments to work on the first try, I need to install gunicorn, which will act as our webserver `pip3 install gunicorn`, and freeze that into our requirements.txt file.
+2. To now make my deployments to work on the first try, I need to install `gunicorn`, which will act as our webserver `pip3 install gunicorn`, and freeze that into the requirements.txt file.
 3. I created the `Procfile` at root directory level to tell Heroku to create a web dyno which will run gunicorn and serve my Django app.
 4. I need to temporarily disable collectstatic by using
 `heroku config:set DISALBE-COLLECTSTATIC=1` so that Heroku won't try to collect staticfiles when I deploy.
-5. I need to add the hostname of our Heroku app to ALLOWED_HOSTS in settings.py I also added `localhost` in here so that Gitpod will still work too.
+5. I need to add the hostname of my Heroku app to ALLOWED_HOSTS in settings.py, and added `localhost` in here so that Gitpod will still work too.
 ```python
 ALLOWED_HOSTS = ['pp5-elite-rides.herokuapp.com', 'localhost']
 ```
-6. I need to create a new secret key for the Heroko app and add it to the Congif Vars in Heroku.
+6. I need to create a new secret key for the Heroko app and add it to the Congif Vars in Heroku. I used an online Secret Key Generator tool.
 7. I setup `automatic deployments to Heroku` so when I `$ git push` to Github, I also deploy to Heroku at the same time.
 
 ![image](/documentation/deployment/heroku_automatic_deployment_setup.png)
@@ -970,8 +978,8 @@ ALLOWED_HOSTS = ['pp5-elite-rides.herokuapp.com', 'localhost']
 [Back to contents](#contents)
 
 # Use of env.py
-I've used the env.py to store secret keys and other senstive environment varaibles.
-This ensures that the project secret keys and variables are safe and out of version control, and not stored in Github.
+I've used the env.py file to store secret keys and other senstive environment varaibles.
+This ensures that the project secret keys and variables are safe, out of version control, and not stored in Github.
 
 [Back to contents](#contents)
 
@@ -987,12 +995,12 @@ Then create an access policy giving the group access to the s3 bucket we created
 And finally, assign the user to the group so it can use the policy to access all our files.
 
 ## AWS Config Vars
-In settings.py I added a key `USE_AWS` which is set to true.
-This is so thr settings file knows to use the AWS configuration when we deploy to Heroku.
+In settings.py I added a key `USE_AWS` which is set to `true`.
+This is so the settings file knows to use the AWS configuration when we deploy to Heroku.
 
 ## AWS Cache Control
 I added another setting to settings.py called `AWS_S3_OBJECT_PARAMETERS`.
-This will tell the browser that it's okay to cache static files for a long time
+This will tell the browser that it's okay to cache static files for a long time.
 
 [Back to contents](#contents)
 
@@ -1065,10 +1073,7 @@ This will tell the browser that it's okay to cache static files for a long time
 I realised that on the checkout success page, the grand total is calculating a little less.
 
 For example, when I add a product with shipping cost, the Grand Total should be `£14.25` but shows on the checkout success page as `£14.24`
-
-Order Total £12.95
-Delivery £1.30
-Grand Total should be £14.25
+<br>
 
 ![image](/documentation/bugs/1_bug_shopping_bag.png)
 
