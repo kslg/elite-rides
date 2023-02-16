@@ -109,17 +109,18 @@
             </div>
         </div>
     </div>
+    <hr>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
                 <div>
-                    Write Review ({{ num_reviews }})
+                    Reviews ({{ num_reviews }})
                     <br>
                     <hr>
 
                     {% if not eachProduct.reviews.all %}
                         <p>No reviews yet...</p>
-                        <p><a class="btn btn-primary" href="">Add Review</a></p>
+                        <p><a class="btn btn-primary" href="{% url 'add-review' eachProduct.id %}">Add Review</a></p>
 
                         {% else %}
 
@@ -127,11 +128,14 @@
                                 <h5><strong>{{ reviews.customer_name }}</strong></h5>
                                 <p>{{ reviews.review }}</p>
                                 <p><small>{{ reviews.date_added }}</small></p>
-                                {% if request.user.username == reviews.customer_name %}
-                                    <p><a class="btn btn-primary" href="">Add Comment </a></p>
+
+                                {% if request.user.username == comment.commenter_name %}
+                                    <p><a class="btn btn-primary" href="{% url 'add-review' eachProduct.id %}">Add Review</a></p>
+                                {% endif %}
+                                {% if request.user.is_superuser %}
+                                <p><a class="btn btn-danger" href="">Delete Review</a></p>
                                 {% endif %}
                             {% endfor %}
-
                     {% endif %}
                 </div>
             </div>

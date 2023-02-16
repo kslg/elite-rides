@@ -3,9 +3,10 @@ from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
+from datetime import datetime
 
 from .models import Product, Category, Reviews
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 
 # Create your views here.
 
@@ -145,3 +146,29 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Model deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def add_review(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+
+    form = ReviewForm(instance=product)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=product)
+        if form.is_valid():
+            name = request.user.username
+            body = form.cleaned_data['review']
+            c = Reviews(product=product, customer_name=name, review=body, date_added=datetime.now())
+            c.save()
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            print('form is invalid')
+    else:
+        form = ReviewForm()
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'products/add_review.html', context)
