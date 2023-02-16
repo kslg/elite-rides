@@ -39,3 +39,24 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Reviews(models.Model):
+
+    class Meta:
+        """"
+        Allows you to have a user friendly name in the admin.
+        """
+
+        verbose_name_plural = 'Product Reviews'
+
+    product = models.ForeignKey(
+        Product,
+        related_name="reviews",
+        on_delete=models.CASCADE)
+    customer_name = models.CharField(max_length=200)
+    review = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return '%s - %s' % (self.customer_name, self.date_added)

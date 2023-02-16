@@ -109,6 +109,34 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    Write Review ({{ num_reviews }})
+                    <br>
+                    <hr>
+
+                    {% if not eachProduct.reviews.all %}
+                        <p>No reviews yet...</p>
+                        <p><a class="btn btn-primary" href="">Add Review</a></p>
+
+                        {% else %}
+
+                            {% for reviews in eachProduct.reviews.all %}
+                                <h5><strong>{{ reviews.customer_name }}</strong></h5>
+                                <p>{{ reviews.review }}</p>
+                                <p><small>{{ reviews.date_added }}</small></p>
+                                {% if request.user.username == reviews.customer_name %}
+                                    <p><a class="btn btn-primary" href="">Add Comment </a></p>
+                                {% endif %}
+                            {% endfor %}
+
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block postloadjs %}
