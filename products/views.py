@@ -172,3 +172,10 @@ def add_review(request, product_id):
     }
 
     return render(request, 'products/add_review.html', context)
+
+
+def delete_review(request, product_id):
+    reviews = Reviews.objects.filter(product=product_id).last()
+    product_id = reviews.product_id
+    reviews.delete()
+    return redirect(reverse('product_detail', args=[product_id]))

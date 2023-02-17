@@ -123,19 +123,21 @@
                         <p><a class="btn btn-primary" href="{% url 'add-review' eachProduct.id %}">Add Review</a></p>
 
                         {% else %}
-
+                                {% if request.user.is_username == reviews.customer_name %}
+                                    <p><a class="btn btn-primary" href="{% url 'add-review' eachProduct.id %}">Add Review</a></p>
+                                {% endif %}
                             {% for reviews in eachProduct.reviews.all %}
+                                
                                 <h5><strong>{{ reviews.customer_name }}</strong></h5>
                                 <p>{{ reviews.review }}</p>
                                 <p><small>{{ reviews.date_added }}</small></p>
 
-                                {% if request.user.username == comment.commenter_name %}
-                                    <p><a class="btn btn-primary" href="{% url 'add-review' eachProduct.id %}">Add Review</a></p>
-                                {% endif %}
+                                
                                 {% if request.user.is_superuser %}
-                                <p><a class="btn btn-danger" href="">Delete Review</a></p>
+                                    <p><a class="btn btn-danger" href="{% url 'delete-review' eachProduct.id %}">Delete Review</a></p>
                                 {% endif %}
                             {% endfor %}
+
                     {% endif %}
                 </div>
             </div>
