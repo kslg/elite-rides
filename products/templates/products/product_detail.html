@@ -42,7 +42,7 @@
                         <a href="{% url 'edit_product' product.id %}">Edit</a> | 
                         <a href="" class="text-danger" data-toggle="modal" data-target="#modal-{{ product.id }}">Delete</a>
                         </small>
-                        <!-- Delete Modal -->
+                        <!-- Delete Modal for Product Deletion -->
                         <div class="modal fade" id="modal-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="modal to delete a product" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
@@ -109,40 +109,67 @@
             </div>
         </div>
     </div>
-    <hr>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-                <div>
-                    Reviews ({{ num_reviews }})
-                    <br>
-                    <hr>
-
-                    {% if not eachProduct.reviews.all %}
-                        <p>No reviews yet...</p>
-                        <p><a class="btn btn-primary" href="{% url 'add-review' eachProduct.id %}">Add Review</a></p>
-
-                        {% else %}
-                                {% if request.user.is_username == reviews.customer_name %}
-                                    <p><a class="btn btn-primary" href="{% url 'add-review' eachProduct.id %}">Add Review</a></p>
-                                {% endif %}
-                            {% for reviews in eachProduct.reviews.all %}
-                                
-                                <h5><strong>{{ reviews.customer_name }}</strong></h5>
-                                <p>{{ reviews.review }}</p>
-                                <p><small>{{ reviews.date_added }}</small></p>
-
-                                
-                                {% if request.user.is_superuser %}
-                                    <p><a class="btn btn-danger" href="{% url 'delete-review' eachProduct.id %}">Delete Review</a></p>
-                                {% endif %}
-                            {% endfor %}
-
-                    {% endif %}
+    <div class="row">
+        <div class="col-12 col-md-9">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left text-black" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Customer Reviews
+                      </button>
+                    </h2>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div>
+                            Reviews ({{ num_reviews }})
+                            <br>
+                            <hr>
+                            {% if not eachProduct.reviews.all %}
+                                <p>No reviews yet...</p>
+                                <p><a class="btn btn-black rounded-0 text-uppercase mt-5" href="{% url 'add-review' eachProduct.id %}">Add Review</a></p>
+                                {% else %}
+                                        {% if request.user.is_username == reviews.customer_name %}
+                                            <p><a class="btn btn-black rounded-0 text-uppercase" href="{% url 'add-review' eachProduct.id %}">Add Review</a></p>
+                                        {% endif %}
+                                    {% for reviews in eachProduct.reviews.all %}
+                                        <h5><strong>{{ reviews.customer_name }}</strong></h5>
+                                        <p>{{ reviews.review }}</p>
+                                        <p><small>{{ reviews.date_added }}</small></p>
+                                        {% if request.user.is_superuser %}
+                                            <p><a class="text-danger" href="{% url 'delete-review' eachProduct.id %}" data-toggle="modal" data-target="#modal-{{ review.id }}">Delete Review</a></p>
+                                            <!-- Delete Modal for Product Reviews -->
+                                            <div class="modal fade" id="modal-{{ review.id }}" tabindex="-1" role="dialog" aria-labelledby="modal to delete a product review" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLongTitle">Attention Please!</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                    <div class="modal-body">
+                                                        You are about to delete this review. Do you wish to proceed?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <a class="btn btn-primary btn-danger" href="{% url 'delete-review' eachProduct.id %}" role="button">Delete</a>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>            
 {% endblock %}
 
 {% block postloadjs %}

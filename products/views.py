@@ -159,8 +159,14 @@ def add_review(request, product_id):
         if form.is_valid():
             name = request.user.username
             body = form.cleaned_data['review']
-            c = Reviews(product=product, customer_name=name, review=body, date_added=datetime.now())
+            c = Reviews(
+                product=product,
+                customer_name=name,
+                review=body,
+                date_added=datetime.now()
+            )
             c.save()
+            messages.success(request, 'Thank you for the review!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             print('form is invalid')
@@ -178,4 +184,5 @@ def delete_review(request, product_id):
     reviews = Reviews.objects.filter(product=product_id).last()
     product_id = reviews.product_id
     reviews.delete()
+    messages.info(request, 'The review has been deleted')
     return redirect(reverse('product_detail', args=[product_id]))
