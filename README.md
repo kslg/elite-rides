@@ -55,6 +55,7 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
         + [Bootstrap Toasts - Alert Messages](#)
         + [Bootstrap Carousel - USP (Unique Selling Points)](#)
     * [Guest Checkout](#guest-checkout)
+    * [Product Reviews](#product-reviews)
     * [Shipping Logic](#shipping-logic)
     * [Sort By Filter](#sort-by-filter)
     * [404 Page](#404-page)
@@ -172,6 +173,7 @@ Jura was used due to it's luxury, modern look and feel. It's easy to read.
 17. Error Handling
 18. 404 Error Page
 19. Shipping Rate Logic
+20. Product Reviews
 
 [Back to contents](#contents)
 
@@ -226,7 +228,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 |Display Sale Price | - | Y | - | - |
 |Current login state reflected to the user | - | - | - | Y |
 |Hero Banner Carousel | - | - | - | Y |
-|Product Reviews | - | - | - | Y |
+|Product Reviews | Y | - | - | - |
 |Product Image Carousel | - | - | - | Y |
 |Shipping Rate Logic | Y | - | - | - |
 
@@ -571,6 +573,19 @@ The Guest Customer has the option to Create an Account at the Checkout Success P
 
 [Back to contents](#contents)
 
+## Product Reviews
+Logged In Customers are able write and submit a product reviews on the product page. 
+An Admin has the ability to delete reviews from the front-end, if needed.
+All product reviews are saved to the database.
+
+Product reviews are a `powerful source of social proof`, which `builds trust and confidence` in the brand. Adding reviews to your product pages can result in `increased in revenue`, by attracting new customers.
+
+<br>
+
+![image](/documentation/features/product_reviews.png)
+
+[Back to contents](#contents)
+
 ## Shipping Logic
 
 - Customers are offered `Free Shipping` when they spend over £50.
@@ -709,9 +724,39 @@ Here I am using MailChimp to `capture the Customer emails` and `manage the subsc
 I used Jira Project Tracking Software to manage the backlog for the project.
 Jira Software is an agile project management tool that supports any agile methodology and I was able to plan, track, and manage the whole project in Jira.
 
-I tested the site against the Acceptance Criteria in the Jira User Stories.
-
 [Go to Jira](https://krishangharu.atlassian.net/jira/software/projects/ER/boards/2)
+
+[Back to contents](#contents)
+
+# Manual Testing the Acceptance Criteria in each User Story
+
+I tested the site against the Acceptance Criteria in each Jira User Story.
+
+| Result | User Story | Summary | Acceptance Criteria |
+| ------------- | ------------- | ------------- | ------------- |
+| PASS | [ER-56](https://krishangharu.atlassian.net/browse/ER-56) | Product Reviews | - As a **USER**, I want to be able to **see the reviews section and click the review button**, so that I can **write and submit a review.** <br> - As a logged out **USER and ADMIN**, I want to be **directed to the login page**, so that I can **write and submit a review.** <br> - As a **USER**, I want to **not see the Delete link under each review**, so I that I **cannot delete product reviews.** <br> - As an **ADMIN**, I want to **see the Delete link under each review**, so I that I can **delete product reviews if I choose to.** <br> - As a **SUPER ADMIN**, I want to **see the product reviews section in the django admin**, so that I can **manage/delete reviews.** |
+| PASS | [ER-55](https://krishangharu.atlassian.net/browse/ER-55) | Toast Alert Messages for Customers and Admins | - As **a Customer**, I want to be able to **see the success toast**, so that **I know I have successfully added a product to my shopping bag.** <br> - As **a Customer**, I want to be able to **see the success toast**, so that **I know I have successfully updated a product to my shopping bag.** <br> - As **a Customer**, I want to be able to **see the success toast**, so that **I know I have successfully placed an order.** <br> - As **a Customer**, I want to be able to **see the error toast**, so that **I know there is a server error or something is wrong.** |
+| PASS | [ER-44](https://krishangharu.atlassian.net/browse/ER-44) | Custom 404 Page | - As a **Customer / Site User**, I want to be able to **see the 404 page**, so that **I know the certain url/page does not exist**. |
+| PASS | [ER-41](https://krishangharu.atlassian.net/browse/ER-41) | Product Listing Page Template | - As a **Site User**, I want to be able to **view products based category selection**, so that I can **narrow down my products of interest.** |
+| PASS | [ER-40](https://krishangharu.atlassian.net/browse/ER-40) | Sort By Functionality | - As a **Customer**, I want to be able to **Sort the list of available products**, so that I can **easily identify the best-priced and categorically sorted products.** <br> - As a **Customer**, I want to be able to **sort a specific category of product,** so that I can **find the best-priced product in a specific category, or sort products in that category by name, make and model.** <br> - As a **Customer**, I want to be able to **sort multiple categories or products simultaneously,** so that I can **find the best-priced products across broad categories, such as “british” or “italian“.** <br> - As a **Customer**, I want to be able to **easily see what I’ve searched for and the number of results**, so that I can **quickly decide whether the product I want is available.** |
+| PASS | [ER-39](https://krishangharu.atlassian.net/browse/ER-39) | Contact Us Form | - As a **site user**, I want to be able to **link on the link in the top navigation**, so that I can **see the page and the contact form.** <br> - As a **site user**, I want to be able to **fill out the form and submit my message**, so that I can **contact the company** <br> - As a **site user**, I want to be able **see a success notification on the front-end**, so that **I know my contact form was submitted**. <br> - As an **admin user**, I want to be able **see customer messages come through in the admin**, so that **I can respond to them.** |
+| PASS | [ER-37](https://krishangharu.atlassian.net/browse/ER-37) | Terms & Conditions | - As a **Site User**, I want to be able to **click on the Terms & Conditions link**, so that I can **view the page.** |
+| PASS | [ER-36](https://krishangharu.atlassian.net/browse/ER-36) | Cookie Policy | - As a **Site User**, I want to be able to **click on the Cookie Policy link**, so that I can **view the page.** |
+| PASS | [ER-35](https://krishangharu.atlassian.net/browse/ER-35) | Privacy Policy | - As a **Site User**, I want to be able to **click on the link in the nav and in the footer**, so that I can **view the page.** |
+| PASS | [ER-34](https://krishangharu.atlassian.net/browse/ER-34) | About Us | - As a **Site User**, I want to be able to **click on the link in the nav and in the footer**, so that I can **view the page.** |
+| PASS | [ER-33](https://krishangharu.atlassian.net/browse/ER-33) | Checkout Overlay | - As a **site user**, I want to be able to **see the loading screen when I make a payment**, so that I can **know that my payment is being processed.** |
+| PASS | [ER-29](https://krishangharu.atlassian.net/browse/ER-29) | Stripe Payment Integration | - As a **Registered and Guest User**, I want to be able to **checkout using Stripe payment gateway**, so that I can **make a purchase online on desktop and responsive devices.** |
+| PASS | [ER-28](https://krishangharu.atlassian.net/browse/ER-28) | Checkout Page Template | - As a **Guest User**, I **should not have to log in**, so that I can **checkout faster** <br> - As a **Registered User**, I **want see my details**, so that I can **update my details if I wanted.** |
+| PASS | [ER-25](https://krishangharu.atlassian.net/browse/ER-25) | Shopping Bag Page | - As a **Site User**, I want to be able to **click on the bag icon in the header**, so that I can **be directed to the shopping bag page.** <br> - As a **Site User**, I want to be able to **view Shopping Bag Content at line item level**, so that I can **see what products I am going to buy.** <br> - As a **Site User that has a bag total under £50**, I want to be able to **see the delivery threshold message**, so that **I know how much left i can spend to get free delivery.** <br> - As a **Site User that has a bag total over £50**, I **should not** be able to **see the delivery threshold message**. |
+| PASS | [ER-24](https://krishangharu.atlassian.net/browse/ER-24) | Mini Shopping Bag in the Header | - As a **Site User**, I want to be able to **see what products are in by bag and the bag total**, so that **I can stay on the current page**.  <br> - As a **Site User that has a bag total under £50**, I want to be able to **see the delivery threshold banner**, so that **I know how much left i can spend to get free delivery.** <br> - As a **Site User that has a bag total over £50**, I **should not** be able to **see the delivery threshold banner**. |
+| PASS | [ER-23](https://krishangharu.atlassian.net/browse/ER-23) | Taxonomy: Product Category Tree | - As a **Site User**, I want to be able to **see the products categorised in the navigation**, so that I can **clearly browse products on offer based on the categories.** <br> - As an **Admin** **User**, I want to be able to **the attributes in the admin**, so that I can **manage the product data.** |
+| PASS | [ER-22](https://krishangharu.atlassian.net/browse/ER-22) | Site Navigation | - As a **customer**, I want to be able to **view a specific category of products**, so that I can **quickly find products I’m interested in without having to search through all products.** |
+| PASS | [ER-21](https://krishangharu.atlassian.net/browse/ER-21) | Install Summernote for Product Description | - As as **Admin User**, I want to be able to **see and use Summernote Editor in the Admin**, so that I can **style and format the Product Description.** <br> - As a **Site User**, I want to be able to **see a styled and formatted product description**, so that I can **read the product information clearly and easily in my web browser.** |
+| PASS | [ER-20](https://krishangharu.atlassian.net/browse/ER-20) | Product Detail Page Template | - As a **Site User**, I want to be able to **view a hi-res the product image and the ability to view fully on screen**, so that I can **see what I am purchasing.** <br> - As a **Site User**, I want to be able to **read the title, description, price and label clearly**, so that I can **read the product information.** <br> - As a **Site User**, I want to be able to use the **quantity selector**, so that I can **purchase more than one of the same product if want to.** <br> - As a **Site User**, I **must not** be able to use the **quantity selector**, to select **minus quantity**. <br> - As a **Site User**, I want to be able to **click on 'Add To Bag'**, so that I can **add the product to my shopping bag.** <br> - As a **Site User**, I want to be able to **click on 'Keep Browsing'**, so that I can **go back to the main product page to look at other products.** <br> - As a **Site User on responsive devices**, I want to be able to **view the product detail page**, so that I can **see the product information and interact with the page.** |
+| PASS | [ER-19](https://krishangharu.atlassian.net/browse/ER-19) | Implement Site Footer | - As a **Site User**, I want to be able to **view the footer with all the expected elements and links**, so that I can **interact with the site.** <br> - As a **Site User on a responsive device** I want to be able to **view the footer and use the site links**, so that I can **interact with the site.** |
+| PASS | [ER-18](https://krishangharu.atlassian.net/browse/ER-18) | Implement Site Header | - As a **Site User**, I want to be able to **view the header with all the expected elements** , so that I can **interact with the site.** <br> - As a **Site User on a responsive device** I want to be able to **view the burger menu dropdown and use the site links**, so that I can **interact with the site.** |
+| PASS | [ER-17](https://krishangharu.atlassian.net/browse/ER-17) | Install Django AllAuth for User Registration and Authentication | - As a **Site User**, I want to **Register for an account,** so that **I Have personal account and be able to view my profile.** <br> - As a **Site User**, I want to **Login and Logout,** so that **I can access and secure my personal account.** <br> - As a **Site User**, I want to **Reset my password in case I forget it,** so that **I can gain access to my personal account.** <br> - As a **Site User**, I want to **Receive an email confirming I’ve registered,** so that **I can verify that my account registration was successful.** |
+
 
 [Back to contents](#contents)
 
@@ -862,7 +907,65 @@ they will always stay perfectly centred, and have a consistent size unless I man
 
 ## Entity-Relationship Diagram
 
-![Database Schema](/documentation/erd/EliteRides_Schema.jpeg)
+Below I have mapped the database and explain how the different entities are connected to each other:
+
+### 1. Relationship and cardinality between the UserProfile and the Order Model.
+- The minimum number of orders a User can have is zero orders.
+- The maximum number of orders a User can have are many orders.
+<br>
+`To show that we use the Zero or Many notation.`
+
+### 2. Relationship and cardinality between the Order Model and UserProfile.
+- A specific order can only be related to one Customer.
+- There can be one (and only one) User to an Order
+<br>
+`To show that we use the ‘One (and only one)’ notation.`
+
+### 3. Relationship and cardinality between the Order Model and Car Product Model.
+- An Order can only exist if it has at least one product. 
+- Also, an Order can have many products as the User can purchase more than one product on the site.
+<br>
+`To show that we use the One or Many notation.`
+
+### 4. Relationship and cardinality between the Car Product Model and Order Model.
+- A single product can be part of no Order but a single product can also be a product in many Orders.
+<br>
+`To show that we use the Zero or Many notation.`
+
+### 5. Relationship and cardinality between the Category Model and Car Product Model
+- Only one Category can be assigned to a product, and a product must live in a Category in order to view and navigate to the Product.
+<br>
+`To show that we use the One (and only One) notation.`
+
+### 6. Relationship and cardinality between the Car Product Model and Category Model
+- Many products can live in one Category. 
+- Also, a Category can have no Products living in it.
+<br>
+`To show that we use the Zero or Many notation.`
+
+### 7. Relationship and cardinality between the Reviews and Product
+- A single Review can only be about one and only one Product.
+<br>
+`To show that we use the One (and only One) notation.`
+
+### 8. Relationship and cardinality between the Product and Reviews
+- A specific product can have zero or many reviews.
+<br>
+`To show that we use the Zero or Many notation.`
+
+### 9. Relationship and cardinality between the Reviews and UserProfile
+- A single Review can only be created by one and only one UserProfile.
+<br>
+`To show that we use One (and only One) notation.`
+
+### 10. Relationship and cardinality between the UserProfile and Reviews
+- A UserProfile can decide to write no Reviews or write many Reviews.
+<br>
+`To show that we use the Zero or Many notation.`
+
+<br>
+
+![Entity-Relationship Diagram](/documentation/erd/EliteRides_ERD.jpeg)
 
 [Back to contents](#contents)
 
@@ -1097,13 +1200,12 @@ In the `Bag App > bag.html` I removed the csrfToken from `var = data` by acciden
 [Back to contents](#contents)
 
 # Future Features
-1. Product Reviews
-2. CAPTCHA on the Contact Us form.
-3. Optimised My Profile section.
-4. Display Sale Price.
-5. Promo Code at Checkout.
-6. Alternative payment methods (PayPal, Amazon Pay).
-7. Customer Control over Marking Channel Opt In - GDPR Compliance
+1. CAPTCHA on the Contact Us form.
+2. Optimise My Profile section.
+3. Display Sale Price.
+4. Promo Code at Checkout.
+5. Alternative payment methods (PayPal, Amazon Pay).
+6. Customer Control over Marking Channel Opt In - GDPR Compliance.
 
 [Back to contents](#contents)
 
