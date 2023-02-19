@@ -69,6 +69,7 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
     * [Social Media Marketing](#social-media-marketing)
     * [Email Marketing](#email-marketing)
 - [Agile Project Management](#agile-project-management)
+- [Manual Testing of User Stories](#manual-testing-of-user-stories)
 - [Strip Integration](#strip-integration)
     * [Testing Stripe](#testing-stripe)
     * [Injecting Stripe](#injecting-stripe)
@@ -728,7 +729,7 @@ Jira Software is an agile project management tool that supports any agile method
 
 [Back to contents](#contents)
 
-# Manual Testing the Acceptance Criteria in each User Story
+# Manual Testing of User Stories
 
 I tested the site against the Acceptance Criteria in each Jira User Story.
 
@@ -1130,7 +1131,7 @@ This will tell the browser that it's okay to cache static files for a long time.
 - [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
 - [Favicon](https://upload.wikimedia.org/wikipedia/commons/b/b8/ER_logo.svg) 
 - [Sitemap.xml](https://www.xml-sitemaps.com/)
-- Insipred by the `Boutique Ado` Walkthrough Project.
+- Insipred by the `Boutique Ado` and `Django Blog` Walkthrough Projects.
 - Special thanks to CI Tutor Support for their support and guidance.
 
 ## E-commerce User Stories Support
@@ -1149,6 +1150,7 @@ This will tell the browser that it's okay to cache static files for a long time.
 - [Product Listing Page](https://www.dynamicyield.com/glossary/product-listing-pages-plps/#:~:text=What%20is%20a%20product%20listing,pages%20and%20closer%20to%20conversion)
 - [Filter and Sorting](https://inviqa.com/blog/filter-and-sort-improving-ecommerce-product-findability)
 - [Code Refactoring](https://www.altexsoft.com/blog/engineering/code-refactoring-best-practices-when-and-when-not-to-do-it/)
+- [Product Reviews](https://www.gorgias.com/blog/ecommerce-product-reviews)
 
 ## Static Content and Copy
 - [model-car-world.co.uk](https://www.model-car-world.co.uk/)
