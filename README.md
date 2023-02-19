@@ -913,56 +913,46 @@ Below I have mapped the database and explain how the different entities are conn
 ### 1. Relationship and cardinality between the UserProfile and the Order Model.
 - The minimum number of orders a User can have is zero orders.
 - The maximum number of orders a User can have are many orders.
-<br>
-`To show that we use the Zero or Many notation.`
+- `To show that we use the Zero or Many notation.`
 
 ### 2. Relationship and cardinality between the Order Model and UserProfile.
 - A specific order can only be related to one Customer.
 - There can be one (and only one) User to an Order
-<br>
-`To show that we use the ‘One (and only one)’ notation.`
+- `To show that we use the ‘One (and only one)’ notation.`
 
 ### 3. Relationship and cardinality between the Order Model and Car Product Model.
 - An Order can only exist if it has at least one product. 
 - Also, an Order can have many products as the User can purchase more than one product on the site.
-<br>
-`To show that we use the One or Many notation.`
+- `To show that we use the One or Many notation.`
 
 ### 4. Relationship and cardinality between the Car Product Model and Order Model.
 - A single product can be part of no Order but a single product can also be a product in many Orders.
-<br>
-`To show that we use the Zero or Many notation.`
+- `To show that we use the Zero or Many notation.`
 
 ### 5. Relationship and cardinality between the Category Model and Car Product Model
 - Only one Category can be assigned to a product, and a product must live in a Category in order to view and navigate to the Product.
-<br>
-`To show that we use the One (and only One) notation.`
+- `To show that we use the One (and only One) notation.`
 
 ### 6. Relationship and cardinality between the Car Product Model and Category Model
 - Many products can live in one Category. 
 - Also, a Category can have no Products living in it.
-<br>
-`To show that we use the Zero or Many notation.`
+- `To show that we use the Zero or Many notation.`
 
 ### 7. Relationship and cardinality between the Reviews and Product
 - A single Review can only be about one and only one Product.
-<br>
-`To show that we use the One (and only One) notation.`
+- `To show that we use the One (and only One) notation.`
 
 ### 8. Relationship and cardinality between the Product and Reviews
 - A specific product can have zero or many reviews.
-<br>
-`To show that we use the Zero or Many notation.`
+- `To show that we use the Zero or Many notation.`
 
 ### 9. Relationship and cardinality between the Reviews and UserProfile
 - A single Review can only be created by one and only one UserProfile.
-<br>
-`To show that we use One (and only One) notation.`
+- `To show that we use One (and only One) notation.`
 
 ### 10. Relationship and cardinality between the UserProfile and Reviews
 - A UserProfile can decide to write no Reviews or write many Reviews.
-<br>
-`To show that we use the Zero or Many notation.`
+- `To show that we use the Zero or Many notation.`
 
 <br>
 
