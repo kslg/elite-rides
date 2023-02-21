@@ -69,7 +69,18 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
     * [Social Media Marketing](#social-media-marketing)
     * [Email Marketing](#email-marketing)
 - [Agile Project Management](#agile-project-management)
-- [Manual Testing of User Stories](#manual-testing-of-user-stories)
+- [Testing](#testing)
+    * [Manual Testing of User Stories](#manual-testing-of-user-stories)
+    * [Code Validation](#code-validation)
+        + [HTML and CSS Validation](#html-and-css-validation)
+        + [Javascript Validation](#javascript-validation)
+        + [Python Validation](#python-validation)
+    * [Performance](#performance)
+        + [Google Lighthouse Score](#google-lighthouse-score)
+        + [Microsoft Edge Lighthouse score](#microsoft-edge-lighthouse-score)
+    * [Bugs Encountered during Testing](#bugs-encountered-during-testing)
+        + [Bug 1](#bug-1)
+        + [Bug 2](#bug-2)
 - [Strip Integration](#strip-integration)
     * [Testing Stripe](#testing-stripe)
     * [Injecting Stripe](#injecting-stripe)
@@ -77,10 +88,6 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
     * [Stripe Handle Form Submission](#stripe-handle-form-submission)
     * [Stripe Webhooks](#stripe-webhooks)
 - [Accessibility](#accessibility)
-- [Performance](#performance)
-    * [Google Lighthouse Score](#google-lighthouse-score)
-    * [Microsoft Edge Lighthouse score](#microsoft-edge-lighthouse-score)
-- [HTML and CSS Code Validation](#html-and-css-code-validation)
 - [Technologies used](#technologies-used)
     * [Languages](#languages)
     * [Frameworks and libraries](#frameworks-and-libraries)
@@ -110,9 +117,6 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
     * [Product Details and Images](#product-details-and-images)
     * [Mind Map images](#mind-map-images)
     * [Web and Social Media Marketing](#web-and-social-media-marketing)
-- [Bugs Encountered during Testing](#bugs-encountered-during-testing)
-    * [Bug 1](#bug-1)
-    * [Bug 2](#bug-2)
 - [Future Features](#future-features)
 
 # User Experience Design
@@ -729,7 +733,9 @@ Jira Software is an agile project management tool that supports any agile method
 
 [Back to contents](#contents)
 
-# Manual Testing of User Stories
+# Testing
+
+## Manual Testing of User Stories
 
 I tested the site against the Acceptance Criteria in each Jira User Story.
 
@@ -760,6 +766,75 @@ I tested the site against the Acceptance Criteria in each Jira User Story.
 
 
 [Back to contents](#contents)
+
+## Code Validation
+
+### HTML and CSS Validation
+
+Both the W3C Markup HTML Validator and W3C CSS Validator were used to confirm there are no errors in the codebase.
+
+### Javascript Validation
+### Python Validation
+
+[Back to contents](#contents)
+
+## Performance
+
+### Google Lighthouse Score
+
+- Mobile
+
+![image](/documentation/lighthouse_tests/google_lighthouse_mobile.png)
+
+<br>
+
+- Desktop
+
+![image](/documentation/lighthouse_tests/google_lighthouse_desktop.png)
+
+### Microsoft Edge Lighthouse score
+
+- Mobile
+
+![image](/documentation/lighthouse_tests/microsoft_edge_lighthouse_mobile.png)
+
+<br>
+
+- Desktop
+
+![image](/documentation/lighthouse_tests/microsoft_edge_lighthouse_desktop.png)
+
+[Back to contents](#contents)
+
+## Bugs Encountered during Testing
+
+### Bug 1
+I realised that on the checkout success page, the grand total is calculating a little less.
+
+For example, when I add a product with shipping cost, the Grand Total should be `£14.25` but shows on the checkout success page as `£14.24`
+<br>
+
+![image](/documentation/bugs/1_bug_shopping_bag.png)
+
+![image](/documentation/bugs/1_bug_checkout_success.png)
+
+The issue was in `Checkout App > models.py` where I need to add a `round() fucntion` to the grand_total and output the price with 2 decimal places.
+
+![image](/documentation/bugs/1_bug_fix.png)
+
+### Bug 2
+
+When I try to remove an item from my bag, nothing happens.
+I checked the browser console and saw a 403 error.
+
+![image](/documentation/bugs/2_bug_403_error.png)
+
+In the `Bag App > bag.html` I removed the csrfToken from `var = data` by accident as I wanted to remove the size reference.
+
+![image](/documentation/bugs/2_bug_403_fix.png)
+
+[Back to contents](#contents)
+
 
 # Strip Integration
 Stripe is a PSP (Payment Service Provider) that lets business owners collect payments and transfer them directly to their own account instantly.
@@ -819,39 +894,6 @@ The `Admin` can then verify that the purchase was made successfully in Stripe, e
 I used `aria-label` attributes in the html templates to help disabled users on the front-end understand what the different elements are and their purpose.
 
 I’ve used Symantic HTML markup which helps browsers to understand the context of the content, and also helps with the accessibility for users with impairments.
-
-[Back to contents](#contents)
-
-# Performance
-
-## Google Lighthouse Score
-
-- Mobile
-
-![image](/documentation/lighthouse_tests/google_lighthouse_mobile.png)
-
-<br>
-
-- Desktop
-
-![image](/documentation/lighthouse_tests/google_lighthouse_desktop.png)
-
-## Microsoft Edge Lighthouse score
-
-- Mobile
-
-![image](/documentation/lighthouse_tests/microsoft_edge_lighthouse_mobile.png)
-
-<br>
-
-- Desktop
-
-![image](/documentation/lighthouse_tests/microsoft_edge_lighthouse_desktop.png)
-
-[Back to contents](#contents)
-
-# HTML and CSS Code Validation
-Both the W3C Markup HTML Validator and W3C CSS Validator were used to confirm there are no errors in the codebase.
 
 [Back to contents](#contents)
 
@@ -1159,35 +1201,6 @@ This will tell the browser that it's okay to cache static files for a long time.
 ## Web and Social Media Marketing
 - [MailChimp Newsletter Sign Up](https://mailchimp.com/)
 - [Facebook Business Page](https://www.facebook.com/)
-
-[Back to contents](#contents)
-
-# Bugs Encountered during Testing
-
-## Bug 1
-I realised that on the checkout success page, the grand total is calculating a little less.
-
-For example, when I add a product with shipping cost, the Grand Total should be `£14.25` but shows on the checkout success page as `£14.24`
-<br>
-
-![image](/documentation/bugs/1_bug_shopping_bag.png)
-
-![image](/documentation/bugs/1_bug_checkout_success.png)
-
-The issue was in `Checkout App > models.py` where I need to add a `round() funtion` to the grand_total and output the price with 2 decimal places.
-
-![image](/documentation/bugs/1_bug_fix.png)
-
-## Bug 2
-
-When I try to remove an item from my bag, nothing happens.
-I checked the browser console and saw a 403 error.
-
-![image](/documentation/bugs/2_bug_403_error.png)
-
-In the `Bag App > bag.html` I removed the csrfToken from `var = data` by accident as I wanted to remove the size reference.
-
-![image](/documentation/bugs/2_bug_403_fix.png)
 
 [Back to contents](#contents)
 
