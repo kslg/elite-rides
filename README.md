@@ -769,9 +769,42 @@ I tested the site against the Acceptance Criteria in each Jira User Story.
 
 ## Code Validation
 
-### HTML and CSS Validation
+### CSS Validation
 
-Both the W3C Markup HTML Validator and W3C CSS Validator were used to confirm there are no errors in the codebase.
+I used the W3C CSS Validator to confirm there are no errors in the `base.css` file and the `checkout.css` file.
+
+![image](/documentation/testing/CSS_validation_passed.png)
+
+### HTML Validation
+
+I used the W3C Markup HTML Validator to confirm there are no errors in the html pages:
+
+`Document checking completed. No errors or warnings to show.`
+
+| URL | Result |
+| ------------- | ------------- |
+| https://pp5-elite-rides.herokuapp.com/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/products/?sort=price&direction=asc |  |
+| https://pp5-elite-rides.herokuapp.com/products/?sort=make&direction=asc |  |
+| https://pp5-elite-rides.herokuapp.com/products/?sort=model&direction=asc |  |
+| https://pp5-elite-rides.herokuapp.com/products/ |  |
+| https://pp5-elite-rides.herokuapp.com/products/?category=british |  |
+| https://pp5-elite-rides.herokuapp.com/products/?category=italian |  |
+| https://pp5-elite-rides.herokuapp.com/products/?category=german |  |
+| https://pp5-elite-rides.herokuapp.com/products/?category=british,italian,german |  |
+| https://pp5-elite-rides.herokuapp.com/about-us/ |  |
+| https://pp5-elite-rides.herokuapp.com/contact/ |  |
+| https://pp5-elite-rides.herokuapp.com/products/add/ |  |
+| https://pp5-elite-rides.herokuapp.com/profile/ |  |
+| https://pp5-elite-rides.herokuapp.com/accounts/logout/ |  |
+| https://pp5-elite-rides.herokuapp.com/accounts/signup/ |  |
+| https://pp5-elite-rides.herokuapp.com/accounts/login/ |  |
+| https://pp5-elite-rides.herokuapp.com/bag/ |  |
+| https://pp5-elite-rides.herokuapp.com/terms-conditions/ |  |
+| https://pp5-elite-rides.herokuapp.com/privacy-policy/ |  |
+| https://pp5-elite-rides.herokuapp.com/cookie-policy/
+| https://pp5-elite-rides.herokuapp.com/checkout/
+
 
 ### Javascript Validation
 ### Python Validation
