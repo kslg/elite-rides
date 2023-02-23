@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     {% endif %}
-                    <p class="mt-3">{{ product.description | safe }}</p>
+                    {{ product.description | safe }}
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
