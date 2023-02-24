@@ -72,7 +72,8 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
 - [Testing](#testing)
     * [Manual Testing of User Stories](#manual-testing-of-user-stories)
     * [Code Validation](#code-validation)
-        + [HTML and CSS Validation](#html-and-css-validation)
+        + [CSS Validation](#css-validation)
+        + [HTML Validation](#html-validation)
         + [Javascript Validation](#javascript-validation)
         + [Python Validation](#python-validation)
     * [Performance](#performance)
@@ -81,6 +82,7 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
     * [Bugs Encountered during Testing](#bugs-encountered-during-testing)
         + [Bug 1](#bug-1)
         + [Bug 2](#bug-2)
+        + [Bug 3](#bug-3)
 - [Strip Integration](#strip-integration)
     * [Testing Stripe](#testing-stripe)
     * [Injecting Stripe](#injecting-stripe)
@@ -94,7 +96,7 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
     * [Databases](#databases)
     * [Other tools](#other-tools)
 - [Information Architecture](#information-architecture)
-    * [Entity-Relationship Diagram](#entity-relationship-diagram)
+    * [Relational Database Schema](#relational-database-schema)
 - [Deployments and Database Setup](#deployments-and-database-setup)
     * [Creating an external database using ElephantSQL](#creating-an-external-database-using-elephantsql)
     * [Create a Heroku app to connect to the new database](#create-a-heroku-app-to-connect-to-the-new-database)
@@ -781,33 +783,52 @@ I used the W3C Markup HTML Validator to confirm there are no errors in the html 
 
 `Document checking completed. No errors or warnings to show.`
 
-| URL | Result |
+| Page URL | Result |
 | ------------- | ------------- |
 | https://pp5-elite-rides.herokuapp.com/ | PASS |
-| https://pp5-elite-rides.herokuapp.com/products/?sort=price&direction=asc |  |
-| https://pp5-elite-rides.herokuapp.com/products/?sort=make&direction=asc |  |
-| https://pp5-elite-rides.herokuapp.com/products/?sort=model&direction=asc |  |
-| https://pp5-elite-rides.herokuapp.com/products/ |  |
-| https://pp5-elite-rides.herokuapp.com/products/?category=british |  |
-| https://pp5-elite-rides.herokuapp.com/products/?category=italian |  |
-| https://pp5-elite-rides.herokuapp.com/products/?category=german |  |
-| https://pp5-elite-rides.herokuapp.com/products/?category=british,italian,german |  |
-| https://pp5-elite-rides.herokuapp.com/about-us/ |  |
-| https://pp5-elite-rides.herokuapp.com/contact/ |  |
-| https://pp5-elite-rides.herokuapp.com/products/add/ |  |
-| https://pp5-elite-rides.herokuapp.com/profile/ |  |
-| https://pp5-elite-rides.herokuapp.com/accounts/logout/ |  |
-| https://pp5-elite-rides.herokuapp.com/accounts/signup/ |  |
-| https://pp5-elite-rides.herokuapp.com/accounts/login/ |  |
-| https://pp5-elite-rides.herokuapp.com/bag/ |  |
-| https://pp5-elite-rides.herokuapp.com/terms-conditions/ |  |
-| https://pp5-elite-rides.herokuapp.com/privacy-policy/ |  |
-| https://pp5-elite-rides.herokuapp.com/cookie-policy/
-| https://pp5-elite-rides.herokuapp.com/checkout/
-
+| https://pp5-elite-rides.herokuapp.com/products/?sort=price&direction=asc | PASS |
+| https://pp5-elite-rides.herokuapp.com/products/?sort=make&direction=asc | PASS |
+| https://pp5-elite-rides.herokuapp.com/products/?sort=model&direction=asc | PASS |
+| https://pp5-elite-rides.herokuapp.com/products/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/products/?category=british | PASS |
+| https://pp5-elite-rides.herokuapp.com/products/?category=italian | PASS |
+| https://pp5-elite-rides.herokuapp.com/products/?category=german | PASS |
+| https://pp5-elite-rides.herokuapp.com/products/?category=british,italian,german | PASS |
+| https://pp5-elite-rides.herokuapp.com/about-us/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/contact/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/products/add/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/profile/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/accounts/logout/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/accounts/signup/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/accounts/login/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/bag/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/terms-conditions/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/privacy-policy/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/cookie-policy/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/checkout/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/products/{product id}/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/profile/order_history/ | PASS |
+| https://pp5-elite-rides.herokuapp.com/accounts/confirm-email/ | PASS |
 
 ### Javascript Validation
+
+Javascript files tested using https://jshint.com/
+
+I added `/*jshint esversion: 6 */` at the top of the js files which tells 
+JS hint to use es6 features so it won't warn about them.
+
+Also, I used `/*globals $:false */` to suppress jquery warnings.
+
+| File Name | Result | Notes |
+| --------- | ------ | ----- |
+| stripe_elements.js | PASS | One undefined variable Line 25 for Stripe . This is coming from another script for Stripe which we don't want to modify. |
+| countryfield.js | PASS |
+
 ### Python Validation
+
+- I used flake8 to validate Python code. 
+- All flags/errors from my .py updates/files have been removed.
+- The only flags listed now are related to migrations, settings.py and vscode which do not need to be touched.
 
 [Back to contents](#contents)
 
@@ -865,6 +886,26 @@ I checked the browser console and saw a 403 error.
 In the `Bag App > bag.html` I removed the csrfToken from `var = data` by accident as I wanted to remove the size reference.
 
 ![image](/documentation/bugs/2_bug_403_fix.png)
+
+### Bug 3
+
+I added a test review in the django admin for a product. But the product review was not showing on the product detail page.
+
+![image](/documentation/bugs/3_product_reviews_error.png)
+
+In the product_detail.html template I'm checking against the contents of `eachProduct`, and I didn't set `eachProduct` in the `context` for your product_detail view.
+
+After I added the context, the reivews were showing
+
+```python
+context = {
+        'product': product,
+        'eachProduct': product,
+        'num_reviews': num_reviews,
+    }
+```
+
+![image](/documentation/bugs/3_product_reviews_fix.png)
 
 [Back to contents](#contents)
 
@@ -981,7 +1022,7 @@ they will always stay perfectly centred, and have a consistent size unless I man
 
 # Information Architecture
 
-## Entity-Relationship Diagram
+## Relational Database Schema
 
 Below I have mapped the database and explain how the different entities are connected to each other:
 
@@ -1031,7 +1072,7 @@ Below I have mapped the database and explain how the different entities are conn
 
 <br>
 
-![Entity-Relationship Diagram](/documentation/erd/EliteRides_ERD.jpeg)
+![Relational Database Schema](/documentation/erd/EliteRides_Relational_Database_Schema.jpeg)
 
 [Back to contents](#contents)
 
