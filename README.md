@@ -807,7 +807,7 @@ I used the W3C Markup HTML Validator to confirm there are no errors in the html 
 | https://pp5-elite-rides.herokuapp.com/privacy-policy/ | PASS |
 | https://pp5-elite-rides.herokuapp.com/cookie-policy/ | PASS |
 | https://pp5-elite-rides.herokuapp.com/checkout/ | PASS |
-| https://pp5-elite-rides.herokuapp.com/products/{product id}/ | PASS |
+| Individual Product Pages | PASS |
 | https://pp5-elite-rides.herokuapp.com/profile/order_history/ | PASS |
 | https://pp5-elite-rides.herokuapp.com/accounts/confirm-email/ | PASS |
 
