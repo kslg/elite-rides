@@ -83,6 +83,7 @@ Elite Rides is responsive which makes shopping possible on mobile and table devi
         + [Bug 1](#bug-1)
         + [Bug 2](#bug-2)
         + [Bug 3](#bug-3)
+        + [Bug 4](#bug-4)
 - [Strip Integration](#strip-integration)
     * [Testing Stripe](#testing-stripe)
     * [Injecting Stripe](#injecting-stripe)
@@ -907,6 +908,63 @@ context = {
 
 ![image](/documentation/bugs/3_product_reviews_fix.png)
 
+
+### Bug 4
+
+I've been setting up reviews on the product details page and all seems to be working on the local environment (gitpod).
+However, after I deployed to Production and tried to open a product page on Prod, I got an error:
+
+`ProgrammingError at /products/12/ relation "products_reviews" does not exist LINE 1: SELECT COUNT(*) AS "__count" FROM "products_reviews" WHERE "...`
+
+![image](/documentation/bugs/4_bug_error.png)
+
+After speaking to Tutor Support, it seems the error was to do with database migrations.
+The issue comes from the fact I was connected to two databases. Every migration I do will be to the local database, and not both databases. 
+This means that if I do migrations and make updates, these errors come on the remote database.
+
+What I had to do was carry out a few steps:
+
+1. First is to comment out the sql database and the if statement so I only access the remote Elephant SQL database:
+
+```python
+# Database
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+# if 'DATABASE_URL' in os.environ:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+```
+
+2. I had to import the env.py file into my settings.py file:
+
+```python
+if os.path.exists("env.py"):
+    import env
+```
+
+3. I ran migrations to the remote database.
+
+`python3 manage.py makemigrations`
+<br>
+
+`python3 manage.py migrate --plan`
+<br>
+
+`python3 manage.py migrate`
+
+This then resolved the issue.
+
+
 [Back to contents](#contents)
 
 
@@ -1015,6 +1073,7 @@ they will always stay perfectly centred, and have a consistent size unless I man
 + [W3C Validator](https://validator.w3.org/): used to validate HTML5 code.
 + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): used to validate CSS code.
 + [flake8](https://pypi.org/project/flake8/): was used to validate Python code.
++ [jshint.com](https://jshint.com/): was used to validate Javascript Code
 + [Replit.com](https://replit.com/): to store versions of work-in-progress snippets and functions of code.
 + [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/) to generate a new secret key for the Heroku app.
 
