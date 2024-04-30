@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['pp5-elite-rides.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['pp5-elite-rides.herokuapp.com', 'localhost', '8000-kslg-eliterides-nwvf67ujt7n.ws-eu110.gitpod.io']
 
 
 # Application definition
